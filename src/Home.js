@@ -16,8 +16,6 @@ export default function Home() {
         <Clubdesc>
           <h1>Some Club</h1>
           <span>of Anna University Trichy</span>
-          <br></br>
-          <br></br>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
             industry's standard dummy text.
@@ -33,7 +31,6 @@ export default function Home() {
 
 const Header = styled.div`
   height: 100vh;
-  width: 100%;
   background-image: linear-gradient(90deg, #7524dd, #bf59c0);
 `;
 
@@ -45,32 +42,29 @@ const Nav = styled.div`
   align-items: center;
 
   & a {
+    font-family: 'JetBrains Mono', monospace;
     text-decoration: none;
     color: white;
     margin: 2rem;
-    font-family: 'Gothic A1', sans-serif;
   }
 `;
 
 const Clubbox = styled.div`
   display: flex;
   margin-top: 3rem;
+  color: white;
 
   & h1 {
     font-family: 'Gothic A1', sans-serif;
-    color: white;
     font-size: 4rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: -1.5rem;
   }
   & span {
-    color: white;
-    font-family: 'JetBrains Mono', Monospace;
-    font-size: 14px;
+    font-size: 1.3rem;
   }
-  & p {
-    color: white;
-    font-family: 'JetBrains Mono', Monospace;
-    font-size: 18px;
+
+  p {
+    margin: 2rem 0;
   }
 
   & img {

@@ -1,23 +1,18 @@
-import React from 'react';
 import styled from 'styled-components';
 
 export default function Button() {
-  return (
-    <div>
-      <Btn>REGISTER</Btn>
-    </div>
-  );
+  return <Btn>REGISTER</Btn>;
 }
 
 const Btn = styled.button`
-  margin-top: 20px;
-  width: 120px;
-  height: 40px;
-  font-size: 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
   background-color: #3aceb2;
   color: white;
   outline: none;
   border: none;
-  border-radius: 20px;
+  text-transform: uppercase;
+  border-radius: 2rem;
   cursor: pointer;
 `;

@@ -9,9 +9,7 @@ export default function Members() {
       <Head>Our core members</Head>
       <Corebox>
         <Card imgSrc={Bheem} Name='Bheem' position='Vice President'></Card>
-
         <Card imgSrc={Bheem} Name='Bheem' position='Vice President'></Card>
-
         <Card imgSrc={Bheem} Name='Bheem' position='Vice President'></Card>
       </Corebox>
     </div>
@@ -22,6 +20,7 @@ const Corebox = styled.div`
   display: flex;
   justify-content: space-around;
 `;
+
 const Head = styled.h1`
   background: -webkit-linear-gradient(45deg, #7524dd, #bf59c0);
   -webkit-background-clip: text;
