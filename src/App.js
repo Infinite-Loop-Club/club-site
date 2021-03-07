@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from "./Home";
+import Home from './Home';
 import Paget from './Paget';
 import Cta from './Cta';
 import Members from './Members';
@@ -14,6 +14,5 @@ export default function App() {
       <Members></Members>
       <Footer></Footer>
     </div>
-  )
+  );
 }
-  

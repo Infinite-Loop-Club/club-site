@@ -1,16 +1,16 @@
-import React from "react";
-import styled from "styled-components";
-import code from "./svg/Code Development _Isometric  1.svg";
-import Button from "./component/Button";
+import React from 'react';
+import styled from 'styled-components';
+import code from './svg/Code Development _Isometric  1.svg';
+import Button from './components/Button';
 
 export default function Home() {
   return (
     <Header>
       <Nav>
-        <a href="">Home</a>
-        <a href="">Posts</a>
-        <a href="">About us</a>
-        <a href="">Contact us</a>
+        <a href=''>Home</a>
+        <a href=''>Posts</a>
+        <a href=''>About us</a>
+        <a href=''>Contact us</a>
       </Nav>
       <Clubbox>
         <Clubdesc>
@@ -19,13 +19,13 @@ export default function Home() {
           <br></br>
           <br></br>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text.
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text.
           </p>
 
           <Button />
         </Clubdesc>
-        <img src={code} alt="Code development"></img>
+        <img src={code} alt='Code development'></img>
       </Clubbox>
     </Header>
   );
@@ -48,7 +48,7 @@ const Nav = styled.div`
     text-decoration: none;
     color: white;
     margin: 2rem;
-    font-family: "Gothic A1", sans-serif;
+    font-family: 'Gothic A1', sans-serif;
   }
 `;
 
@@ -57,19 +57,19 @@ const Clubbox = styled.div`
   margin-top: 3rem;
 
   & h1 {
-    font-family: "Gothic A1", sans-serif;
+    font-family: 'Gothic A1', sans-serif;
     color: white;
     font-size: 4rem;
     margin-bottom: 0.5rem;
   }
   & span {
     color: white;
-    font-family: "JetBrains Mono", Monospace;
+    font-family: 'JetBrains Mono', Monospace;
     font-size: 14px;
   }
   & p {
     color: white;
-    font-family: "JetBrains Mono", Monospace;
+    font-family: 'JetBrains Mono', Monospace;
     font-size: 18px;
   }
 

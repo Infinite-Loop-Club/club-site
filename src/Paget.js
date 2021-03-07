@@ -1,39 +1,39 @@
-import React from "react";
-import styled from "styled-components";
-import Fbox from "./Fbox";
-import job from "./svg/Job Interview _Isometric 1.svg";
-import TeamB from "./svg/Team building _Two Color 1.svg";
-import TeamM from "./svg/Team meeting_Monochromatic 1.svg";
-import Web from "./svg/Web Developer_Monochromatic 1.svg";
+import React from 'react';
+import styled from 'styled-components';
+import Fbox from './Fbox';
+import job from './svg/Job Interview _Isometric 1.svg';
+import TeamB from './svg/Team building _Two Color 1.svg';
+import TeamM from './svg/Team meeting_Monochromatic 1.svg';
+import Web from './svg/Web Developer_Monochromatic 1.svg';
 
 export default function Paget() {
   return (
     <Div>
       <H1>What do we do?</H1>
-      <div className="container">
+      <div className='container'>
         <Fbox
-          title="Build a community"
+          title='Build a community'
           imgSrc={TeamM}
           para="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             Lorem Ipsum has been the industry's standard dummy text."
         ></Fbox>
 
         <Fbox
-          title="Team building"
+          title='Team building'
           imgSrc={TeamB}
           para="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             Lorem Ipsum has been the industry's standard dummy text."
         ></Fbox>
 
         <Fbox
-          title="Learn new things"
+          title='Learn new things'
           imgSrc={Web}
           para="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             Lorem Ipsum has been the industry's standard dummy text."
         ></Fbox>
 
         <Fbox
-          title="Create opportunities"
+          title='Create opportunities'
           imgSrc={job}
           para="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             Lorem Ipsum has been the industry's standard dummy text."
@@ -51,7 +51,7 @@ const H1 = styled.h1`
   margin-bottom: 4rem;
   font-weight: bold;
   font-size: 4rem;
-  font-family: "Gothic A1", sans-serif;
+  font-family: 'Gothic A1', sans-serif;
 `;
 const Div = styled.section`
   margin: 8rem auto;
