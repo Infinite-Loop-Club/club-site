@@ -7,10 +7,10 @@ export default function Home() {
   return (
     <Header>
       <Nav>
-        <a href=''>Home</a>
-        <a href=''>Posts</a>
-        <a href=''>About us</a>
-        <a href=''>Contact us</a>
+        <a href='#someLink'>Home</a>
+        <a href='#someLink'>Posts</a>
+        <a href='#someLink'>About us</a>
+        <a href='#someLink'>Contact us</a>
       </Nav>
       <Clubbox>
         <Clubdesc>

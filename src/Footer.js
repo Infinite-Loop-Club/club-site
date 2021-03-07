@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <Div>
       <Abtclub>
-        <img></img>
+        <img src='./dummy.jpg' alt='logo' />
         <p>
           University College of Engg.,
           <br />

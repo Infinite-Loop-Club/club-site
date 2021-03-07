@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export default function Card(props) {
   return (
     <Div>
-      <img src={props.imgSrc}></img>
+      <img src={props.imgSrc} alt='props.Name'></img>
       <h2>{props.Name}</h2>
       <h3>{props.position}</h3>
     </Div>
@@ -28,6 +28,7 @@ const Div = styled.div`
     font-family: 'Gothic A1', sans-serif;
     background: -webkit-linear-gradient(45deg, #7524dd, #bf59c0);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 

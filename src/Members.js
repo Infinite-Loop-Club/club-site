@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 import Card from './components/Card';
@@ -26,6 +25,7 @@ const Corebox = styled.div`
 const Head = styled.h1`
   background: -webkit-linear-gradient(45deg, #7524dd, #bf59c0);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
   margin: 5rem 2rem;

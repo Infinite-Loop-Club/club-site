@@ -1,10 +1,9 @@
-import React from 'react';
 import styled from 'styled-components';
 
 export default function Fbox(props) {
   return (
     <Container>
-      <img src={props.imgSrc}></img>
+      <img alt='feat-img' src={props.imgSrc}></img>
       <div>
         <h3>{props.title}</h3>
         <p>{props.para}</p>
