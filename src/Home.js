@@ -48,7 +48,6 @@ const Hero = styled.div`
     color: white;
 
     & h1 {
-      font-size: 4rem;
       margin-bottom: -1.5rem;
     }
     & span {

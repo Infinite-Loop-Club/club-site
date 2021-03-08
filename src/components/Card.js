@@ -1,38 +1,49 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export default function Card(props) {
+export default function Card({ name, position, imgSrc, isSpecial }) {
   return (
-    <Div>
-      <img src={props.imgSrc} alt='props.Name'></img>
-      <h2>{props.Name}</h2>
-      <h3>{props.position}</h3>
-    </Div>
+    <CardInternal isSpecial={isSpecial}>
+      <img src={imgSrc} alt={name}></img>
+      <h2>{name}</h2>
+      <p>{position}</p>
+    </CardInternal>
   );
 }
 
-const Div = styled.div`
-  height: 550px;
-  width: 440px;
+const CardInternal = styled.div`
+  max-width: 30rem;
+  padding: 5rem;
   text-align: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.4rem;
+  transition: all 0.3s;
+
+  ${({ isSpecial }) =>
+    isSpecial &&
+    `
+      background-image: linear-gradient(to top left, #7524dd, #bf59c0);
+      color: white;
+
+      &>h2 {
+        color: white !important;
+      }
+  `}
+
+  &:hover {
+    transform: translateY(-1rem) scale(1.05);
+    box-shadow: 0 0.7rem 1.1rem rgba(0, 0, 0, 0.2);
+  }
 
   & img {
-    height: 346px;
-    width: 341px;
-    border-radius: 250px;
-    margin-top: 3rem;
+    height: 15rem;
+    width: 15rem;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
   }
 
   & h2 {
-    font-family: 'Gothic A1', sans-serif;
-    background: -webkit-linear-gradient(45deg, #7524dd, #bf59c0);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  & h3 {
-    font-family: 'JetBrains Mono', monospace;
+    color: #7524dd;
   }
 `;

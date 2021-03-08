@@ -50,8 +50,6 @@ const H1 = styled.h1`
   -webkit-text-fill-color: transparent;
   text-align: center;
   margin-bottom: 4rem;
-  font-weight: bold;
-  font-size: 4rem;
 `;
 
 const InnerContainer = styled.div`

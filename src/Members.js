@@ -1,24 +1,30 @@
 import styled from 'styled-components';
+import { Container } from './components';
 
 import Card from './components/Card';
 import Bheem from './svg/Bheem.jpg';
 
 export default function Members() {
   return (
-    <div>
+    <Container>
       <Head>Our core members</Head>
-      <Corebox>
-        <Card imgSrc={Bheem} Name='Bheem' position='Vice President'></Card>
-        <Card imgSrc={Bheem} Name='Bheem' position='Vice President'></Card>
-        <Card imgSrc={Bheem} Name='Bheem' position='Vice President'></Card>
-      </Corebox>
-    </div>
+      <CoreBox>
+        <Card imgSrc={Bheem} name='Bheem' position='Vice President' />
+        <Card imgSrc={Bheem} name='Bheem' position='President' isSpecial />
+        <Card imgSrc={Bheem} name='Bheem' position='Tech Lead' />
+      </CoreBox>
+    </Container>
   );
 }
 
-const Corebox = styled.div`
+const CoreBox = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  & > div {
+    &:not(:last-child) {
+      margin-right: 4rem;
+    }
+  }
 `;
 
 const Head = styled.h1`
@@ -27,7 +33,5 @@ const Head = styled.h1`
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
-  margin: 5rem 2rem;
-  font-weight: 700;
-  font-size: 50px;
+  margin-bottom: 3rem;
 `;
