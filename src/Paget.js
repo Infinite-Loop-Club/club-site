@@ -57,5 +57,5 @@ const H1 = styled.h1`
 const InnerContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 3rem;
+  grid-gap: 6rem;
 `;
