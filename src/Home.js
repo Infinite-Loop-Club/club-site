@@ -40,11 +40,10 @@ const Nav = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  color: white;
 
   & a {
-    font-family: 'JetBrains Mono', monospace;
     text-decoration: none;
-    color: white;
     margin: 2rem;
   }
 `;
@@ -55,7 +54,6 @@ const Clubbox = styled.div`
   color: white;
 
   & h1 {
-    font-family: 'Gothic A1', sans-serif;
     font-size: 4rem;
     margin-bottom: -1.5rem;
   }

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export default function Fbox(props) {
   return (
     <Container>
-      <img alt='feat-img' src={props.imgSrc}></img>
+      <img alt='feat-img' src={props.imgSrc}/>
       <div>
         <h3>{props.title}</h3>
         <p>{props.para}</p>
@@ -39,13 +39,11 @@ const Container = styled.div`
 
   div {
     & h3 {
-      font-family: 'Gothic A1', sans-serif;
       font-size: 2rem;
       margin-bottom: 1.2rem;
     }
 
     & p {
-      font-family: 'JetBrains Mono', monospace;
       line-height: 2;
     }
   }
