@@ -1,7 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
-import Button from './components/Button';
-import Container from './components/Container';
+import { Button, Container } from './components';
 
 export default function Cta() {
   return (
@@ -13,7 +11,7 @@ export default function Cta() {
           standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
           has been the industry's standard dummy text.
         </p>
-        <Button />
+        <Button>Register</Button>
       </Container>
     </Div>
   );

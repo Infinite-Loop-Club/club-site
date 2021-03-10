@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-export default function Button() {
-  return <Btn>REGISTER</Btn>;
+export default function Button({ children, ...props }) {
+  return <Btn {...props}>{children}</Btn>;
 }
 
 const Btn = styled.button`

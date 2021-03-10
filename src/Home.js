@@ -21,7 +21,7 @@ export default function Home() {
               industry's standard dummy text.
             </p>
 
-            <Button />
+            <Button>Register</Button>
           </div>
           <img src={code} alt='Code development'></img>
         </div>
