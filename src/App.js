@@ -28,7 +28,24 @@ const GlobalStyles = createGlobalStyle`
 
   html {
     font-size: 65%;
+  scroll-behavior: smooth;
   }
+
+::-webkit-scrollbar {
+  width: .5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7524dd;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #bf59c0;
+}
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Gothic A1', sans-serif;
