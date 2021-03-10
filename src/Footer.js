@@ -1,10 +1,9 @@
-import React from 'react';
 import styled from 'styled-components';
 
 export default function Footer() {
   return (
     <Div>
-      <Abtclub>
+      <AboutClub>
         <img src='./dummy.jpg' alt='logo' />
         <p>
           University College of Engg.,
@@ -22,38 +21,28 @@ export default function Footer() {
           <p>Craig Larman</p>
           <p>Liam Williams</p>
         </div>
-      </Abtclub>
-      <Cpyright>
-        <p>Copyrights, 2021, Some Club of Anna University</p>
-      </Cpyright>
+      </AboutClub>
+      <Copyright>Copyrights, 2021, Some Club of Anna University</Copyright>
     </Div>
   );
 }
 const Div = styled.div`
   background-color: #7524dd;
-  margin: 5rem 0;
+  margin-top: 5rem;
 `;
 
-const Abtclub = styled.div`
+const AboutClub = styled.div`
+  padding: 6rem 0;
+  color: #fff;
+  max-width: 120rem;
+  margin: auto;
   display: flex;
   justify-content: space-around;
-  padding: 6rem 0;
-
-  & p {
-    color: white;
-    font-family: 'JetBrains Mono', monospace;
-  }
-  & h3 {
-    color: white;
-    font-family: 'Gothic A1', sans-serif;
-  }
 `;
 
-const Cpyright = styled.div`
+const Copyright = styled.div`
   background-color: #3f3d56;
-  height: 3rem;
+  padding: 1.8rem;
   color: white;
-  font-family: 'JetBrains Mono', monospace;
   text-align: center;
-  padding-top: 3px;
 `;
