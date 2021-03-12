@@ -7,16 +7,16 @@ import Members from './Members';
 import Footer from './Footer';
 
 export default function App() {
-  return (
-    <>
-      <GlobalStyles />
-      <Home></Home>
-      <Paget></Paget>
-      <Cta></Cta>
-      <Members></Members>
-      <Footer></Footer>
-    </>
-  );
+	return (
+		<>
+			<GlobalStyles />
+			<Home></Home>
+			<Paget></Paget>
+			<Cta></Cta>
+			<Members></Members>
+			<Footer></Footer>
+		</>
+	);
 }
 
 const GlobalStyles = createGlobalStyle`
@@ -28,7 +28,7 @@ const GlobalStyles = createGlobalStyle`
 
   html {
     font-size: 65%;
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
   }
 
 ::-webkit-scrollbar {

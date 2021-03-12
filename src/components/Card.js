@@ -2,26 +2,26 @@ import React from 'react';
 import styled from 'styled-components';
 
 export default function Card({ name, position, imgSrc, isSpecial }) {
-  return (
-    <CardInternal isSpecial={isSpecial}>
-      <img src={imgSrc} alt={name}></img>
-      <h2>{name}</h2>
-      <p>{position}</p>
-    </CardInternal>
-  );
+	return (
+		<CardInternal isSpecial={isSpecial}>
+			<img src={imgSrc} alt={name}></img>
+			<h2>{name}</h2>
+			<p>{position}</p>
+		</CardInternal>
+	);
 }
 
 const CardInternal = styled.div`
-  max-width: 30rem;
-  padding: 5rem;
-  text-align: center;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-  border-radius: 0.4rem;
-  transition: all 0.3s;
+	max-width: 30rem;
+	padding: 5rem;
+	text-align: center;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+	border-radius: 0.4rem;
+	transition: all 0.3s;
 
-  ${({ isSpecial }) =>
-    isSpecial &&
-    `
+	${({ isSpecial }) =>
+		isSpecial &&
+		`
       background-image: linear-gradient(to top left, #7524dd, #bf59c0);
       color: white;
 
@@ -30,20 +30,20 @@ const CardInternal = styled.div`
       }
   `}
 
-  &:hover {
-    transform: translateY(-1rem) scale(1.05);
-    box-shadow: 0 0.7rem 1.1rem rgba(0, 0, 0, 0.2);
-  }
+	&:hover {
+		transform: translateY(-1rem) scale(1.05);
+		box-shadow: 0 0.7rem 1.1rem rgba(0, 0, 0, 0.2);
+	}
 
-  & img {
-    height: 15rem;
-    width: 15rem;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 50%;
-  }
+	& img {
+		height: 15rem;
+		width: 15rem;
+		object-fit: cover;
+		object-position: center;
+		border-radius: 50%;
+	}
 
-  & h2 {
-    color: #7524dd;
-  }
+	& h2 {
+		color: #7524dd;
+	}
 `;
