@@ -54,6 +54,10 @@ const GlobalStyles = createGlobalStyle`
 
   h1 {
     font-size: 5rem;
+
+    @media(max-width: 600px) {
+      font-size: 4rem;
+    }
   }
 
   body, p {

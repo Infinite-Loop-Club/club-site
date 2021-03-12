@@ -19,10 +19,27 @@ export default function Members() {
 
 const CoreBox = styled.div`
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	& > div {
-		&:not(:last-child) {
-			margin-right: 4rem;
+		@media (min-width: 600px) {
+			&:not(:last-child) {
+				margin-right: 4rem;
+			}
+		}
+
+		@media (max-width: 600px) {
+			margin-bottom: 3rem;
+
+			&:last-child {
+				margin-left: 2rem;
+			}
+		}
+	}
+
+	@media (max-width: 600px) {
+		& > div:nth-child(even) {
+			order: -1;
 		}
 	}
 `;

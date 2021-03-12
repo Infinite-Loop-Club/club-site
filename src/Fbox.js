@@ -18,16 +18,27 @@ const Container = styled.div`
 	grid-gap: 4rem;
 	place-items: center;
 
-	&:nth-child(even) {
-		img {
-			grid-column: -1/-2;
-			justify-self: flex-start;
-		}
+	@media (max-width: 600px) {
+		grid-template-columns: 1fr;
+		text-align: center;
 
-		div {
-			grid-column: 1/2;
-			grid-row: 1/2;
-			text-align: right;
+		& img {
+			justify-self: center !important;
+		}
+	}
+
+	@media (min-width: 600px) {
+		&:nth-child(even) {
+			img {
+				grid-column: -1/-2;
+				justify-self: flex-start;
+			}
+
+			div {
+				grid-column: 1/2;
+				grid-row: 1/2;
+				text-align: right;
+			}
 		}
 	}
 

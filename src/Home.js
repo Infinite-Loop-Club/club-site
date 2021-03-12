@@ -60,6 +60,31 @@ const Hero = styled.div`
 
 		& img {
 			height: 70%;
+			max-width: 100%;
+		}
+	}
+
+	@media (max-width: 600px) {
+		height: 110vh;
+
+		.container {
+			max-width: 90%;
+		}
+
+		.hero__content {
+			margin-top: 6rem;
+			grid-template-columns: 1fr;
+
+			div {
+				place-self: flex-end;
+				grid-row: 1/2;
+			}
+
+			img {
+				height: auto !important;
+				place-self: flex-start;
+				grid-row: -1/-2;
+			}
 		}
 	}
 `;

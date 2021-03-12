@@ -30,8 +30,29 @@ const CardInternal = styled.div`
       }
   `}
 
+	${({ isSpecial }) =>
+		!isSpecial &&
+		`
+			@media(max-width: 600px) {
+				padding: 2rem;
+
+				img {
+					height: 10rem !important;
+					width: 10rem !important;
+				}
+
+				h2 {
+					font-size: 1.4rem;
+				}
+
+				p{
+					font-size: 1rem;
+				}
+			}
+		`}
+
 	&:hover {
-		transform: translateY(-1rem) scale(1.05);
+		transform: translateY(-1rem);
 		box-shadow: 0 0.7rem 1.1rem rgba(0, 0, 0, 0.2);
 	}
 

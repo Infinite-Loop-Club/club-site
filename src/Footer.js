@@ -37,7 +37,13 @@ const AboutClub = styled.div`
 	max-width: 120rem;
 	margin: auto;
 	display: flex;
+	flex-wrap: wrap;
+	gap: 3rem;
 	justify-content: space-around;
+
+	@media (max-width: 600px) {
+		max-width: 90%;
+	}
 `;
 
 const Copyright = styled.div`
