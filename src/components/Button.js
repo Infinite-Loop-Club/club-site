@@ -18,6 +18,7 @@ const Btn = styled.button`
 		text-transform: uppercase;
 		border-radius: 2rem;
 		cursor: pointer;
+		transition: all 0.3s;
 	}
 
 	&:hover {

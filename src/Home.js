@@ -1,17 +1,12 @@
 import styled from 'styled-components';
 import code from './svg/Code Development _Isometric  1.svg';
-import { Button } from './components';
+import { Button, NavigationBar } from './components';
 
 export default function Home() {
 	return (
 		<Hero>
 			<div className='container'>
-				<Nav>
-					<a href='#someLink'>Home</a>
-					<a href='#someLink'>Posts</a>
-					<a href='#someLink'>About us</a>
-					<a href='#someLink'>Contact us</a>
-				</Nav>
+				<NavigationBar />
 				<div className='hero__content'>
 					<div>
 						<h1>Some Club</h1>
@@ -85,23 +80,6 @@ const Hero = styled.div`
 				place-self: flex-start;
 				grid-row: -1/-2;
 			}
-		}
-	}
-`;
-
-const Nav = styled.div`
-	color: white;
-	display: flex;
-	justify-content: flex-end;
-	padding: 2.5rem 0;
-	margin-bottom: -4rem;
-
-	& a {
-		display: inline-flex;
-		text-decoration: none;
-
-		&:not(:last-child) {
-			margin-right: 4rem;
 		}
 	}
 `;
