@@ -1,35 +1,39 @@
 import styled from 'styled-components';
-import { Button, Container } from './components';
+import { Button, Container, Footer, NavigationBar } from './components';
 
 export default function RegisterForm() {
 	return (
-		<FormContainer>
-			<Form>
-				<Field>
-					<label>Register Number</label>
-					<input />
-				</Field>
-				<Field>
-					<label>Name of the Student</label>
-					<input />
-				</Field>
+		<>
+			<NavigationBar />
+			<FormContainer>
+				<Form>
+					<Field>
+						<label>Register Number</label>
+						<input />
+					</Field>
+					<Field>
+						<label>Name of the Student</label>
+						<input />
+					</Field>
 
-				<Field>
-					<label>Email of the Student</label>
-					<input />
-				</Field>
+					<Field>
+						<label>Email of the Student</label>
+						<input />
+					</Field>
 
-				<Field>
-					<label>Phone Number</label>
-					<input />
-				</Field>
-				<Field>
-					<label>Year</label>
-					<input />
-				</Field>
-				<SubmitButton>SUBMIT</SubmitButton>
-			</Form>
-		</FormContainer>
+					<Field>
+						<label>Phone Number</label>
+						<input />
+					</Field>
+					<Field>
+						<label>Year</label>
+						<input />
+					</Field>
+					<SubmitButton>SUBMIT</SubmitButton>
+				</Form>
+			</FormContainer>
+			<Footer />
+		</>
 	);
 }
 
