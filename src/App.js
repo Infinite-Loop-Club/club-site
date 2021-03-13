@@ -5,11 +5,13 @@ import Paget from './Paget';
 import Cta from './Cta';
 import Members from './Members';
 import Footer from './Footer';
+import RegisterForm from './RegisterForm';
 
 export default function App() {
 	return (
 		<>
 			<GlobalStyles />
+			<RegisterForm />
 			<Home></Home>
 			<Paget></Paget>
 			<Cta></Cta>
