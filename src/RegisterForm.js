@@ -1,7 +1,43 @@
+import { useState } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 import { Button, Container, Footer, NavigationBar } from './components';
 
 export default function RegisterForm() {
+	const [values, setValues] = useState({});
+
+	const handleChange = e => {
+		const { name, value } = e.target;
+		setValues(old => {
+			return {
+				...old,
+				[name]: value
+			};
+		});
+	};
+
+	const handleSubmit = async () => {
+		if (
+			JSON.stringify({}) === JSON.stringify(values) ||
+			values.email === '' ||
+			values.password === '' ||
+			!values.email ||
+			!values.password
+		) {
+			console.log('error');
+		}
+		try {
+			const res = await axios.post('/api/auth/login', values);
+			if (res.data.auth) {
+				// setData(res.data);
+			} else {
+				console.log('error');
+			}
+		} catch (err) {
+			console.error(err);
+		}
+	};
+
 	return (
 		<>
 			<Nav />
@@ -10,26 +46,24 @@ export default function RegisterForm() {
 					<Heading>Registration</Heading>
 					<Form>
 						<Field>
-							<label>Register Number</label>
-							<Input />
+							<label htmlFor='regno'>Register Number</label>
+							<Input id='regno' onChange={handleChange} />
 						</Field>
 						<Field>
-							<label>Name of the Student</label>
-							<Input />
-						</Field>
-
-						<Field>
-							<label>Email of the Student</label>
-							<Input />
-						</Field>
-
-						<Field>
-							<label>Phone Number</label>
-							<Input />
+							<label htmlFor='name'>Name of the Student</label>
+							<Input id='name' />
 						</Field>
 						<Field>
-							<label>Year</label>
-							<Dropdown name='years' id='years'>
+							<label htmlFor='email'>Email of the Student</label>
+							<Input id='email' />
+						</Field>
+						<Field>
+							<label htmlFor='phn_num'>Phone Number</label>
+							<Input id='phn_num' />
+						</Field>
+						<Field>
+							<label htmlFor='year'>Year</label>
+							<Dropdown name='year' id='year'>
 								<option value='1'>1</option>
 								<option value='2'>2</option>
 								<option value='3'>3</option>
@@ -38,7 +72,7 @@ export default function RegisterForm() {
 						</Field>
 					</Form>
 				</Box>
-				<SubmitButton>Submit</SubmitButton>
+				<SubmitButton onClick={handleSubmit}>Submit</SubmitButton>
 			</FormContainer>
 			<Footer />
 		</>
