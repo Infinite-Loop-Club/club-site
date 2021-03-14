@@ -1,12 +1,20 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+
 import { Button, Container, Footer, NavigationBar } from './components';
 
 export default function RegisterForm() {
-	const [values, setValues] = useState({});
+	const [values, setValues] = useState({
+		name: '',
+		registerNumber: '',
+		email: '',
+		phoneNumber: '',
+		year: ''
+	});
 
 	const handleChange = e => {
+		console.log('triggeres');
 		const { name, value } = e.target;
 		setValues(old => {
 			return {
@@ -16,24 +24,21 @@ export default function RegisterForm() {
 		});
 	};
 
-	const handleSubmit = async () => {
-		if (
-			JSON.stringify({}) === JSON.stringify(values) ||
-			values.email === '' ||
-			values.password === '' ||
-			!values.email ||
-			!values.password
-		) {
-			console.log('error');
-		}
+	useEffect(() => {
+		// hit the server to wake it up
+		axios.get('/');
+	}, []);
+
+	const handleSubmit = async event => {
+		event.preventDefault();
+		console.log(values);
 		try {
-			const res = await axios.post('/api/auth/login', values);
-			if (res.data.auth) {
-				// setData(res.data);
-			} else {
-				console.log('error');
-			}
+			await axios.post('/user/new', values);
+
+			// registration successful - handle
+			window.open('/', '_self');
 		} catch (err) {
+			// handle the error properly
 			console.error(err);
 		}
 	};
@@ -47,23 +52,23 @@ export default function RegisterForm() {
 					<Form>
 						<Field>
 							<label htmlFor='regno'>Register Number</label>
-							<Input id='regno' onChange={handleChange} />
+							<Input id='regno' name='registerNumber' onChange={handleChange} required />
 						</Field>
 						<Field>
 							<label htmlFor='name'>Name of the Student</label>
-							<Input id='name' />
+							<Input id='name' name='name' onChange={handleChange} required />
 						</Field>
 						<Field>
 							<label htmlFor='email'>Email of the Student</label>
-							<Input id='email' />
+							<Input id='email' name='email' onChange={handleChange} required />
 						</Field>
 						<Field>
 							<label htmlFor='phn_num'>Phone Number</label>
-							<Input id='phn_num' />
+							<Input id='phn_num' name='phoneNumber' onChange={handleChange} required />
 						</Field>
 						<Field>
 							<label htmlFor='year'>Year</label>
-							<Dropdown name='year' id='year'>
+							<Dropdown name='year' onChange={handleChange} id='year'>
 								<option value='1'>1</option>
 								<option value='2'>2</option>
 								<option value='3'>3</option>
