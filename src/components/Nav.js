@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export default function NavigationBar() {
+export default function NavigationBar({ color }) {
 	return (
-		<Nav>
+		<Nav color={color}>
 			<a href='#someLink'>Home</a>
 			<a href='#someLink'>Posts</a>
 			<a href='#someLink'>About us</a>
@@ -17,6 +17,8 @@ const Nav = styled.div`
 	justify-content: flex-end;
 	padding: 2.5rem 0;
 	margin-bottom: -4rem;
+	background-image: ${props =>
+		props.color === 'transparent' ? 'transparent' : 'linear-gradient(90deg, #7524dd, #bf59c0)'};
 
 	& a {
 		display: inline-flex;

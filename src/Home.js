@@ -6,7 +6,7 @@ export default function Home() {
 	return (
 		<Hero>
 			<div className='container'>
-				<NavigationBar />
+				<NavigationBar color='transparent' />
 				<div className='hero__content'>
 					<div>
 						<h1>Some Club</h1>
