@@ -22,7 +22,7 @@ export default function Footer() {
 					<p>Liam Williams</p>
 				</div>
 			</AboutClub>
-			<Copyright>Copyrights, 2021, Some Club of Anna University</Copyright>
+			<Copyright>Copyrights &#169; 2021, Infinity Loop Club of Anna University</Copyright>
 		</Div>
 	);
 }

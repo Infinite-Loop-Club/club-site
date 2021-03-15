@@ -9,7 +9,7 @@ export default function Home() {
 				<NavigationBar color='transparent' />
 				<div className='hero__content'>
 					<div>
-						<h1>Some Club</h1>
+						<h1>Infinity Loop Club</h1>
 						<span>of Anna University Trichy</span>
 						<p>
 							We're here to dig out your talents and find out what you're passionate about, let's us join together and
