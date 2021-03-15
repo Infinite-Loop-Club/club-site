@@ -4,28 +4,50 @@ export default function Footer() {
 	return (
 		<Div>
 			<AboutClub>
-				<img src='./dummy.jpg' alt='logo' />
+				<Logo src='logo.png' alt='logo' />
 				<p>
 					University College of Engg.,
 					<br />
 					Bharathidasan Institute of Tech.,
 					<br />
-					Anna University, Trichy.
-					<br />
-					<br />
-					Trichy, 620024
+					Anna University, Trichy - 620024.
 				</p>
 				<div>
-					<h3>Behind the page</h3>
-					<p>John Doe</p>
-					<p>Craig Larman</p>
-					<p>Liam Williams</p>
+					<h3>Behind this page</h3>
+					<LinksContainer>
+						<a href='https://devkrish.tech' target='_blank' rel='noreferrer'>
+							Krishna Moorthy A
+						</a>
+						<a href='https://realgpr.tech' target='_blank' rel='noreferrer'>
+							Pranav G
+						</a>
+						<a href='https://sandev.tech' target='_blank' rel='noreferrer'>
+							Santhosh K
+						</a>
+						<a href='https://github.com/DeepAnraj285' target='_blank' rel='noreferrer'>
+							Deepanraj E
+						</a>
+					</LinksContainer>
 				</div>
 			</AboutClub>
 			<Copyright>Copyrights &#169; 2021, Infinity Loop Club of Anna University</Copyright>
 		</Div>
 	);
 }
+
+const LinksContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+
+	& > a {
+		transition: all 0.3s;
+
+		&:hover {
+			color: black;
+		}
+	}
+`;
+
 const Div = styled.div`
 	background-color: #7524dd;
 	margin-top: 5rem;
@@ -51,4 +73,9 @@ const Copyright = styled.div`
 	padding: 1.8rem;
 	color: white;
 	text-align: center;
+`;
+
+const Logo = styled.img`
+	width: 12rem;
+	height: 12rem;
 `;

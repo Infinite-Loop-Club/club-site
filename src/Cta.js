@@ -6,10 +6,7 @@ export default function Cta() {
 		<Div>
 			<Container>
 				<h1>Join Today</h1>
-				<p>
-					Still what you're waiting for? Click below to register and we're sure you would cherish the entire journey
-					with us.
-				</p>
+				<p>What are you waiting for? Register now and we're sure you would cherish the entire journey with us.</p>
 				<Button>Register</Button>
 			</Container>
 		</Div>
