@@ -14,29 +14,25 @@ export default function Paget() {
 				<Fbox
 					title='Build a community'
 					imgSrc={TeamM}
-					para="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text."
+					para='This is a community in which we share our interests in common, grow friendship bond so that everyone would feel comfortable in exploring and exposing themselves without any hesitation.'
 				></Fbox>
 
 				<Fbox
 					title='Team building'
 					imgSrc={TeamB}
-					para="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text."
+					para="We let you all unfurl your wings by working together, enabling you to understand how to take everyone's ideas in a team as well as cheering an inactive member to shed their fear and mingle with all."
 				></Fbox>
 
 				<Fbox
 					title='Learn new things'
 					imgSrc={Web}
-					para="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text."
+					para="We all know life's all about learning and experiencing, here we keep you engaged in knowing new things which includes all fields ranging from art to tech."
 				></Fbox>
 
 				<Fbox
 					title='Create opportunities'
 					imgSrc={job}
-					para="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text."
+					para="There's a saying, 'If opportunity doesn't knock your door, build one'. That's what we students gonna do, support and guide you to make an attempt to every single opportunity either it be hackathon or any other technical competitions."
 				></Fbox>
 			</InnerContainer>
 		</Container>

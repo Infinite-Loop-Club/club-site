@@ -7,9 +7,8 @@ export default function Cta() {
 			<Container>
 				<h1>Join Today</h1>
 				<p>
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-					standard dummy text. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-					has been the industry's standard dummy text.
+					Still what you're waiting for? Click below to register and we're sure you would cherish the entire journey
+					with us.
 				</p>
 				<Button>Register</Button>
 			</Container>

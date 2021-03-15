@@ -12,8 +12,8 @@ export default function Home() {
 						<h1>Some Club</h1>
 						<span>of Anna University Trichy</span>
 						<p>
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-							industry's standard dummy text.
+							We're here to dig out your talents and find out what you're passionate about, let's us join together and
+							grow together.
 						</p>
 
 						<Button>Register</Button>
