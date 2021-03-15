@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 
 import App from './App';
 import RegisterForm from './RegisterForm';
+import About from './About';
 
 export default function AppRouter() {
 	return (
@@ -11,6 +12,7 @@ export default function AppRouter() {
 			<Router>
 				<Switch>
 					<Route path='/register' exact component={RegisterForm} />
+					<Route path='/about-us' exact component={About} />
 					<Route path='/' exact component={App} />
 				</Switch>
 			</Router>

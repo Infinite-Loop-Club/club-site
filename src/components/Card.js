@@ -18,6 +18,7 @@ const CardInternal = styled.div`
 	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 	border-radius: 0.4rem;
 	transition: all 0.3s;
+	cursor: pointer;
 
 	${({ isSpecial }) =>
 		isSpecial &&
@@ -54,6 +55,12 @@ const CardInternal = styled.div`
 	&:hover {
 		transform: translateY(-1rem);
 		box-shadow: 0 0.7rem 1.1rem rgba(0, 0, 0, 0.2);
+		background-image: linear-gradient(to top left, #7524dd, #bf59c0);
+		color: white;
+
+		& > h2 {
+			color: white !important;
+		}
 	}
 
 	& img {

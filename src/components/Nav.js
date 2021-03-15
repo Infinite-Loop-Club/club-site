@@ -1,12 +1,13 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export default function NavigationBar({ color }) {
 	return (
 		<Nav color={color}>
-			<a href='#someLink'>Home</a>
-			<a href='#someLink'>Posts</a>
-			<a href='#someLink'>About us</a>
-			<a href='#someLink'>Contact us</a>
+			<Link to='/'>Home</Link>
+			<Link to='/'>Posts</Link>
+			<Link to='/about-us'>About us</Link>
+			<Link to='/'>Contact us</Link>
 		</Nav>
 	);
 }
@@ -15,8 +16,7 @@ const Nav = styled.div`
 	color: white;
 	display: flex;
 	justify-content: flex-end;
-	padding: 2.5rem 0;
-	margin-bottom: -4rem;
+	padding: 2.5rem 2rem;
 	background-image: ${props =>
 		props.color === 'transparent' ? 'transparent' : 'linear-gradient(90deg, #7524dd, #bf59c0)'};
 
