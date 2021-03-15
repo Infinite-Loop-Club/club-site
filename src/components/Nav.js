@@ -7,7 +7,6 @@ export default function NavigationBar({ color }) {
 			<Link to='/'>Home</Link>
 			<Link to='/'>Posts</Link>
 			<Link to='/about-us'>About us</Link>
-			<Link to='/'>Contact us</Link>
 		</Nav>
 	);
 }
