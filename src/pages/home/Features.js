@@ -45,4 +45,6 @@ const InnerContainer = styled.div`
 	grid-template-columns: 1fr;
 	grid-gap: 6rem;
 	margin: 3rem auto 6rem auto;
+
+	max-width: 100rem;
 `;

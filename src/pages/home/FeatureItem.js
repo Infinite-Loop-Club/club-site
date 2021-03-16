@@ -17,7 +17,7 @@ const Container = styled.div`
 	align-items: center;
 
 	@supports (gap: 3rem) {
-		gap: 3rem;
+		gap: 6rem;
 	}
 
 	@media (max-width: 600px) {
@@ -39,7 +39,7 @@ const Container = styled.div`
 			div {
 				text-align: right;
 				@supports not (gap: 3rem) {
-					margin-right: 3rem;
+					margin-right: 6rem;
 					margin-left: 0;
 				}
 			}
@@ -54,7 +54,7 @@ const Container = styled.div`
 
 	div {
 		@supports not (gap: 3rem) {
-			margin-left: 3rem;
+			margin-left: 6rem;
 		}
 		& h3 {
 			font-size: 2rem;
