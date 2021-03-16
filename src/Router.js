@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
+import { colors, fonts } from './constants/theme';
 
 import { Home, About, Register } from './pages';
 
@@ -39,15 +40,15 @@ const GlobalStyles = createGlobalStyle`
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #7524dd;
+  background: ${colors.primary};
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #bf59c0;
+  background: ${colors.secondary};
 }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Gothic A1', sans-serif;
+    font-family: ${fonts.sansSerif};
     font-weight: 900;
   }
 
@@ -60,7 +61,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body, p {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: ${fonts.monospace};
     font-size: 1.5rem;
     line-height: 2;
   }

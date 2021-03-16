@@ -8,5 +8,10 @@ export const colors = {
 	white: '#fff'
 };
 
-const theme = { colors };
+export const fonts = {
+	monospace: "'JetBrains Mono', monospace",
+	sansSerif: "'Gothic A1', sans-serif"
+};
+
+const theme = { colors, fonts };
 export default theme;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../constants/theme';
+import { colors, fonts } from '../constants/theme';
 
 export default function Button({ children, ...props }) {
 	return <Btn {...props}>{children}</Btn>;
@@ -8,7 +8,7 @@ export default function Button({ children, ...props }) {
 const Btn = styled.button`
 	&,
 	&:link {
-		font-family: 'JetBrains Mono', monospace;
+		font-family: ${fonts.monospace};
 		font-size: 1.6rem;
 		padding: 1rem 2rem;
 		background-color: ${colors.tertiary};
