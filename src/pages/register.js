@@ -11,7 +11,8 @@ export default function RegisterForm() {
 		registerNumber: '',
 		email: '',
 		phoneNumber: '',
-		year: ''
+		year: '',
+		gender: ''
 	});
 
 	const handleChange = e => {
@@ -57,6 +58,15 @@ export default function RegisterForm() {
 						<Field>
 							<label htmlFor='name'>Name of the Student</label>
 							<Input id='name' name='name' onChange={handleChange} required />
+						</Field>
+						<Field>
+							<label htmlFor='gender'>Gender</label>
+							<Dropdown name='gender' onChange={handleChange} id='gender'>
+								<option value='Male' selected>
+									Male
+								</option>
+								<option value='Female'>Female</option>
+							</Dropdown>
 						</Field>
 						<Field>
 							<label htmlFor='email'>Email of the Student</label>
@@ -115,7 +125,6 @@ const Dropdown = styled.select`
 const Form = styled.form`
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
 	margin: 1rem;
 `;
