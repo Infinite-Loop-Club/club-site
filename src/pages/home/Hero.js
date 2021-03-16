@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import code from './images/Code Development _Isometric  1.svg';
-import { Button, NavigationBar } from './components';
+import { Button, NavigationBar } from '../../components';
+
+import code from '../../images/Code Development _Isometric  1.svg';
 
 export default function Home() {
 	return (

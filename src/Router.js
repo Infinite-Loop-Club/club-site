@@ -1,9 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 
-import App from './App';
-import RegisterForm from './RegisterForm';
-import About from './About';
+import { Home, About, Register } from './pages';
 
 export default function AppRouter() {
 	return (
@@ -11,9 +9,9 @@ export default function AppRouter() {
 			<GlobalStyles />
 			<Router>
 				<Switch>
-					<Route path='/register' exact component={RegisterForm} />
+					<Route path='/register' exact component={Register} />
 					<Route path='/about-us' exact component={About} />
-					<Route path='/' exact component={App} />
+					<Route path='/' exact component={Home} />
 				</Switch>
 			</Router>
 		</>

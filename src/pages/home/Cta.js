@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button, Container } from './components';
+import { Button, Container } from '../../components';
 
 export default function Cta() {
 	return (
