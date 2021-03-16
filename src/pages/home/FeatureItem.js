@@ -13,10 +13,12 @@ export default function Feature(props) {
 }
 
 const Container = styled.div`
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-gap: 4rem;
-	place-items: center;
+	display: flex;
+	align-items: center;
+
+	@supports (gap: 3rem) {
+		gap: 3rem;
+	}
 
 	@media (max-width: 600px) {
 		grid-template-columns: 1fr;
@@ -29,15 +31,17 @@ const Container = styled.div`
 
 	@media (min-width: 600px) {
 		&:nth-child(even) {
+			flex-direction: row-reverse;
 			img {
-				grid-column: -1/-2;
 				justify-self: flex-start;
 			}
 
 			div {
-				grid-column: 1/2;
-				grid-row: 1/2;
 				text-align: right;
+				@supports not (gap: 3rem) {
+					margin-right: 3rem;
+					margin-left: 0;
+				}
 			}
 		}
 	}
@@ -49,6 +53,9 @@ const Container = styled.div`
 	}
 
 	div {
+		@supports not (gap: 3rem) {
+			margin-left: 3rem;
+		}
 		& h3 {
 			font-size: 2rem;
 			margin-bottom: 1.2rem;
