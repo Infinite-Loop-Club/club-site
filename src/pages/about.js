@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 
-import { Footer, NavigationBar } from './components';
-import Card from './components/Card';
-import man from './images/man.png';
-import H1 from './components/H1';
+import { Card, H1, Footer, NavigationBar } from '../components';
+import man from '../images/man.png';
 
 export default function About() {
 	return (

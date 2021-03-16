@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export default function Fbox(props) {
+export default function Feature(props) {
 	return (
 		<Container>
 			<img alt='feat-img' src={props.imgSrc} />

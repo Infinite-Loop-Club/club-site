@@ -1,14 +1,14 @@
-import Home from './Home';
-import Paget from './Paget';
+import Home from './Hero';
+import Features from './Features';
 import Cta from './Cta';
 import Members from './Members';
-import { Footer } from './components';
+import { Footer } from '../../components';
 
 export default function App() {
 	return (
 		<>
 			<Home></Home>
-			<Paget></Paget>
+			<Features></Features>
 			<Cta></Cta>
 			<Members></Members>
 			<Footer></Footer>

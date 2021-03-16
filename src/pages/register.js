@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 
-import { Button, Container, Footer, NavigationBar } from './components';
+import { Button, Container, Footer, NavigationBar } from '../components';
 
 export default function RegisterForm() {
 	const [values, setValues] = useState({
