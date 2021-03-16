@@ -13,8 +13,8 @@ export default function Home() {
 						<h1>Infinity Loop Club</h1>
 						<span>of Anna University Trichy</span>
 						<p>
-							We're here to dig out your talents and find out what you're passionate about, let's join together and grow
-							together.
+							We're here to dig out your talents and find out what you're passionate about, let's
+							join together and grow together.
 						</p>
 
 						<Button>Register</Button>

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../constants/theme';
 
 export default function Footer() {
 	return (
@@ -43,19 +44,19 @@ const LinksContainer = styled.div`
 		transition: all 0.3s;
 
 		&:hover {
-			color: black;
+			color: ${colors.slate};
 		}
 	}
 `;
 
 const Div = styled.div`
-	background-color: #7524dd;
+	background-color: ${colors.primary};
 	margin-top: 5rem;
 `;
 
 const AboutClub = styled.div`
 	padding: 6rem 0;
-	color: #fff;
+	color: ${colors.white};
 	max-width: 120rem;
 	margin: auto;
 	display: flex;
@@ -69,9 +70,9 @@ const AboutClub = styled.div`
 `;
 
 const Copyright = styled.div`
-	background-color: #3f3d56;
+	background-color: ${colors.slate};
 	padding: 1.8rem;
-	color: white;
+	color: ${colors.white};
 	text-align: center;
 `;
 

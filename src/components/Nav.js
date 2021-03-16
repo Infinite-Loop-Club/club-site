@@ -1,5 +1,7 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
+import { colors } from '../constants/theme';
 
 export default function NavigationBar({ color }) {
 	return (
@@ -18,7 +20,9 @@ const Nav = styled.div`
 	justify-content: flex-end;
 	padding: 2.5rem 2rem;
 	background-image: ${props =>
-		props.color === 'transparent' ? 'transparent' : 'linear-gradient(90deg, #7524dd, #bf59c0)'};
+		props.color === 'transparent'
+			? 'transparent'
+			: `linear-gradient(90deg, ${colors.primary}, ${colors.secondary})`};
 
 	& a {
 		display: inline-flex;
@@ -38,7 +42,7 @@ const Nav = styled.div`
 			width: 4rem;
 			height: 0.3rem;
 			border-radius: 0.3rem;
-			background-color: #3aceb2;
+			background-color: ${colors.tertiary};
 			opacity: 0;
 			transition: all 0.3s;
 		}

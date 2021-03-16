@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../constants/theme';
 
 export default function Button({ children, ...props }) {
 	return <Btn {...props}>{children}</Btn>;
@@ -10,7 +11,7 @@ const Btn = styled.button`
 		font-family: 'JetBrains Mono', monospace;
 		font-size: 1.6rem;
 		padding: 1rem 2rem;
-		background-color: #3aceb2;
+		background-color: ${colors.tertiary};
 		color: #000;
 		box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.3);
 		outline: none;
