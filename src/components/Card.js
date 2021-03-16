@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { colors } from '../constants/theme';
 
 export default function Card({ name, position, imgSrc, isSpecial }) {
 	return (
@@ -23,7 +24,7 @@ const CardInternal = styled.div`
 	${({ isSpecial }) =>
 		isSpecial &&
 		`
-      background-image: linear-gradient(to top left, #7524dd, #bf59c0);
+      background-image: linear-gradient(to top left, ${colors.primary}, ${colors.secondary});
       color: white;
 
       &>h2 {

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 
 import { Button, Container, Footer, NavigationBar } from '../components';
+import { colors } from '../constants/theme';
 
 export default function RegisterForm() {
 	const [values, setValues] = useState({
@@ -105,8 +106,8 @@ const Dropdown = styled.select`
 
 	:focus {
 		outline: none;
-		color: #7524dd;
-		border: 2px solid #7524dd;
+		color: ${colors.primary};
+		border: 2px solid ${colors.primary};
 		box-shadow: 3px 3px 20px rgba(117, 36, 221, 0.3);
 	}
 `;
@@ -140,14 +141,14 @@ const Input = styled.input`
 	width: 30rem;
 	border-radius: 0.5rem;
 	border: 2px solid transparent;
-	background-color: #f2f2f2;
+	background-color: ${colors.grey};
 	box-shadow: 1px 1px 10px rgba(117, 36, 221, 0.3);
 	transition: all 0.2s;
 
 	:focus {
 		outline: none;
-		color: #7524dd;
-		border: 2px solid #7524dd;
+		color: ${colors.primary};
+		border: 2px solid ${colors.primary};
 		box-shadow: 3px 3px 20px rgba(117, 36, 221, 0.3);
 	}
 `;

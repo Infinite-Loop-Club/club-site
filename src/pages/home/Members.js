@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Card, Container } from '../../components';
+import { colors } from '../../constants/theme';
 
 import Bheem from '../../images/man.png';
 
@@ -44,7 +45,7 @@ const CoreBox = styled.div`
 `;
 
 const Head = styled.h1`
-	background: -webkit-linear-gradient(45deg, #7524dd, #bf59c0);
+	background: -webkit-linear-gradient(45deg, ${colors.primary}, ${colors.secondary});
 	-webkit-background-clip: text;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
