@@ -16,12 +16,19 @@ const Container = styled.div`
 	display: flex;
 	align-items: center;
 
-	@supports (gap: 3rem) {
-		gap: 6rem;
+	@media (max-width: 750px) {
+		flex-direction: column;
 	}
 
-	@media (max-width: 600px) {
-		grid-template-columns: 1fr;
+	@supports (gap: 3rem) {
+		gap: 6rem;
+
+		@media (max-width: 750px) {
+			gap: 3rem;
+		}
+	}
+
+	@media (max-width: 750px) {
 		text-align: center;
 
 		& img {
@@ -29,7 +36,7 @@ const Container = styled.div`
 		}
 	}
 
-	@media (min-width: 600px) {
+	@media (min-width: 750px) {
 		&:nth-child(even) {
 			flex-direction: row-reverse;
 			img {
@@ -41,6 +48,11 @@ const Container = styled.div`
 				@supports not (gap: 3rem) {
 					margin-right: 6rem;
 					margin-left: 0;
+
+					@media (max-width: 750px) {
+						margin: 0;
+						margin-top: 3rem;
+					}
 				}
 			}
 		}
