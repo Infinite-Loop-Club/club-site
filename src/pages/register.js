@@ -39,7 +39,7 @@ export default function RegisterForm() {
 			window.open('/', '_self');
 		} catch (err) {
 			// handle the error properly
-			console.error(err);
+			console.log(err.response); // {status = HTTP STATUS CODE, data: Defined data {message, error}}
 		}
 	};
 
@@ -85,7 +85,6 @@ export default function RegisterForm() {
 }
 
 const Box = styled.div`
-	min-width: 45rem;
 	max-width: 50rem;
 	padding: 3rem 4rem;
 	border-radius: 3%;
