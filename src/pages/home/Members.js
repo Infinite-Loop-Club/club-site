@@ -1,13 +1,12 @@
 import styled from 'styled-components';
-import { Card, Container } from '../../components';
-import { colors } from '../../constants/theme';
+import { Card, Container, Heading } from '../../components';
 
 import Bheem from '../../images/man.png';
 
 export default function Members() {
 	return (
 		<Container>
-			<Head>Our core members</Head>
+			<Heading>Our core members</Heading>
 			<CoreBox>
 				<Card imgSrc={Bheem} name='Bheem' position='Vice President' />
 				<Card imgSrc={Bheem} name='Bheem' position='President' isSpecial />
@@ -42,13 +41,4 @@ const CoreBox = styled.div`
 			order: -1;
 		}
 	}
-`;
-
-const Head = styled.h1`
-	background: -webkit-linear-gradient(45deg, ${colors.primary}, ${colors.secondary});
-	-webkit-background-clip: text;
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
-	text-align: center;
-	margin-bottom: 3rem;
 `;

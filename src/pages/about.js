@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Card, H1, Footer, NavigationBar } from '../components';
+import { Card, Heading, Footer, NavigationBar } from '../components';
 import man from '../images/man.png';
 
 export default function About() {
@@ -9,7 +9,7 @@ export default function About() {
 			<section>
 				<NavigationBar></NavigationBar>
 				<TitleContainer>
-					<H1>About Us</H1>
+					<Heading>About Us</Heading>
 				</TitleContainer>
 				<TeamContainer>
 					<h2>Management Team :</h2>
