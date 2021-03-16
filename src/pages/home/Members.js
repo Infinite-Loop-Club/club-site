@@ -21,13 +21,13 @@ const CoreBox = styled.div`
 	flex-wrap: wrap;
 	justify-content: center;
 	& > div {
-		@media (min-width: 600px) {
+		@media (min-width: 700px) {
 			&:not(:last-child) {
 				margin-right: 4rem;
 			}
 		}
 
-		@media (max-width: 600px) {
+		@media (max-width: 700px) {
 			margin-bottom: 3rem;
 
 			&:last-child {
@@ -36,7 +36,7 @@ const CoreBox = styled.div`
 		}
 	}
 
-	@media (max-width: 600px) {
+	@media (max-width: 700px) {
 		& > div:nth-child(even) {
 			order: -1;
 		}
