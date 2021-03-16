@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Container } from './components';
 
 import Card from './components/Card';
-import Bheem from './svg/man.png';
+import Bheem from './images/man.png';
 
 export default function Members() {
 	return (

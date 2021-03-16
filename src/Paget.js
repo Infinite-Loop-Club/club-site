@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import Container from './components/Container';
 import Fbox from './Fbox';
-import job from './svg/Job Interview _Isometric 1.svg';
-import TeamB from './svg/Team building _Two Color 1.svg';
-import TeamM from './svg/Team meeting_Monochromatic 1.svg';
-import Web from './svg/Web Developer_Monochromatic 1.svg';
+import job from './images/Job Interview _Isometric 1.svg';
+import TeamB from './images/Team building _Two Color 1.svg';
+import TeamM from './images/Team meeting_Monochromatic 1.svg';
+import Web from './images/Web Developer_Monochromatic 1.svg';
 
 export default function Paget() {
 	return (
