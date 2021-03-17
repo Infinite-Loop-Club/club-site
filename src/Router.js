@@ -1,21 +1,23 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { NavigationBar } from './components';
 import { colors, fonts } from './constants/theme';
 
 import { Home, About, Register } from './pages';
 
 export default function AppRouter() {
 	return (
-		<>
+		<ThemeProvider theme={colors}>
 			<GlobalStyles />
 			<Router>
+				<NavigationBar />
 				<Switch>
 					<Route path='/register' exact component={Register} />
 					<Route path='/about-us' exact component={About} />
 					<Route path='/' exact component={Home} />
 				</Switch>
 			</Router>
-		</>
+		</ThemeProvider>
 	);
 }
 

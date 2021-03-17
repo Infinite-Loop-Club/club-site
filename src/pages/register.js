@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 
-import { Button, Container, Footer, NavigationBar } from '../components';
+import { Button, Container, Footer } from '../components';
 import { colors } from '../constants/theme';
 
 export default function RegisterForm() {
@@ -45,7 +45,6 @@ export default function RegisterForm() {
 
 	return (
 		<>
-			<Nav />
 			<FormContainer>
 				<h1>Registration</h1>
 				<Box>
@@ -150,10 +149,6 @@ const Input = styled.input`
 		border: 2px solid ${colors.primary};
 		box-shadow: 3px 3px 20px rgba(117, 36, 221, 0.3);
 	}
-`;
-
-const Nav = styled(NavigationBar)`
-	padding: 2.5rem;
 `;
 
 const SubmitButton = styled(Button)`

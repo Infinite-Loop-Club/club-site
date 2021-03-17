@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button, NavigationBar } from '../../components';
+import { Button } from '../../components';
 
 import code from '../../images/Code Development _Isometric  1.svg';
 
@@ -7,7 +7,6 @@ export default function Home() {
 	return (
 		<Hero>
 			<div className='container'>
-				<NavigationBar color='transparent' />
 				<div className='hero__content'>
 					<div>
 						<h1>Infinite Loop Club</h1>
@@ -53,7 +52,6 @@ const Hero = styled.div`
 		color: white;
 
 		@media (max-width: 750px) {
-			margin-top: 6rem;
 			grid-template-columns: 1fr;
 
 			div {

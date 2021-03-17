@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
-import { Card, Heading, Footer, NavigationBar } from '../components';
+import { Card, Heading, Footer } from '../components';
 import man from '../images/man.png';
 
 export default function About() {
 	return (
 		<>
 			<section>
-				<NavigationBar></NavigationBar>
 				<TitleContainer>
 					<Heading>About Us</Heading>
 				</TitleContainer>
