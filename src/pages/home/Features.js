@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Container } from '../../components';
+import { Container, Heading } from '../../components';
 import Feature from './FeatureItem';
 
 import job from '../../images/Job Interview _Isometric 1.svg';
@@ -10,7 +10,7 @@ import Web from '../../images/Web Developer_Monochromatic 1.svg';
 export default function Paget() {
 	return (
 		<Container>
-			<H1>What do we do?</H1>
+			<Heading>What do we do?</Heading>
 			<InnerContainer>
 				<Feature
 					title='Build a community'
@@ -40,17 +40,11 @@ export default function Paget() {
 	);
 }
 
-const H1 = styled.h1`
-	background: -webkit-linear-gradient(45deg, #7524dd, #bf59c0);
-	-webkit-background-clip: text;
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
-	text-align: center;
-	margin-bottom: 4rem;
-`;
-
 const InnerContainer = styled.div`
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-gap: 6rem;
+	margin: 3rem auto 6rem auto;
+
+	max-width: 100rem;
 `;

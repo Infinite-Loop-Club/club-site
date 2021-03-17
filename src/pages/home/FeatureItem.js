@@ -13,13 +13,22 @@ export default function Feature(props) {
 }
 
 const Container = styled.div`
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-gap: 4rem;
-	place-items: center;
+	display: flex;
+	align-items: center;
 
-	@media (max-width: 600px) {
-		grid-template-columns: 1fr;
+	@media (max-width: 750px) {
+		flex-direction: column;
+	}
+
+	@supports (gap: 3rem) {
+		gap: 6rem;
+
+		@media (max-width: 750px) {
+			gap: 3rem;
+		}
+	}
+
+	@media (max-width: 750px) {
 		text-align: center;
 
 		& img {
@@ -27,17 +36,24 @@ const Container = styled.div`
 		}
 	}
 
-	@media (min-width: 600px) {
+	@media (min-width: 750px) {
 		&:nth-child(even) {
+			flex-direction: row-reverse;
 			img {
-				grid-column: -1/-2;
 				justify-self: flex-start;
 			}
 
 			div {
-				grid-column: 1/2;
-				grid-row: 1/2;
 				text-align: right;
+				@supports not (gap: 3rem) {
+					margin-right: 6rem;
+					margin-left: 0;
+
+					@media (max-width: 750px) {
+						margin: 0;
+						margin-top: 3rem;
+					}
+				}
 			}
 		}
 	}
@@ -49,6 +65,9 @@ const Container = styled.div`
 	}
 
 	div {
+		@supports not (gap: 3rem) {
+			margin-left: 6rem;
+		}
 		& h3 {
 			font-size: 2rem;
 			margin-bottom: 1.2rem;
