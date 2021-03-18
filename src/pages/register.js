@@ -353,15 +353,11 @@ const RadioContainer = styled.div`
 
 const Box = styled.div`
 	position: relative;
-	width: 40%;
+	min-width: 65rem;
 	padding: 3rem 4rem;
 	background-color: ${colors.white};
 	border-radius: 3%;
 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
-
-	@media (max-width: 1000px) {
-		min-width: 65rem;
-	}
 
 	@media (max-width: 700px) {
 		min-width: 100%;
