@@ -1,4 +1,4 @@
-import Home from './Hero';
+import Hero from './Hero';
 import Features from './Features';
 import Cta from './Cta';
 import Members from './Members';
@@ -7,7 +7,7 @@ import { Footer } from '../../components';
 export default function App() {
 	return (
 		<>
-			<Home></Home>
+			<Hero></Hero>
 			<Features></Features>
 			<Cta></Cta>
 			<Members></Members>
