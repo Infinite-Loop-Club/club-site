@@ -59,15 +59,26 @@ export default function RegisterForm() {
 							<label htmlFor='name'>Name of the Student</label>
 							<Input id='name' name='name' onChange={handleChange} required />
 						</Field>
-						<Field>
+						<Field style={{ marginBottom: '1rem' }}>
 							<label htmlFor='gender'>Gender</label>
-							<Dropdown name='gender' onChange={handleChange} id='gender'>
-								<option value='Male' selected>
-									Male
-								</option>
-								<option value='Female'>Female</option>
-							</Dropdown>
+							<RadioContainer>
+								<RadioGroup>
+									<input type='radio' class='radio__group-input' id='small' name='size' />
+									<label for='small' class='radio__group-label'>
+										<span class='radio__group-button'></span>
+										Male
+									</label>
+								</RadioGroup>
+								<RadioGroup>
+									<input type='radio' class='radio__group-input' id='large' name='size' />
+									<label for='large' class='radio__group-label'>
+										<span class='radio__group-button'></span>
+										Female
+									</label>
+								</RadioGroup>
+							</RadioContainer>
 						</Field>
+
 						<Field>
 							<label htmlFor='email'>Email of the Student</label>
 							<Input id='email' name='email' onChange={handleChange} required />
@@ -93,6 +104,70 @@ export default function RegisterForm() {
 		</>
 	);
 }
+
+//  <Dropdown name='gender' onChange={handleChange} id='gender'>
+// 								<option value='Male' selected>
+// 									Male
+// 								</option>
+// 								<option value='Female'>Female</option>
+// 							</Dropdown>
+
+const RadioGroup = styled.div`
+	width: 49%;
+	display: flex;
+	flex-direction: row;
+	margin: 0.75rem;
+
+	.radio__group {
+		&-input {
+			display: none;
+		}
+
+		&-label {
+			font-size: 1.6rem;
+			cursor: pointer;
+			position: relative;
+			padding-left: 4.5rem;
+		}
+
+		&-button {
+			height: 2.5rem;
+			width: 2.5rem;
+			border: 5px solid ${colors.tertiary};
+			border-radius: 50%;
+			display: inline-block;
+			position: absolute;
+			left: 0;
+			top: 0;
+
+			&::after {
+				content: '';
+				display: block;
+				height: 0.85rem;
+				width: 0.85rem;
+				border-radius: 50%;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				-webkit-transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%);
+				background-color: ${colors.tertiary};
+				opacity: 0;
+				-webkit-transition: opacity 0.2s;
+				transition: opacity 0.2s;
+			}
+		}
+	}
+
+	.radio__group-input:checked ~ .radio__group-label .radio__group-button::after {
+		opacity: 1;
+	}
+`;
+
+const RadioContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+`;
 
 const Box = styled.div`
 	min-width: 45rem;
@@ -137,6 +212,7 @@ const FormContainer = styled(Container)`
 `;
 
 const Field = styled.div`
+	width: 80%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
