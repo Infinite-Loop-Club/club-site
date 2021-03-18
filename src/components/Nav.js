@@ -53,6 +53,7 @@ const Nav = styled.div`
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		visibility: ${p => (p.active ? 'true' : 'hidden')};
 
 		li {
 			display: inline-block;

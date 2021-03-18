@@ -1,6 +1,6 @@
 import Hero from './Hero';
 import Features from './Features';
-import Cta from './Cta';
+import Register from './Register';
 import Members from './Members';
 import { Footer } from '../../components';
 
@@ -9,7 +9,7 @@ export default function App() {
 		<>
 			<Hero></Hero>
 			<Features></Features>
-			<Cta></Cta>
+			<Register></Register>
 			<Members></Members>
 			<Footer></Footer>
 		</>

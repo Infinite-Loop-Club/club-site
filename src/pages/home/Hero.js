@@ -1,10 +1,43 @@
+import { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { Button } from '../../components';
 
-import code from '../../images/Code Development _Isometric  1.svg';
+import code from '../../images/hero.svg';
 import LogoImage from '../../images/logo_white_vector.png';
 
+const text = `We're here to dig out your talents and find out what you're passionate about, let's
+							join together and grow together.`;
+
 export default function Home() {
+	const contentRef = useRef(null);
+	const countRef = useRef(1);
+	const intervalRef = useRef(null);
+
+	function writeText() {
+		contentRef.current.innerText = text.slice(0, countRef.current);
+
+		countRef.current++;
+
+		if (countRef.current > text.length) {
+			return;
+		}
+	}
+
+	function activateInterval() {
+		intervalRef.current = setInterval(() => {
+			writeText();
+		}, 100);
+	}
+
+	useEffect(() => {
+		activateInterval();
+		return () => {
+			clearInterval(intervalRef.current);
+		};
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+
 	return (
 		<Hero>
 			<div className='container'>
@@ -14,10 +47,7 @@ export default function Home() {
 						<img className='logo2' src={LogoImage} alt='logo' />
 						<h1>Infinite Loop Club</h1>
 						<span>of Anna University Trichy</span>
-						<p>
-							We're here to dig out your talents and find out what you're passionate about, let's
-							join together and grow together.
-						</p>
+						<p ref={contentRef}></p>
 
 						<Button>Register</Button>
 					</div>
@@ -81,14 +111,13 @@ const Hero = styled.div`
 			grid-template-columns: 1fr;
 
 			div {
-				place-self: flex-end;
+				place-self: flex-start;
 				grid-row: 1/2;
 				margin-top: 12rem;
-				margin-bottom: 4rem;
+				margin-bottom: 1rem;
 			}
 
 			img {
-				height: auto !important;
 				place-self: flex-start;
 				grid-row: 2/3;
 			}
@@ -107,7 +136,6 @@ const Hero = styled.div`
 		}
 
 		& img {
-			height: 70%;
 			max-width: 100%;
 		}
 	}
