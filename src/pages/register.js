@@ -196,7 +196,7 @@ const AvatarContainer = styled.div`
 `;
 
 const Avatar = styled.img`
-	width: 30%;
+	width: 10rem;
 	margin-right: 2rem;
 	border-radius: 50%;
 	background-image: ${props =>
@@ -207,6 +207,18 @@ const Avatar = styled.img`
 	&:hover {
 		background-image: linear-gradient(to right bottom, ${colors.primary}, ${colors.secondary});
 		cursor: pointer;
+	}
+
+	@media (max-width: 600px) {
+		width: 8rem;
+	}
+
+	@media (max-width: 500px) {
+		width: 6rem;
+	}
+
+	@media (max-width: 400px) {
+		width: 5rem;
 	}
 `;
 
