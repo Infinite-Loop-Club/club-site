@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 
-import { Button, Container, Footer } from '../components';
+import { Button, Footer } from '../components';
 import { colors } from '../constants/theme';
 
 export default function RegisterForm() {
@@ -47,10 +47,6 @@ export default function RegisterForm() {
 	return (
 		<>
 			<FormContainer>
-				<Rect1 />
-				<MiddleRect />
-				<Rect2 />
-				<Rect3 />
 				<h1>Registration</h1>
 				<Box>
 					<Form>
@@ -111,6 +107,10 @@ export default function RegisterForm() {
 					</Form>
 				</Box>
 				<SubmitButton onClick={handleSubmit}>Submit</SubmitButton>
+				<Rect3 />
+				<Rect1 />
+				<Rect2 />
+				<MiddleRect />
 			</FormContainer>
 			<Footer />
 		</>
@@ -126,7 +126,13 @@ const Rect1 = styled.div`
 	height: 4rem;
 	transform: skew(0deg, -15deg);
 
-	
+	@media (max-width: 1000px) {
+		width: 16rem;
+	}
+
+	@media (max-width: 700px) {
+		display: none;
+	}
 `;
 
 const MiddleRect = styled.div`
@@ -135,8 +141,16 @@ const MiddleRect = styled.div`
 	left: -6rem;
 	background-color: #0048aa;
 	width: 20rem;
-	height: 2rem;
+	height: 1rem;
 	transform: skew(0deg, -15deg);
+
+	@media (max-width: 1000px) {
+		width: 16rem;
+	}
+
+	@media (max-width: 700px) {
+		display: none;
+	}
 `;
 
 const Rect2 = styled.div`
@@ -147,6 +161,15 @@ const Rect2 = styled.div`
 	width: 27.5rem;
 	height: 4rem;
 	transform: skew(0deg, -15deg);
+
+	@media (max-width: 1000px) {
+		width: 20rem;
+		top: 48.4%;
+	}
+
+	@media (max-width: 700px) {
+		display: none;
+	}
 `;
 
 const Rect3 = styled.div`
@@ -157,6 +180,15 @@ const Rect3 = styled.div`
 	width: 27.5rem;
 	height: 4rem;
 	transform: skew(0deg, -15deg);
+
+	@media (max-width: 1000px) {
+		width: 20rem;
+		top: 25.3%;
+	}
+
+	@media (max-width: 700px) {
+		display: none;
+	}
 `;
 
 const RadioGroup = styled.div`
@@ -214,21 +246,36 @@ const RadioGroup = styled.div`
 const RadioContainer = styled.div`
 	display: flex;
 	flex-direction: row;
+
+	@media (max-width: 400px) {
+		flex-direction: column;
+	}
 `;
 
 const Box = styled.div`
-	max-width: 50rem;
+	position: relative;
+	width: 40%;
 	padding: 3rem 4rem;
 	border-radius: 3%;
 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+	z-index: 1000;
+
+	@media (max-width: 1000px) {
+		width: 50%;
+	}
+
+	@media (max-width: 700px) {
+		width: 100%;
+		box-shadow: none;
+	}
 `;
 
 const Dropdown = styled.select`
+	width: 100%;
 	font: inherit;
 	font-size: 1.4rem;
 	margin: 0.5rem auto 3rem auto;
 	padding: 0.7rem 1.25rem;
-	width: 30rem;
 	border-radius: 0.5rem;
 	border: 2px solid transparent;
 	background-color: #f2f2f2;
@@ -251,13 +298,14 @@ const Form = styled.form`
 `;
 
 const FormContainer = styled.div`
-	margin: 8rem 0;
 	position: relative;
+	margin: 8rem 0;
 	overflow-x: hidden;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	z-index: 2;
 `;
 
 const Field = styled.div`
@@ -268,11 +316,11 @@ const Field = styled.div`
 `;
 
 const Input = styled.input`
+	width: 100%;
 	font: inherit;
 	font-size: 1.4rem;
 	margin: 0.5rem auto 3rem auto;
 	padding: 0.7rem 1.25rem;
-	width: 30rem;
 	border-radius: 0.5rem;
 	border: 2px solid transparent;
 	background-color: ${colors.grey};
