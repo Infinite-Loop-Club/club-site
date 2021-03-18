@@ -103,7 +103,7 @@ const Hero = styled.div`
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-gap: 5rem;
-		place-items: center;
+		align-items: center;
 		color: white;
 
 		@media (max-width: 750px) {
