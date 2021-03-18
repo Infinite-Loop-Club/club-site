@@ -22,6 +22,9 @@ export default function RegisterForm() {
 	});
 	const [male, setMale] = useState(false);
 	const [female, setFemale] = useState(false);
+	const [index, setIndex] = useState(0);
+	const maleAvatars = [male1, male2, male3];
+	const femaleAvatars = [female1, female2, female3];
 
 	const handleChange = e => {
 		const { name, value } = e.target;
@@ -53,7 +56,6 @@ export default function RegisterForm() {
 	};
 
 	const handleGender = e => {
-		console.log(e.target.value);
 		if (e.target.value === 'male') {
 			setMale(true);
 			setFemale(false);
@@ -83,46 +85,70 @@ export default function RegisterForm() {
 								<RadioGroup>
 									<input
 										type='radio'
-										class='radio__group-input'
+										className='radio__group-input'
 										id='male'
 										name='gender'
 										value='male'
 										onClick={handleGender}
 									/>
-									<label for='male' class='radio__group-label'>
-										<span class='radio__group-button'></span>
+									<label htmlFor='male' className='radio__group-label'>
+										<span className='radio__group-button'></span>
 										Male
 									</label>
 								</RadioGroup>
 								<RadioGroup>
 									<input
 										type='radio'
-										class='radio__group-input'
+										className='radio__group-input'
 										id='female'
 										name='gender'
 										value='female'
 										onClick={handleGender}
 									/>
-									<label for='female' class='radio__group-label'>
-										<span class='radio__group-button'></span>
+									<label htmlFor='female' className='radio__group-label'>
+										<span className='radio__group-button'></span>
 										Female
 									</label>
 								</RadioGroup>
 							</RadioContainer>
 						</Field>
-						{male ? (
-							<AvatarContainer>
-								<Avatar src={male1} alt='male1' />
-								<Avatar src={male2} alt='male2' />
-								<Avatar src={male3} alt='male3' />
-							</AvatarContainer>
-						) : female ? (
-							<AvatarContainer>
-								<Avatar src={female1} alt='female1' />
-								<Avatar src={female2} alt='female2' />
-								<Avatar src={female3} alt='female3' />
-							</AvatarContainer>
-						) : null}
+						<Field>
+							{male ? (
+								<>
+									<label htmlFor='avatar'>Select your Avatar</label>
+									<AvatarContainer>
+										{maleAvatars.map((value, i) => {
+											return (
+												<Avatar
+													key={i}
+													src={value}
+													alt='male'
+													onClick={() => setIndex(i)}
+													active={index === i}
+												/>
+											);
+										})}
+									</AvatarContainer>
+								</>
+							) : female ? (
+								<>
+									<label htmlFor='avatar'>Select your Avatar</label>
+									<AvatarContainer>
+										{femaleAvatars.map((value, i) => {
+											return (
+												<Avatar
+													key={i}
+													src={value}
+													alt='female'
+													onClick={() => setIndex(i)}
+													active={index === i}
+												/>
+											);
+										})}
+									</AvatarContainer>
+								</>
+							) : null}
+						</Field>
 						<Field>
 							<label htmlFor='email'>Email of the Student</label>
 							<Input id='email' name='email' onChange={handleChange} required />
@@ -172,6 +198,16 @@ const AvatarContainer = styled.div`
 const Avatar = styled.img`
 	width: 30%;
 	margin-right: 2rem;
+	border-radius: 50%;
+	background-image: ${props =>
+		props.active
+			? `linear-gradient(to right bottom, ${colors.primary}, ${colors.secondary})`
+			: 'none'};
+
+	&:hover {
+		background-image: linear-gradient(to right bottom, ${colors.primary}, ${colors.secondary});
+		cursor: pointer;
+	}
 `;
 
 const Rect1 = styled.div`
@@ -233,7 +269,7 @@ const Rect3 = styled.div`
 	position: absolute;
 	top: 20%;
 	right: -4.3%;
-	background-color: #0295dd;
+	background-color: ${colors.primary};
 	width: 27.5rem;
 	height: 4rem;
 	transform: skew(0deg, -15deg);
