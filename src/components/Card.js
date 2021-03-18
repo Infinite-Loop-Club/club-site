@@ -67,6 +67,6 @@ const CardInternal = styled.div`
 	}
 
 	& h2 {
-		color: #7524dd;
+		color: ${p => p.theme.primary};
 	}
 `;

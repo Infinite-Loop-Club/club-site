@@ -93,7 +93,7 @@ const Background = styled.div`
 
 	transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
 
-	@media screen and (min-width: 900px) {
+	@media screen and (max-width: 900px) {
 		top: 3.5rem;
 		right: 3.5rem;
 	}
@@ -113,7 +113,7 @@ const Hamburger = styled.div`
 	text-align: center;
 	cursor: pointer;
 
-	@media screen and (min-width: 900px) {
+	@media screen and (max-width: 900px) {
 		top: 3rem;
 		right: 3rem;
 	}

@@ -18,7 +18,7 @@ export default function Cta() {
 }
 
 const Div = styled.div`
-	background-image: linear-gradient(90deg, ${colors.secondary}, ${colors.primary});
+	background-image: linear-gradient(120deg, ${colors.secondary}, ${colors.primary});
 	text-align: center;
 	padding: 0.5rem 0;
 	color: ${colors.white};

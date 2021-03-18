@@ -42,13 +42,18 @@ export default function Footer() {
 					</ul>
 				</div>
 			</AboutClub>
-			<Copyright>Copyrights &copy; 2021, Infinite Loop Club of Anna University, Trichy</Copyright>
+			<Copyright>
+				<p>
+					Copyrights &copy; {new Date().getFullYear()}, Infinite Loop Club of Anna University,
+					Trichy
+				</p>
+			</Copyright>
 		</Div>
 	);
 }
 
 const Div = styled.div`
-	background-color: ${colors.primary};
+	background-color: #3f3d56;
 	margin-top: 5rem;
 `;
 
@@ -106,7 +111,7 @@ const AboutClub = styled.div`
 				}
 
 				&:hover {
-					color: ${colors.slate};
+					color: ${colors.primary};
 				}
 			}
 		}
@@ -114,8 +119,11 @@ const AboutClub = styled.div`
 `;
 
 const Copyright = styled.div`
-	background-color: ${colors.slate};
+	background-color: ${colors.black};
 	padding: 1.8rem;
 	color: ${colors.white};
 	text-align: center;
+	p {
+		font-size: 1rem;
+	}
 `;

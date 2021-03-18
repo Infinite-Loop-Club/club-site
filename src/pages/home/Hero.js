@@ -2,13 +2,16 @@ import styled from 'styled-components';
 import { Button } from '../../components';
 
 import code from '../../images/Code Development _Isometric  1.svg';
+import LogoImage from '../../images/logo_white_vector.png';
 
 export default function Home() {
 	return (
 		<Hero>
 			<div className='container'>
+				<img className='logo' src={LogoImage} alt='logo' />
 				<div className='hero__content'>
 					<div>
+						<img className='logo2' src={LogoImage} alt='logo' />
 						<h1>Infinite Loop Club</h1>
 						<span>of Anna University Trichy</span>
 						<p>
@@ -26,9 +29,32 @@ export default function Home() {
 }
 
 const Hero = styled.div`
-	position: relative;
 	min-height: 100vh;
-	background-image: linear-gradient(90deg, #7524dd, #bf59c0);
+	background-image: linear-gradient(25deg, rgba(2, 130, 251, 1) 40%, rgba(2, 239, 81, 1) 100%);
+	display: flex;
+	align-items: center;
+	padding: 5em 2rem;
+	position: relative;
+
+	.logo {
+		width: 8rem;
+		position: absolute;
+		top: 5em;
+		left: 4em;
+
+		@media (max-width: 750px) {
+			display: none;
+		}
+	}
+	.logo2 {
+		width: 8rem;
+		display: none;
+
+		@media (max-width: 750px) {
+			display: block;
+			margin-bottom: 3em;
+		}
+	}
 
 	.container {
 		max-width: 120rem;
@@ -57,13 +83,14 @@ const Hero = styled.div`
 			div {
 				place-self: flex-end;
 				grid-row: 1/2;
-				margin-bottom: 6rem;
+				margin-top: 12rem;
+				margin-bottom: 4rem;
 			}
 
 			img {
 				height: auto !important;
 				place-self: flex-start;
-				grid-row: -1/-2;
+				grid-row: 2/3;
 			}
 		}
 
