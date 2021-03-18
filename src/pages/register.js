@@ -4,6 +4,12 @@ import axios from 'axios';
 
 import { Button, Footer } from '../components';
 import { colors } from '../constants/theme';
+import male1 from '../images/male-1.png';
+import male2 from '../images/male-2.png';
+import male3 from '../images/male-3.png';
+import female1 from '../images/female-1.png';
+import female2 from '../images/female-2.png';
+import female3 from '../images/female-3.png';
 
 export default function RegisterForm() {
 	const [values, setValues] = useState({
@@ -14,6 +20,8 @@ export default function RegisterForm() {
 		year: '',
 		gender: ''
 	});
+	const [male, setMale] = useState(false);
+	const [female, setFemale] = useState(false);
 
 	const handleChange = e => {
 		const { name, value } = e.target;
@@ -44,6 +52,17 @@ export default function RegisterForm() {
 		}
 	};
 
+	const handleGender = e => {
+		console.log(e.target.value);
+		if (e.target.value === 'male') {
+			setMale(true);
+			setFemale(false);
+		} else {
+			setMale(false);
+			setFemale(true);
+		}
+	};
+
 	return (
 		<>
 			<FormContainer>
@@ -62,22 +81,48 @@ export default function RegisterForm() {
 							<label htmlFor='gender'>Gender</label>
 							<RadioContainer>
 								<RadioGroup>
-									<input type='radio' class='radio__group-input' id='small' name='size' />
-									<label for='small' class='radio__group-label'>
+									<input
+										type='radio'
+										class='radio__group-input'
+										id='male'
+										name='gender'
+										value='male'
+										onClick={handleGender}
+									/>
+									<label for='male' class='radio__group-label'>
 										<span class='radio__group-button'></span>
 										Male
 									</label>
 								</RadioGroup>
 								<RadioGroup>
-									<input type='radio' class='radio__group-input' id='large' name='size' />
-									<label for='large' class='radio__group-label'>
+									<input
+										type='radio'
+										class='radio__group-input'
+										id='female'
+										name='gender'
+										value='female'
+										onClick={handleGender}
+									/>
+									<label for='female' class='radio__group-label'>
 										<span class='radio__group-button'></span>
 										Female
 									</label>
 								</RadioGroup>
 							</RadioContainer>
 						</Field>
-
+						{male ? (
+							<AvatarContainer>
+								<Avatar src={male1} alt='male1' />
+								<Avatar src={male2} alt='male2' />
+								<Avatar src={male3} alt='male3' />
+							</AvatarContainer>
+						) : female ? (
+							<AvatarContainer>
+								<Avatar src={female1} alt='female1' />
+								<Avatar src={female2} alt='female2' />
+								<Avatar src={female3} alt='female3' />
+							</AvatarContainer>
+						) : null}
 						<Field>
 							<label htmlFor='email'>Email of the Student</label>
 							<Input id='email' name='email' onChange={handleChange} required />
@@ -116,6 +161,18 @@ export default function RegisterForm() {
 		</>
 	);
 }
+
+const AvatarContainer = styled.div`
+	margin: 1rem 1rem 3rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+`;
+
+const Avatar = styled.img`
+	width: 30%;
+	margin-right: 2rem;
+`;
 
 const Rect1 = styled.div`
 	position: absolute;
