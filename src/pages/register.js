@@ -364,7 +364,7 @@ const Box = styled.div`
 	}
 
 	@media (max-width: 700px) {
-		width: 100%;
+		min-width: 100%;
 		box-shadow: none;
 	}
 `;
