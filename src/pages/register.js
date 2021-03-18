@@ -107,7 +107,7 @@ export default function RegisterForm() {
 									/>
 									<label htmlFor='female' className='radio__group-label'>
 										<span className='radio__group-button'></span>
-										Female
+										<p>Female</p>
 									</label>
 								</RadioGroup>
 							</RadioContainer>
@@ -218,6 +218,7 @@ const Rect1 = styled.div`
 	width: 20rem;
 	height: 4rem;
 	transform: skew(0deg, -15deg);
+	z-index: -1;
 
 	@media (max-width: 1000px) {
 		width: 16rem;
@@ -230,12 +231,13 @@ const Rect1 = styled.div`
 
 const MiddleRect = styled.div`
 	position: absolute;
-	top: 48.4%;
+	top: 48.2%;
 	left: -6rem;
 	background-color: #0048aa;
 	width: 20rem;
 	height: 1rem;
 	transform: skew(0deg, -15deg);
+	z-index: -1;
 
 	@media (max-width: 1000px) {
 		width: 16rem;
@@ -254,6 +256,7 @@ const Rect2 = styled.div`
 	width: 27.5rem;
 	height: 4rem;
 	transform: skew(0deg, -15deg);
+	z-index: -1;
 
 	@media (max-width: 1000px) {
 		width: 20rem;
@@ -273,6 +276,7 @@ const Rect3 = styled.div`
 	width: 27.5rem;
 	height: 4rem;
 	transform: skew(0deg, -15deg);
+	z-index: -1;
 
 	@media (max-width: 1000px) {
 		width: 20rem;
@@ -299,7 +303,10 @@ const RadioGroup = styled.div`
 			font-size: 1.6rem;
 			cursor: pointer;
 			position: relative;
-			padding-left: 4.5rem;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
 
 		&-button {
@@ -308,9 +315,8 @@ const RadioGroup = styled.div`
 			border: 5px solid ${colors.tertiary};
 			border-radius: 50%;
 			display: inline-block;
-			position: absolute;
-			left: 0;
-			top: 0;
+			position: relative;
+			margin-right: 2rem;
 
 			&::after {
 				content: '';
@@ -349,12 +355,12 @@ const Box = styled.div`
 	position: relative;
 	width: 40%;
 	padding: 3rem 4rem;
+	background-color: ${colors.white};
 	border-radius: 3%;
 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
-	z-index: 1000;
 
 	@media (max-width: 1000px) {
-		width: 50%;
+		min-width: 65rem;
 	}
 
 	@media (max-width: 700px) {
@@ -392,7 +398,8 @@ const Form = styled.form`
 
 const FormContainer = styled.div`
 	position: relative;
-	margin: 8rem 0;
+	margin: 4rem 0;
+	padding: 4rem 0;
 	overflow-x: hidden;
 	display: flex;
 	justify-content: center;
