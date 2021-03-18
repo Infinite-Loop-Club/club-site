@@ -1,8 +1,11 @@
+import { useHistory } from 'react-router';
 import styled from 'styled-components';
 import { Button, Container } from '../../components';
 import { colors } from '../../constants/theme';
 
 export default function Cta() {
+	const history = useHistory();
+
 	return (
 		<Div>
 			<Container>
@@ -11,7 +14,7 @@ export default function Cta() {
 					What are you waiting for? Register now and we're sure you would cherish the entire journey
 					with us.
 				</p>
-				<Button>Register</Button>
+				<Button onClick={() => history.push('/register')}>Register</Button>
 			</Container>
 		</Div>
 	);

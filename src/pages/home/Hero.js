@@ -1,4 +1,5 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
 import styled from 'styled-components';
 import { Button } from '../../components';
 
@@ -12,6 +13,9 @@ export default function Home() {
 	const contentRef = useRef(null);
 	const countRef = useRef(1);
 	const intervalRef = useRef(null);
+	const [showButton, setShowButton] = useState(false);
+
+	const history = useHistory();
 
 	function writeText() {
 		contentRef.current.innerText = text.slice(0, countRef.current);
@@ -22,6 +26,7 @@ export default function Home() {
 	function activateInterval() {
 		intervalRef.current = setInterval(() => {
 			if (countRef.current > text.length) {
+				setShowButton(true);
 				return;
 			}
 			writeText();
@@ -40,15 +45,14 @@ export default function Home() {
 	return (
 		<Hero>
 			<div className='container'>
-				<img className='logo' src={LogoImage} alt='logo' />
 				<div className='hero__content'>
 					<div>
-						<img className='logo2' src={LogoImage} alt='logo' />
+						<img className='logo' src={LogoImage} alt='logo' />
 						<h1>Infinite Loop Club</h1>
 						<span>of Anna University Trichy</span>
 						<p ref={contentRef}></p>
 
-						<Button>Register</Button>
+						{showButton && <Button onClick={() => history.push('/register')}>Register</Button>}
 					</div>
 					<img src={code} alt='Code development'></img>
 				</div>
@@ -66,16 +70,6 @@ const Hero = styled.div`
 	position: relative;
 
 	.logo {
-		width: 8rem;
-		position: absolute;
-		top: 5em;
-		left: 4em;
-
-		@media (max-width: 750px) {
-			display: none;
-		}
-	}
-	.logo2 {
 		width: 8rem;
 		display: none;
 
