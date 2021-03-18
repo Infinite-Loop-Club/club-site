@@ -17,14 +17,13 @@ export default function Home() {
 		contentRef.current.innerText = text.slice(0, countRef.current);
 
 		countRef.current++;
-
-		if (countRef.current > text.length) {
-			return;
-		}
 	}
 
 	function activateInterval() {
 		intervalRef.current = setInterval(() => {
+			if (countRef.current > text.length) {
+				return;
+			}
 			writeText();
 		}, 100);
 	}
