@@ -1,22 +1,58 @@
+import { useRef, useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
 import styled from 'styled-components';
 import { Button } from '../../components';
 
-import code from '../../images/Code Development _Isometric  1.svg';
+import code from '../../images/hero.svg';
+import LogoImage from '../../images/logo_white_vector.png';
+
+const text = `We're here to dig out your talents and find out what you're passionate about, let's
+							join together and grow together.`;
 
 export default function Home() {
+	const contentRef = useRef(null);
+	const countRef = useRef(1);
+	const intervalRef = useRef(null);
+	const [showButton, setShowButton] = useState(false);
+
+	const history = useHistory();
+
+	function writeText() {
+		contentRef.current.innerText = text.slice(0, countRef.current);
+
+		countRef.current++;
+	}
+
+	function activateInterval() {
+		intervalRef.current = setInterval(() => {
+			if (countRef.current > text.length) {
+				setShowButton(true);
+				return;
+			}
+			writeText();
+		}, 100);
+	}
+
+	useEffect(() => {
+		activateInterval();
+		return () => {
+			clearInterval(intervalRef.current);
+		};
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+
 	return (
 		<Hero>
 			<div className='container'>
 				<div className='hero__content'>
 					<div>
+						<img className='logo' src={LogoImage} alt='logo' />
 						<h1>Infinite Loop Club</h1>
 						<span>of Anna University Trichy</span>
-						<p>
-							We're here to dig out your talents and find out what you're passionate about, let's
-							join together and grow together.
-						</p>
+						<p ref={contentRef}></p>
 
-						<Button>Register</Button>
+						{showButton && <Button onClick={() => history.push('/register')}>Register</Button>}
 					</div>
 					<img src={code} alt='Code development'></img>
 				</div>
@@ -26,9 +62,22 @@ export default function Home() {
 }
 
 const Hero = styled.div`
-	position: relative;
 	min-height: 100vh;
-	background-image: linear-gradient(90deg, #7524dd, #bf59c0);
+	background-image: linear-gradient(25deg, rgba(2, 130, 251, 1) 40%, rgba(2, 239, 81, 1) 100%);
+	display: flex;
+	align-items: center;
+	padding: 5em 2rem;
+	position: relative;
+
+	.logo {
+		width: 8rem;
+		display: none;
+
+		@media (max-width: 750px) {
+			display: block;
+			margin-bottom: 3em;
+		}
+	}
 
 	.container {
 		max-width: 120rem;
@@ -48,22 +97,22 @@ const Hero = styled.div`
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-gap: 5rem;
-		place-items: center;
+		align-items: center;
 		color: white;
 
 		@media (max-width: 750px) {
 			grid-template-columns: 1fr;
 
 			div {
-				place-self: flex-end;
+				place-self: flex-start;
 				grid-row: 1/2;
-				margin-bottom: 6rem;
+				margin-top: 12rem;
+				margin-bottom: 1rem;
 			}
 
 			img {
-				height: auto !important;
 				place-self: flex-start;
-				grid-row: -1/-2;
+				grid-row: 2/3;
 			}
 		}
 
@@ -80,7 +129,6 @@ const Hero = styled.div`
 		}
 
 		& img {
-			height: 70%;
 			max-width: 100%;
 		}
 	}
