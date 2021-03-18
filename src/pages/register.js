@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 
-import { Button, Container, Footer, NavigationBar } from '../components';
+import { Button, Footer, NavigationBar } from '../components';
 import { colors } from '../constants/theme';
 
 export default function RegisterForm() {
@@ -48,6 +48,10 @@ export default function RegisterForm() {
 		<>
 			<Nav />
 			<FormContainer>
+				<Rect1 />
+				<MiddleRect />
+				<Rect2 />
+				<Rect3 />
 				<h1>Registration</h1>
 				<Box>
 					<Form>
@@ -96,6 +100,15 @@ export default function RegisterForm() {
 								<option value='4'>4</option>
 							</Dropdown>
 						</Field>
+						<Field>
+							<label htmlFor='dept'>Department</label>
+							<Dropdown name='dept' onChange={handleChange} id='dept'>
+								<option value='CSE' selected>
+									CSE
+								</option>
+								<option value='IT'>IT</option>
+							</Dropdown>
+						</Field>
 					</Form>
 				</Box>
 				<SubmitButton onClick={handleSubmit}>Submit</SubmitButton>
@@ -105,12 +118,47 @@ export default function RegisterForm() {
 	);
 }
 
-//  <Dropdown name='gender' onChange={handleChange} id='gender'>
-// 								<option value='Male' selected>
-// 									Male
-// 								</option>
-// 								<option value='Female'>Female</option>
-// 							</Dropdown>
+const Rect1 = styled.div`
+	position: absolute;
+	top: 45%;
+	left: -6rem;
+	background-color: ${colors.tertiary};
+	width: 20rem;
+	height: 4rem;
+	transform: skew(0deg, -15deg);
+
+	
+`;
+
+const MiddleRect = styled.div`
+	position: absolute;
+	top: 48.4%;
+	left: -6rem;
+	background-color: #0048aa;
+	width: 20rem;
+	height: 2rem;
+	transform: skew(0deg, -15deg);
+`;
+
+const Rect2 = styled.div`
+	position: absolute;
+	top: 48%;
+	left: -6rem;
+	background-color: #0295dd;
+	width: 27.5rem;
+	height: 4rem;
+	transform: skew(0deg, -15deg);
+`;
+
+const Rect3 = styled.div`
+	position: absolute;
+	top: 20%;
+	right: -4.3%;
+	background-color: #0295dd;
+	width: 27.5rem;
+	height: 4rem;
+	transform: skew(0deg, -15deg);
+`;
 
 const RadioGroup = styled.div`
 	width: 49%;
@@ -204,7 +252,10 @@ const Form = styled.form`
 	margin: 1rem;
 `;
 
-const FormContainer = styled(Container)`
+const FormContainer = styled.div`
+	margin: 8rem 0;
+	position: relative;
+	overflow-x: hidden;
 	display: flex;
 	justify-content: center;
 	align-items: center;
