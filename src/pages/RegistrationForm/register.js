@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Formik, Form, Field } from 'formik';
 import axios from 'axios';
@@ -14,56 +14,43 @@ import female3 from '../../images/female-3.png';
 import validationSchema from './validationSchema';
 
 export default function RegisterForm() {
-	const [male, setMale] = useState(false);
-	const [female, setFemale] = useState(false);
-	const [index, setIndex] = useState(0);
-	const [values, setValues] = useState({
+	const [active, setActive] = useState(null);
+	const [avatarError, setAvatarError] = useState(false);
+	const formRef = useRef();
+
+	const initialValues = {
 		name: '',
 		registerNumber: '',
 		email: '',
 		phoneNumber: '',
 		year: '',
 		gender: '',
-		dept: '',
-		avatar: ''
-	});
-
-	const Avatars = {
-		male: [male1, male2, male3],
-		female: [female1, female2, female3]
+		dept: ''
 	};
 
-	const handleSubmit = async event => {
-		event.preventDefault();
-		console.log(values);
-		try {
-			await axios.post('/user/new', values);
-			// registration successful - handle
-			window.open('/', '_self');
-		} catch (err) {
-			// handle the error properly
-			console.log(err.response); // {status = HTTP STATUS CODE, data: Defined data {message, error}}
+	const avatars = [
+		{ url: male1, gender: 'male', id: 'male1' },
+		{ url: male2, gender: 'male', id: 'male2' },
+		{ url: male3, gender: 'male', id: 'male3' },
+		{ url: female1, gender: 'female', id: 'female1' },
+		{ url: female2, gender: 'female', id: 'female2' },
+		{ url: female3, gender: 'female', id: 'female3' }
+	];
+
+	const handleSubmit = async (values, action) => {
+		if (!active || active?.gender !== values.gender) {
+			setAvatarError(true);
+			return;
 		}
-	};
 
-	const handleChange = e => {
-		const { name, value } = e.target;
-		setValues(old => {
-			return {
-				...old,
-				[name]: value
-			};
-		});
-	};
-
-	const handleGender = e => {
-		if (e.target.value === 'male') {
-			setMale(true);
-			setFemale(false);
-		} else {
-			setMale(false);
-			setFemale(true);
-		}
+		// try {
+		// 	await axios.post('/user/new', values);
+		// 	// registration successful - handle
+		// 	window.open('/', '_self');
+		// } catch (err) {
+		// 	// handle the error properly
+		// 	console.log(err.response); // {status = HTTP STATUS CODE, data: Defined data {message, error}}
+		// }
 	};
 
 	useEffect(() => {
@@ -75,8 +62,13 @@ export default function RegisterForm() {
 		<>
 			<FormContainer>
 				<h1>Registration</h1>
-				<Formik initialValues={values} validationSchema={validationSchema} onSubmit={handleSubmit}>
-					{({ errors, touched }) => (
+				<Formik
+					initialValues={initialValues}
+					validationSchema={validationSchema}
+					onSubmit={handleSubmit}
+					innerRef={formRef}
+				>
+					{({ errors, touched, values }) => (
 						<FormikForm>
 							<Box>
 								<FieldContainer>
@@ -95,14 +87,12 @@ export default function RegisterForm() {
 									<label htmlFor='gender'>Gender</label>
 									<RadioContainer>
 										<RadioGroup>
-											<input
-												type='radio'
-												className='radio__group-input'
+											<Field
 												id='male'
+												className='radio__group-input'
 												name='gender'
 												value='male'
-												onClick={handleGender}
-												onChange={handleChange}
+												type='radio'
 											/>
 											<label htmlFor='male' className='radio__group-label'>
 												<span className='radio__group-button'></span>
@@ -110,14 +100,12 @@ export default function RegisterForm() {
 											</label>
 										</RadioGroup>
 										<RadioGroup>
-											<input
+											<Field
+												id='female'
 												type='radio'
 												className='radio__group-input'
-												id='female'
 												name='gender'
 												value='female'
-												onClick={handleGender}
-												onChange={handleChange}
 											/>
 											<label htmlFor='female' className='radio__group-label'>
 												<span className='radio__group-button'></span>
@@ -125,41 +113,31 @@ export default function RegisterForm() {
 											</label>
 										</RadioGroup>
 									</RadioContainer>
-									{male ? (
+									{errors.gender && touched.gender ? <Error>{errors.gender}</Error> : null}
+									{values?.gender !== '' && (
 										<>
 											<label htmlFor='avatar'>Select your Avatar</label>
 											<AvatarContainer>
-												{Avatars.male.map((value, i) => {
-													return (
-														<Avatar
-															key={i}
-															src={value}
-															alt='male'
-															onClick={() => setIndex(i)}
-															active={index === i}
-														/>
-													);
-												})}
+												{avatars
+													.filter(value => value.gender === values.gender)
+													.map(value => {
+														return (
+															<Avatar
+																key={value.id}
+																src={value.url}
+																alt='male'
+																onClick={() => {
+																	setActive(value);
+																	setAvatarError(false);
+																}}
+																active={active?.id === value.id}
+															/>
+														);
+													})}
 											</AvatarContainer>
+											{avatarError && <Error>Please select an avatar</Error>}
 										</>
-									) : female ? (
-										<>
-											<label htmlFor='avatar'>Select your Avatar</label>
-											<AvatarContainer>
-												{Avatars.female.map((value, i) => {
-													return (
-														<Avatar
-															key={i}
-															src={value}
-															alt='female'
-															onClick={() => setIndex(i)}
-															active={index === i}
-														/>
-													);
-												})}
-											</AvatarContainer>
-										</>
-									) : null}
+									)}
 								</FieldContainer>
 								<FieldContainer>
 									<label htmlFor='email'>Email of the Student</label>
@@ -175,24 +153,22 @@ export default function RegisterForm() {
 								</FieldContainer>
 								<FieldContainer>
 									<label htmlFor='year'>Year</label>
-									<Dropdown name='year' onChange={handleChange} id='year'>
-										<option value='1' selected>
-											1
-										</option>
+									<Field name='year' as='select' className='select'>
+										<option value=''>-- Select --</option>
+										<option value='1'>1</option>
 										<option value='2'>2</option>
 										<option value='3'>3</option>
 										<option value='4'>4</option>
-									</Dropdown>
+									</Field>
 									{errors.year && touched.year ? <Error>{errors.year}</Error> : null}
 								</FieldContainer>
 								<FieldContainer>
 									<label htmlFor='dept'>Department</label>
-									<Dropdown name='dept' onChange={handleChange} id='dept'>
-										<option value='CSE' selected>
-											CSE
-										</option>
+									<Field name='dept' as='select' className='select'>
+										<option value=''>-- Select --</option>
+										<option value='CSE'>CSE</option>
 										<option value='IT'>IT</option>
-									</Dropdown>
+									</Field>
 									{errors.dept && touched.dept ? <Error>{errors.dept}</Error> : null}
 								</FieldContainer>
 							</Box>
@@ -213,13 +189,11 @@ const Avatar = styled.img`
 	width: 10rem;
 	margin-right: 2rem;
 	border-radius: 50%;
-	background-image: ${props =>
-		props.active
-			? `linear-gradient(to right bottom, ${colors.primary}, ${colors.secondary})`
-			: 'none'};
+	background-color: ${props => (props.active ? `${colors.primary}` : 'none')};
+	transition: all 0.2s;
 
 	&:hover {
-		background-image: linear-gradient(to right bottom, ${colors.primary}, ${colors.secondary});
+		background-color: ${colors.primary};
 		cursor: pointer;
 	}
 
@@ -260,26 +234,6 @@ const Box = styled.div`
 	}
 `;
 
-const Dropdown = styled.select`
-	width: 100%;
-	font: inherit;
-	font-size: 1.4rem;
-	margin: 0.5rem auto 3rem auto;
-	padding: 0.7rem 1.25rem;
-	border-radius: 0.5rem;
-	border: 2px solid transparent;
-	background-color: #f2f2f2;
-	box-shadow: 1px 1px 10px rgba(117, 36, 221, 0.3);
-	transition: all 0.2s;
-
-	:focus {
-		outline: none;
-		color: ${colors.primary};
-		border: 2px solid ${colors.primary};
-		box-shadow: 3px 3px 20px rgba(117, 36, 221, 0.3);
-	}
-`;
-
 const Error = styled.p`
 	color: ${props => props.theme.tomato};
 	font-size: 1.3rem;
@@ -290,6 +244,26 @@ const FieldContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+
+	.select {
+		width: 100%;
+		font: inherit;
+		font-size: 1.4rem;
+		margin: 0.5rem auto 3rem auto;
+		padding: 0.7rem 1.25rem;
+		border-radius: 0.5rem;
+		border: 2px solid transparent;
+		background-color: #f2f2f2;
+		box-shadow: 1px 1px 10px rgba(117, 36, 221, 0.3);
+		transition: all 0.2s;
+
+		:focus {
+			outline: none;
+			color: ${colors.primary};
+			border: 2px solid ${colors.primary};
+			box-shadow: 3px 3px 20px rgba(117, 36, 221, 0.3);
+		}
+	}
 `;
 
 const FormContainer = styled.div`
