@@ -5,8 +5,8 @@ import { Button } from '../../components';
 import code from '../../images/hero.svg';
 import LogoImage from '../../images/logo_white_vector.png';
 
-const text = `We're here to dig out your talents and find out what you're passionate about, let's
-							join together and grow together.`;
+const text =
+	"We're here to dig out your talents and find out what you're passionate about, let's join together and grow together.";
 
 export default function Home() {
 	const contentRef = useRef(null);
