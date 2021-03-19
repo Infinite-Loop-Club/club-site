@@ -5,6 +5,7 @@ import { Container, Heading } from '../../components';
 
 import share from '../../images/share.svg';
 import link from '../../images/link.svg';
+import logo from '../../images/logo_color_vector.svg';
 
 export default function Card({ ind }) {
 	const location = useLocation();
@@ -18,6 +19,7 @@ export default function Card({ ind }) {
 
 	return (
 		<ContainerCustom key={ind}>
+			<img className='logo' src={logo} alt='logo'></img>
 			<Top>
 				<Left>
 					<Title>Hackathon &nbsp;{location?.state}</Title>
@@ -64,6 +66,13 @@ export default function Card({ ind }) {
 
 const ContainerCustom = styled(Container)`
 	margin-top: 10em;
+	position: relative;
+
+	.logo {
+		width: 6em;
+		position: absolute;
+		top: -8em;
+	}
 `;
 
 const Top = styled.div`

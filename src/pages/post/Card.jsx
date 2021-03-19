@@ -25,10 +25,7 @@ export default function Card({ ind }) {
 			<Center>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae perferendis ipsam et
 				aliquam laboriosam aut adipisci, beatae asperiores itaque repudiandae, voluptates, explicabo
-				a dicta neque. Perferendis, asperiores tempore! Ab, consequuntur. Lorem ipsum dolor sit amet
-				consectetur adipisicing elit. Vitae dolores eum adipisci! Ipsa minima nostrum laudantium non
-				tempore alias repellendus sed ipsum eveniet? Soluta debitis corrupti totam accusantium ea
-				vero?
+				a dicta neque.
 			</Center>
 			<Bottom>
 				<img src={share} alt={share}></img>
@@ -42,12 +39,22 @@ const Container = styled.div`
 	margin: 4em;
 	box-shadow: 0px 3px 20px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 1em;
+
+	@media only screen and (max-width: 700px) {
+		padding: 1em;
+		margin: 2em;
+	}
 `;
 
 const Top = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
+	@media only screen and (max-width: 500px) {
+		flex-direction: column;
+		align-items: flex-start;
+	}
 `;
 
 const Title = styled.h2`
@@ -55,10 +62,21 @@ const Title = styled.h2`
 `;
 
 const Details = styled.div`
-	padding: 2em;
+	padding: 1em;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
+
+	@media only screen and (max-width: 500px) {
+		flex-direction: row;
+		padding: 0px;
+		margin-bottom: 1em;
+	}
+
+	@media only screen and (max-width: 400px) {
+		flex-direction: column;
+		align-items: flex-start;
+	}
 
 	p {
 		font-size: 1.2rem;
