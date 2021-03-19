@@ -3,7 +3,8 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { NavigationBar } from './components';
 import { colors, fonts } from './constants/theme';
 
-import { Home, About, Register } from './pages';
+import { Home, About } from './pages';
+import Register from './pages/RegistrationForm/register';
 
 export default function AppRouter() {
 	return (
