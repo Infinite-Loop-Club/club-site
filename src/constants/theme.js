@@ -5,7 +5,8 @@ export const colors = {
 	black: '#000',
 	slate: '#3f3d56',
 	grey: '#f2f2f2',
-	white: '#fff'
+	white: '#fff',
+	tomato: '#E81224'
 };
 
 export const fonts = {

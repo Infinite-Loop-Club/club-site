@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { Formik, Form, Field } from 'formik';
 import axios from 'axios';
-import { useFormik } from 'formik';
 
 import { Button, Footer } from '../../components';
 import { colors } from '../../constants/theme';
@@ -11,7 +11,6 @@ import male3 from '../../images/male-3.png';
 import female1 from '../../images/female-1.png';
 import female2 from '../../images/female-2.png';
 import female3 from '../../images/female-3.png';
-import { initialValues } from './initialValues';
 import validationSchema from './validationSchema';
 
 export default function RegisterForm() {
@@ -34,22 +33,18 @@ export default function RegisterForm() {
 		female: [female1, female2, female3]
 	};
 
-	const formik = useFormik({
-		initialValues: initialValues,
-		validationSchema: validationSchema,
-		onSubmit: async event => {
-			event.preventDefault();
-			console.log(values);
-			try {
-				await axios.post('/user/new', values);
-				// registration successful - handle
-				window.open('/', '_self');
-			} catch (err) {
-				// handle the error properly
-				console.log(err.response); // {status = HTTP STATUS CODE, data: Defined data {message, error}}
-			}
+	const handleSubmit = async event => {
+		event.preventDefault();
+		console.log(values);
+		try {
+			await axios.post('/user/new', values);
+			// registration successful - handle
+			window.open('/', '_self');
+		} catch (err) {
+			// handle the error properly
+			console.log(err.response); // {status = HTTP STATUS CODE, data: Defined data {message, error}}
 		}
-	});
+	};
 
 	const handleChange = e => {
 		const { name, value } = e.target;
@@ -80,119 +75,131 @@ export default function RegisterForm() {
 		<>
 			<FormContainer>
 				<h1>Registration</h1>
-				<Form onSubmit={formik.handleSubmit}>
-					<Box>
-						<Field>
-							<label htmlFor='regno'>Register Number</label>
-							<Input id='regno' name='registerNumber' onChange={handleChange} required />
-						</Field>
-						<Field>
-							<label htmlFor='name'>Name of the Student</label>
-							<Input id='name' name='name' onChange={handleChange} required />
-						</Field>
-						<Field style={{ marginBottom: '1rem' }}>
-							<label htmlFor='gender'>Gender</label>
-							<RadioContainer>
-								<RadioGroup>
-									<input
-										type='radio'
-										className='radio__group-input'
-										id='male'
-										name='gender'
-										value='male'
-										onClick={handleGender}
-										onChange={handleChange}
-									/>
-									<label htmlFor='male' className='radio__group-label'>
-										<span className='radio__group-button'></span>
-										Male
-									</label>
-								</RadioGroup>
-								<RadioGroup>
-									<input
-										type='radio'
-										className='radio__group-input'
-										id='female'
-										name='gender'
-										value='female'
-										onClick={handleGender}
-										onChange={handleChange}
-									/>
-									<label htmlFor='female' className='radio__group-label'>
-										<span className='radio__group-button'></span>
-										<p>Female</p>
-									</label>
-								</RadioGroup>
-							</RadioContainer>
-						</Field>
-						<Field>
-							{male ? (
-								<>
-									<label htmlFor='avatar'>Select your Avatar</label>
-									<AvatarContainer>
-										{Avatars.male.map((value, i) => {
-											return (
-												<Avatar
-													key={i}
-													src={value}
-													alt='male'
-													onClick={() => setIndex(i)}
-													active={index === i}
-												/>
-											);
-										})}
-									</AvatarContainer>
-								</>
-							) : female ? (
-								<>
-									<label htmlFor='avatar'>Select your Avatar</label>
-									<AvatarContainer>
-										{Avatars.female.map((value, i) => {
-											return (
-												<Avatar
-													key={i}
-													src={value}
-													alt='female'
-													onClick={() => setIndex(i)}
-													active={index === i}
-												/>
-											);
-										})}
-									</AvatarContainer>
-								</>
-							) : null}
-						</Field>
-						<Field>
-							<label htmlFor='email'>Email of the Student</label>
-							<Input id='email' name='email' onChange={handleChange} required />
-						</Field>
-						<Field>
-							<label htmlFor='phn_num'>Phone Number</label>
-							<Input id='phn_num' name='phoneNumber' onChange={handleChange} required />
-						</Field>
-						<Field>
-							<label htmlFor='year'>Year</label>
-							<Dropdown name='year' onChange={handleChange} id='year'>
-								<option value='1' selected>
-									1
-								</option>
-								<option value='2'>2</option>
-								<option value='3'>3</option>
-								<option value='4'>4</option>
-							</Dropdown>
-						</Field>
-						<Field>
-							<label htmlFor='dept'>Department</label>
-							<Dropdown name='dept' onChange={handleChange} id='dept'>
-								<option value='CSE' selected>
-									CSE
-								</option>
-								<option value='IT'>IT</option>
-							</Dropdown>
-						</Field>
-					</Box>
-					<SubmitButton type='submit'>Submit</SubmitButton>
-				</Form>
+				<Formik initialValues={values} validationSchema={validationSchema} onSubmit={handleSubmit}>
+					{({ errors, touched }) => (
+						<FormikForm>
+							<Box>
+								<FieldContainer>
+									<label htmlFor='regno'>Register Number</label>
+									<Input id='regno' name='registerNumber' />
+									{errors.registerNumber && touched.registerNumber ? (
+										<Error>{errors.registerNumber}</Error>
+									) : null}
+								</FieldContainer>
+								<FieldContainer>
+									<label htmlFor='name'>Name of the Student</label>
+									<Input id='name' name='name' />
+									{errors.name && touched.name ? <Error>{errors.name}</Error> : null}
+								</FieldContainer>
+								<FieldContainer style={{ marginBottom: '1rem' }}>
+									<label htmlFor='gender'>Gender</label>
+									<RadioContainer>
+										<RadioGroup>
+											<input
+												type='radio'
+												className='radio__group-input'
+												id='male'
+												name='gender'
+												value='male'
+												onClick={handleGender}
+												onChange={handleChange}
+											/>
+											<label htmlFor='male' className='radio__group-label'>
+												<span className='radio__group-button'></span>
+												Male
+											</label>
+										</RadioGroup>
+										<RadioGroup>
+											<input
+												type='radio'
+												className='radio__group-input'
+												id='female'
+												name='gender'
+												value='female'
+												onClick={handleGender}
+												onChange={handleChange}
+											/>
+											<label htmlFor='female' className='radio__group-label'>
+												<span className='radio__group-button'></span>
+												<p>Female</p>
+											</label>
+										</RadioGroup>
+									</RadioContainer>
+									{male ? (
+										<>
+											<label htmlFor='avatar'>Select your Avatar</label>
+											<AvatarContainer>
+												{Avatars.male.map((value, i) => {
+													return (
+														<Avatar
+															key={i}
+															src={value}
+															alt='male'
+															onClick={() => setIndex(i)}
+															active={index === i}
+														/>
+													);
+												})}
+											</AvatarContainer>
+										</>
+									) : female ? (
+										<>
+											<label htmlFor='avatar'>Select your Avatar</label>
+											<AvatarContainer>
+												{Avatars.female.map((value, i) => {
+													return (
+														<Avatar
+															key={i}
+															src={value}
+															alt='female'
+															onClick={() => setIndex(i)}
+															active={index === i}
+														/>
+													);
+												})}
+											</AvatarContainer>
+										</>
+									) : null}
+								</FieldContainer>
+								<FieldContainer>
+									<label htmlFor='email'>Email of the Student</label>
+									<Input id='email' name='email' type='email' />
+									{errors.email && touched.email ? <Error>{errors.email}</Error> : null}
+								</FieldContainer>
+								<FieldContainer>
+									<label htmlFor='phn_num'>Phone Number</label>
+									<Input id='phn_num' name='phoneNumber' />
+									{errors.phoneNumber && touched.phoneNumber ? (
+										<Error>{errors.phoneNumber}</Error>
+									) : null}
+								</FieldContainer>
+								<FieldContainer>
+									<label htmlFor='year'>Year</label>
+									<Dropdown name='year' onChange={handleChange} id='year'>
+										<option value='1' selected>
+											1
+										</option>
+										<option value='2'>2</option>
+										<option value='3'>3</option>
+										<option value='4'>4</option>
+									</Dropdown>
+									{errors.year && touched.year ? <Error>{errors.year}</Error> : null}
+								</FieldContainer>
+								<FieldContainer>
+									<label htmlFor='dept'>Department</label>
+									<Dropdown name='dept' onChange={handleChange} id='dept'>
+										<option value='CSE' selected>
+											CSE
+										</option>
+										<option value='IT'>IT</option>
+									</Dropdown>
+									{errors.dept && touched.dept ? <Error>{errors.dept}</Error> : null}
+								</FieldContainer>
+							</Box>
+							<SubmitButton type='submit'>Submit</SubmitButton>
+						</FormikForm>
+					)}
+				</Formik>
 				<Rect3 />
 				<Rect1 />
 				<Rect2 />
@@ -238,13 +245,16 @@ const AvatarContainer = styled.div`
 
 const Box = styled.div`
 	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	min-width: 60rem;
 	padding: 3rem 4rem;
 	background-color: ${colors.white};
 	border-radius: 3%;
 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
 
-	@media (max-width: 700px) {
+	@media (max-width: 640px) {
 		min-width: 100%;
 		box-shadow: none;
 	}
@@ -270,11 +280,16 @@ const Dropdown = styled.select`
 	}
 `;
 
-const Form = styled.form`
+const Error = styled.p`
+	color: ${props => props.theme.tomato};
+	font-size: 1.3rem;
+`;
+
+const FieldContainer = styled.div`
+	width: 80%;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	margin: 1rem;
+	justify-content: center;
 `;
 
 const FormContainer = styled.div`
@@ -289,18 +304,18 @@ const FormContainer = styled.div`
 	z-index: 2;
 `;
 
-const Field = styled.div`
-	width: 80%;
+const FormikForm = styled(Form)`
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 `;
 
-const Input = styled.input`
+const Input = styled(Field)`
 	width: 100%;
 	font: inherit;
 	font-size: 1.4rem;
-	margin: 0.5rem auto 3rem auto;
+	margin: 0.5rem auto 1rem auto;
 	padding: 0.7rem 1.25rem;
 	border-radius: 0.5rem;
 	border: 2px solid transparent;
@@ -341,10 +356,6 @@ const RadioContainer = styled.div`
 	@media (max-width: 400px) {
 		flex-direction: column;
 	}
-`;
-
-const SubmitButton = styled(Button)`
-	margin-top: 2rem;
 `;
 
 const RadioGroup = styled.div`
@@ -457,5 +468,13 @@ const Rect3 = styled.div`
 
 	@media (max-width: 700px) {
 		display: none;
+	}
+`;
+
+const SubmitButton = styled(Button)`
+	margin-top: 3rem;
+
+	@media (max-width: 700px) {
+		margin-top: 0rem;
 	}
 `;
