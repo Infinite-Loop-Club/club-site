@@ -1,8 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
-import { useHistory } from 'react-router';
 import styled from 'styled-components';
-import { Button } from '../../components';
 
+import { Button } from '../../components';
 import code from '../../images/hero.svg';
 import LogoImage from '../../images/logo_white_vector.png';
 
@@ -14,8 +13,6 @@ export default function Home() {
 	const countRef = useRef(1);
 	const intervalRef = useRef(null);
 	const [showButton, setShowButton] = useState(false);
-
-	const history = useHistory();
 
 	function writeText() {
 		contentRef.current.innerText = text.slice(0, countRef.current);
@@ -52,7 +49,11 @@ export default function Home() {
 						<span>of Anna University Trichy</span>
 						<p ref={contentRef}></p>
 
-						{showButton && <Button onClick={() => history.push('/register')}>Register</Button>}
+						{showButton && (
+							<Button component='link' to='/register'>
+								Register
+							</Button>
+						)}
 					</div>
 					<img src={code} alt='Code development'></img>
 				</div>

@@ -1,11 +1,24 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { colors, fonts } from '../constants/theme';
 
-export default function Button({ children, ...props }) {
-	return <Btn {...props}>{children}</Btn>;
+export default function Button({ children, component, ...props }) {
+	switch (component) {
+		case 'button':
+			return <Btn {...props}>{children}</Btn>;
+
+		case 'anchor':
+			return <Anchor {...props}>{children}</Anchor>;
+
+		case 'link':
+			return <CustomLink {...props}>{children}</CustomLink>;
+
+		default:
+			return <Btn {...props}>{children}</Btn>;
+	}
 }
 
-const Btn = styled.button`
+const buttonStyleString = `
 	&,
 	&:link {
 		font-family: ${fonts.monospace};
@@ -26,7 +39,6 @@ const Btn = styled.button`
 		content: '';
 		display: inline-block;
 		width: 100%;
-		height: 100%;
 		border-radius: 100px;
 		position: absolute;
 		top: 0;
@@ -36,11 +48,22 @@ const Btn = styled.button`
 	}
 
 	&:hover {
-		box-shadow: 0 0.4rem 1.1rem rgba(255, 255, 255, 0.9);
+		box-shadow: 0 0.4rem 1.1rem rgba(0, 0, 0, 0.5);
 		transform: translateY(-0.3em);
 	}
 
 	&:active {
-		box-shadow: 0 0.2rem 0.6rem rgba(255, 255, 255, 0.3);
-	}
-`;
+		box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.3);
+	}`;
+
+const [Btn, Anchor, CustomLink] = [
+	styled.button`
+		${buttonStyleString}
+	`,
+	styled.a`
+		${buttonStyleString}
+	`,
+	styled(Link)`
+		${buttonStyleString}
+	`
+];
