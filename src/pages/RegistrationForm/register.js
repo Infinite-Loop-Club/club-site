@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Formik, Form, Field } from 'formik';
 import axios from 'axios';
@@ -16,7 +16,6 @@ import validationSchema from './validationSchema';
 export default function RegisterForm() {
 	const [active, setActive] = useState(null);
 	const [avatarError, setAvatarError] = useState(false);
-	const formRef = useRef();
 
 	const initialValues = {
 		name: '',
@@ -43,14 +42,16 @@ export default function RegisterForm() {
 			return;
 		}
 
-		// try {
-		// 	await axios.post('/user/new', values);
-		// 	// registration successful - handle
-		// 	window.open('/', '_self');
-		// } catch (err) {
-		// 	// handle the error properly
-		// 	console.log(err.response); // {status = HTTP STATUS CODE, data: Defined data {message, error}}
-		// }
+		/*
+		 try {
+		 	await axios.post('/user/new', values);
+		 	 registration successful - handle
+		 	window.open('/', '_self');
+		 } catch (err) {
+		 	 handle the error properly
+		 	console.log(err.response); // {status = HTTP STATUS CODE, data: Defined data {message, error}}
+		 } 
+		 */
 	};
 
 	useEffect(() => {
@@ -66,7 +67,6 @@ export default function RegisterForm() {
 					initialValues={initialValues}
 					validationSchema={validationSchema}
 					onSubmit={handleSubmit}
-					innerRef={formRef}
 				>
 					{({ errors, touched, values }) => (
 						<FormikForm>
@@ -146,7 +146,13 @@ export default function RegisterForm() {
 								</FieldContainer>
 								<FieldContainer>
 									<label htmlFor='phn_num'>Phone Number</label>
-									<Input id='phn_num' name='phoneNumber' />
+									<Input
+										id='phn_num'
+										name='phoneNumber'
+										type='tel'
+										placeholder='4444444444'
+										pattern='[1-9]{1} [0-9]{9}'
+									/>
 									{errors.phoneNumber && touched.phoneNumber ? (
 										<Error>{errors.phoneNumber}</Error>
 									) : null}
@@ -194,6 +200,7 @@ const Avatar = styled.img`
 
 	&:hover {
 		background-color: ${colors.primary};
+		box-shadow: ${props => `3px 3px 20px ${props.theme.secondary}`};
 		cursor: pointer;
 	}
 
@@ -254,14 +261,14 @@ const FieldContainer = styled.div`
 		border-radius: 0.5rem;
 		border: 2px solid transparent;
 		background-color: #f2f2f2;
-		box-shadow: 1px 1px 10px rgba(117, 36, 221, 0.3);
+		box-shadow: ${props => `1px 1px 10px ${props.theme.primary}50`};
 		transition: all 0.2s;
 
 		:focus {
 			outline: none;
 			color: ${colors.primary};
 			border: 2px solid ${colors.primary};
-			box-shadow: 3px 3px 20px rgba(117, 36, 221, 0.3);
+			box-shadow: ${props => `3px 3px 20px ${props.theme.primary}50`};
 		}
 	}
 `;
@@ -294,14 +301,14 @@ const Input = styled(Field)`
 	border-radius: 0.5rem;
 	border: 2px solid transparent;
 	background-color: ${colors.grey};
-	box-shadow: 1px 1px 10px rgba(117, 36, 221, 0.3);
+	box-shadow: ${props => `1px 1px 10px ${props.theme.primary}50`};
 	transition: all 0.2s;
 
 	:focus {
 		outline: none;
 		color: ${colors.primary};
 		border: 2px solid ${colors.primary};
-		box-shadow: 3px 3px 20px rgba(117, 36, 221, 0.3);
+		box-shadow: ${props => `3px 3px 20px ${props.theme.primary}50`};
 	}
 `;
 const MiddleRect = styled.div`
