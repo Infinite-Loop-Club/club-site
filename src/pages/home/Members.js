@@ -21,6 +21,7 @@ const CoreBox = styled.div`
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 3rem;
+	margin: 2rem 0;
 
 	@media (max-width: 800px) {
 		& > div:nth-child(even) {

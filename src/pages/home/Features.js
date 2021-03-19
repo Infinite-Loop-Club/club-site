@@ -43,8 +43,8 @@ export default function Paget() {
 const InnerContainer = styled.div`
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-gap: 6rem;
-	margin: 3rem auto 6rem auto;
+	grid-gap: 8rem;
+	margin: 3rem auto 8rem auto;
 
 	max-width: 100rem;
 `;

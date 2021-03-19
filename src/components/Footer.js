@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { colors } from '../constants/theme';
 import LogoImage from '../images/logo_white_vector.png';
-import BenxeneLogo from '../images/benxene.png'
+import BenxeneLogo from '../images/benxene.png';
 
 export default function Footer() {
 	return (
@@ -25,8 +25,7 @@ export default function Footer() {
 				</div>
 			</AboutClub>
 			<Copyright>
-					Copyrights &copy; {new Date().getFullYear()}, Infinite Loop Club of Anna University,
-					Trichy
+				Copyrights &copy; {new Date().getFullYear()}, Infinite Loop Club of Anna University, Trichy
 			</Copyright>
 		</Div>
 	);
@@ -34,7 +33,7 @@ export default function Footer() {
 
 const Div = styled.div`
 	background-color: #3f3d56;
-	margin-top: 5rem;
+	margin-top: 8rem;
 `;
 
 const AboutClub = styled.div`
@@ -75,7 +74,7 @@ const AboutClub = styled.div`
 		img {
 			margin: auto;
 			width: 15rem;
-		}		
+		}
 	}
 `;
 
