@@ -23,7 +23,7 @@ export default function NavigationBar() {
 			<Nav active={openHam}>
 				<ul active={openHam}>
 					<li onClick={() => handleClick('/')}>Home</li>
-					<li onClick={() => handleClick('/')}>Posts</li>
+					<li onClick={() => handleClick('/posts')}>Posts</li>
 					<li onClick={() => handleClick('about-us')}>About us</li>
 					<li onClick={() => handleClick('/register')}>Register</li>
 				</ul>
