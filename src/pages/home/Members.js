@@ -22,9 +22,10 @@ const CoreBox = styled.div`
 	justify-content: center;
 	gap: 3rem;
 
-	@media (max-width: 700px) {
+	@media (max-width: 800px) {
 		& > div:nth-child(even) {
 			order: -1;
+			width: 100%;
 		}
 	}
 `;
