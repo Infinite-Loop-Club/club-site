@@ -69,6 +69,7 @@ const Details = styled.div`
 
 	@media only screen and (max-width: 500px) {
 		flex-direction: row;
+		gap: 1em;
 		padding: 0px;
 		margin-bottom: 1em;
 	}

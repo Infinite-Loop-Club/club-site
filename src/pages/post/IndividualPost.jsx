@@ -69,9 +69,13 @@ const ContainerCustom = styled(Container)`
 	position: relative;
 
 	.logo {
-		width: 6em;
+		width: 8rem;
 		position: absolute;
 		top: -8em;
+
+		@media only screen and (max-width: 600px) {
+			width: 7rem;
+		}
 	}
 `;
 
@@ -131,11 +135,12 @@ const Button = styled.button`
 	border-radius: 2em;
 	cursor: pointer;
 	background-color: ${p => `${p.theme.primary}20`};
-	border-color: ${p => p.theme.primary};
+	border: ${p => `2px solid ${p.theme.primary}`};
 	color: ${p => p.theme.black};
 	font-weight: 600;
 	font-size: 1.2rem;
 	margin-right: 2em;
+	font-family: inherit;
 
 	img {
 		display: inline-block;
