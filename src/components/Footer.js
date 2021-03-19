@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { colors } from '../constants/theme';
 import LogoImage from '../images/logo_white_vector.png';
+import BenxeneLogo from '../images/benxene.png'
 
 export default function Footer() {
 	return (
@@ -17,38 +18,22 @@ export default function Footer() {
 					</p>
 				</div>
 				<div className='devs'>
-					<h3>Behind this page</h3>
-					<ul>
-						<li>
-							<a href='https://devkrish.tech' target='_blank' rel='noreferrer'>
-								Krishna Moorthy A
-							</a>
-						</li>
-						<li>
-							<a href='https://realgpr.tech' target='_blank' rel='noreferrer'>
-								Pranav G
-							</a>
-						</li>
-						<li>
-							<a href='https://sandev.tech' target='_blank' rel='noreferrer'>
-								Santhosh K
-							</a>
-						</li>
-						<li>
-							<a href='https://github.com/DeepAnraj285' target='_blank' rel='noreferrer'>
-								Deepanraj E
-							</a>
-						</li>
-					</ul>
+					<p>Made and maintained with ❤️ by</p>
+					<a href='https://github.com/benxene'>
+						<img src={BenxeneLogo} alt='benxene' />
+					</a>
 				</div>
 			</AboutClub>
-			<Copyright>Copyrights &copy; 2021, Infinite Loop Club of Anna University, Trichy</Copyright>
+			<Copyright>
+					Copyrights &copy; {new Date().getFullYear()}, Infinite Loop Club of Anna University,
+					Trichy
+			</Copyright>
 		</Div>
 	);
 }
 
 const Div = styled.div`
-	background-color: ${colors.primary};
+	background-color: #3f3d56;
 	margin-top: 5rem;
 `;
 
@@ -86,36 +71,18 @@ const AboutClub = styled.div`
 	}
 
 	.devs {
-		h3 {
-			text-align: center;
-		}
-
-		ul {
-			display: flex;
-			flex-wrap: wrap;
-			list-style: none;
-			align-items: center;
-			justify-content: space-around;
-
-			& > li {
-				display: inline-block;
-				transition: all 0.3s;
-
-				&:not(:last-child) {
-					margin-right: 3rem;
-				}
-
-				&:hover {
-					color: ${colors.slate};
-				}
-			}
-		}
+		text-align: center;
+		img {
+			margin: auto;
+			width: 15rem;
+		}		
 	}
 `;
 
 const Copyright = styled.div`
-	background-color: ${colors.slate};
+	background-color: ${colors.black};
 	padding: 1.8rem;
 	color: ${colors.white};
 	text-align: center;
+	font-size: 1.2rem;
 `;
