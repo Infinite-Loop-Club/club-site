@@ -3,7 +3,7 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { NavigationBar } from './components';
 import { colors, fonts } from './constants/theme';
 
-import { Home, About, Register } from './pages';
+import { Home, About, Register, Post, IndividualPost } from './pages';
 
 export default function AppRouter() {
 	return (
@@ -14,7 +14,9 @@ export default function AppRouter() {
 				<Switch>
 					<Route path='/register' exact component={Register} />
 					<Route path='/about-us' exact component={About} />
-					<Route path='/' exact component={Home} />
+					<Route path='/posts' exact component={Post} />
+					<Route path='/post/view' exact component={IndividualPost} />
+					<Route path='/' component={Home} />
 				</Switch>
 			</Router>
 		</ThemeProvider>
