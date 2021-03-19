@@ -13,7 +13,10 @@ export default function Card({ name, position, imgSrc, isSpecial }) {
 }
 
 const CardInternal = styled.div`
+	width: 30%;
+	min-width: 20rem;
 	max-width: 30rem;
+	height: 40%;
 	padding: 5rem;
 	text-align: center;
 	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
@@ -35,13 +38,9 @@ const CardInternal = styled.div`
 	${({ isSpecial }) =>
 		!isSpecial &&
 		`
-			@media(max-width: 600px) {
+			@media(max-width: 800px) {
 				padding: 2rem;
-
-				img {
-					height: 10rem !important;
-					width: 10rem !important;
-				}
+				min-width: auto;
 
 				h2 {
 					font-size: 1.4rem;
@@ -59,8 +58,7 @@ const CardInternal = styled.div`
 	}
 
 	& img {
-		height: 15rem;
-		width: 15rem;
+		width: 90%;
 		object-fit: cover;
 		object-position: center;
 		border-radius: 50%;
