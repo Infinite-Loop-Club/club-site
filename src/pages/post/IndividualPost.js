@@ -1,61 +1,45 @@
 import { useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router';
 import styled from 'styled-components';
-import { Container, Heading } from '../../components';
+import { format } from 'date-fns';
 
+import { Container, Heading } from '../../components';
 import { share, link, logoColored } from '../../images';
 
 export default function Card({ ind }) {
-	const location = useLocation();
+	const { state } = useLocation();
 	const history = useHistory();
 
 	useEffect(() => {
-		if (location.state === undefined || location.state === null) {
+		if (state === undefined || state === null) {
 			history.push('/posts');
 		}
-	}, [location, history]);
+	}, [state, history]);
 
 	return (
 		<ContainerCustom key={ind}>
 			<img className='logo' src={logoColored} alt='logo'></img>
 			<Top>
 				<Left>
-					<Heading gradient>Hackathon &nbsp;{location?.state}</Heading>
+					<Heading gradient>{state.title}&nbsp;</Heading>
 					<Details>
-						<p>Posted on: 7:30,8th March by @admin</p>
+						<p>
+							Posted on: {format(new Date(state.createdAt), 'h:m,do LLLL')} by @{state.author}
+						</p>
 					</Details>
 				</Left>
 				<Right>
 					<img src={share} alt={share}></img>
 				</Right>
 			</Top>
-			<Center>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae perferendis ipsam et
-				aliquam laboriosam aut adipisci, beatae asperiores itaque repudiandae, voluptates, explicabo
-				a dicta neque. Perferendis, asperiores tempore! Ab, consequuntur. Lorem ipsum dolor sit amet
-				consectetur adipisicing elit. Vitae dolores eum adipisci! Ipsa minima nostrum laudantium non
-				tempore alias repellendus sed ipsum eveniet? Soluta debitis corrupti totam accusantium ea
-				vero?
-				<br />
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae perferendis ipsam et
-				aliquam laboriosam aut adipisci, beatae asperiores itaque repudiandae, voluptates, explicabo
-				a dicta neque. Perferendis, asperiores tempore! Ab, consequuntur. Lorem ipsum dolor sit amet
-				consectetur adipisicing elit. Vitae dolores eum adipisci! Ipsa minima nostrum laudantium non
-				tempore alias repellendus sed ipsum eveniet? Soluta debitis corrupti totam accusantium ea
-				vero?
-				<br />
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae perferendis ipsam et
-				aliquam laboriosam aut adipisci, beatae asperiores itaque repudiandae, voluptates, explicabo
-				a dicta neque. Perferendis, asperiores tempore! Ab, consequuntur. Lorem ipsum dolor sit amet
-				consectetur adipisicing elit. Vitae dolores eum adipisci! Ipsa minima nostrum laudantium non
-				tempore alias repellendus sed ipsum eveniet? Soluta debitis corrupti totam accusantium ea
-				vero?
-			</Center>
+			<Center>{state.content}</Center>
 			<Bottom>
-				<Button>
-					<img src={link} alt={link}></img>
-					Download attachment
-				</Button>
+				{state.url && (
+					<Button>
+						<img src={link} alt={link}></img>
+						Attachment
+					</Button>
+				)}
 				<img src={share} alt={share}></img>
 			</Bottom>
 		</ContainerCustom>
