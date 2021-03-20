@@ -66,7 +66,7 @@ export default function RegisterForm() {
 					onSubmit={handleSubmit}
 				>
 					{({ errors, touched, values }) => (
-						<FormikForm>
+						<FormikForm style={{ width: '100%' }}>
 							<Box>
 								<FieldContainer>
 									<label htmlFor='regno'>Register Number</label>
@@ -229,8 +229,9 @@ const Box = styled.div`
 	border-radius: 3%;
 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
 
-	@media (max-width: 640px) {
+	@media screen and (max-width: 640px) {
 		min-width: 100%;
+		padding: 2rem 0.5rem;
 		box-shadow: none;
 	}
 `;
