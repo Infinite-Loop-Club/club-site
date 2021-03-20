@@ -4,6 +4,7 @@ export const colors = {
 	tertiary: '#7AADDD',
 	black: '#000',
 	slate: '#3f3d56',
+	lightGrey: '#f7f7f7',
 	grey: '#f2f2f2',
 	white: '#fff',
 	tomato: '#E81224'

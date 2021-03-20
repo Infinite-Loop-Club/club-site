@@ -9,6 +9,7 @@ export { default as male2 } from './male-2.png';
 export { default as male3 } from './male-3.png';
 
 export { default as man } from './man.png';
+export { default as man1 } from './man1.png';
 
 export { default as bookmark } from './bookmark.svg';
 export { default as devStats } from './dev-github.svg';
