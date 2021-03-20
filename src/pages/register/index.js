@@ -185,6 +185,7 @@ export default function RegisterForm() {
 		</>
 	);
 }
+
 const Avatar = styled.img`
 	width: 10rem;
 	margin-right: 2rem;
@@ -250,10 +251,11 @@ const FieldContainer = styled.div`
 		font: inherit;
 		font-size: 1.4rem;
 		margin: 0.5rem auto 3rem auto;
+		height: 3.2em;
 		padding: 0.7rem 1.25rem;
 		border-radius: 0.5rem;
+		background-color: transparent;
 		border: 2px solid transparent;
-		background-color: #f2f2f2;
 		box-shadow: ${props => `1px 1px 10px ${props.theme.primary}50`};
 		transition: all 0.2s;
 
@@ -290,10 +292,10 @@ const Input = styled(Field)`
 	font: inherit;
 	font-size: 1.4rem;
 	margin: 0.5rem auto 1rem auto;
+	height: 3.2em;
 	padding: 0.7rem 1.25rem;
 	border-radius: 0.5rem;
 	border: 2px solid transparent;
-	background-color: ${colors.grey};
 	box-shadow: ${props => `1px 1px 10px ${props.theme.primary}50`};
 	transition: all 0.2s;
 
