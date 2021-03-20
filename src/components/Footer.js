@@ -17,6 +17,7 @@ export default function Footer() {
 						Anna University, Trichy - 620024.
 					</p>
 				</div>
+				<hr />
 				<div className='devs'>
 					<p>Made and maintained with ❤️ by</p>
 					<a href='https://github.com/benxene'>
@@ -42,12 +43,21 @@ const AboutClub = styled.div`
 	max-width: 120rem;
 	margin: auto;
 	display: flex;
-	flex-wrap: wrap;
 	gap: 3rem;
 	justify-content: space-around;
+	align-items: center;
+
+	hr {
+		background-color: ${props => props.theme.grey}01;
+		align-self: stretch;
+	}
 
 	@media (max-width: 120rem) {
 		max-width: 90%;
+	}
+
+	@media (max-width: 900px) {
+		flex-direction: column;
 	}
 
 	@media (max-width: 600px) {
