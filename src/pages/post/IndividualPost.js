@@ -20,7 +20,7 @@ export default function Card({ ind }) {
 			<img className='logo' src={logoColored} alt='logo'></img>
 			<Top>
 				<Left>
-					<Title>Hackathon &nbsp;{location?.state}</Title>
+					<Heading gradient>Hackathon &nbsp;{location?.state}</Heading>
 					<Details>
 						<p>Posted on: 7:30,8th March by @admin</p>
 					</Details>
@@ -95,12 +95,6 @@ const Right = styled.div`
 		width: 2.5rem;
 		cursor: pointer;
 	}
-`;
-
-const Title = styled(Heading)`
-	font-size: 4rem;
-	padding: 0px;
-	text-align: left;
 `;
 
 const Details = styled.div`

@@ -7,7 +7,7 @@ import { meeting, team, devStats, interview } from '../../images';
 export default function Paget() {
 	return (
 		<Container>
-			<Heading>What do we do?</Heading>
+			<Heading gradient>What do we do?</Heading>
 			<InnerContainer>
 				<Feature
 					title='Build a community'

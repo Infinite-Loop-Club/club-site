@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Formik, Form, Field } from 'formik';
 
-import { Button, Footer } from '../../components';
+import { Button, Footer, Heading } from '../../components';
 import { colors } from '../../constants/theme';
 import { male1, male2, male3, female1, female2, female3 } from '../../images';
 import validationSchema from './validationSchema';
@@ -57,7 +57,9 @@ export default function RegisterForm() {
 	return (
 		<>
 			<FormContainer>
-				<h1>Registration</h1>
+				<Heading gradient margin='medium'>
+					Registration
+				</Heading>
 				<Formik
 					initialValues={initialValues}
 					validationSchema={validationSchema}

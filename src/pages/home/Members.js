@@ -6,7 +6,9 @@ import { man } from '../../images';
 export default function Members() {
 	return (
 		<Container>
-			<Heading>Our core members</Heading>
+			<Heading gradient margin='huge'>
+				Our core members
+			</Heading>
 			<CoreBox>
 				<Card imgSrc={man} name='Bheem' position='Vice President' />
 				<Card imgSrc={man} name='Bheem' position='President' isSpecial />
