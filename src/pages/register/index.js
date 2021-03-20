@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Formik, Form, Field } from 'formik';
 
-import { Button, Footer, Heading } from '../../components';
+import { Button, Footer, Heading, BackgroundStripes } from '../../components';
 import { colors } from '../../constants/theme';
 import { male1, male2, male3, female1, female2, female3 } from '../../images';
 import validationSchema from './validationSchema';
@@ -37,16 +37,16 @@ export default function RegisterForm() {
 			return;
 		}
 
-		/*
-		 try {
-		 	await axios.post('/user/new', values);
-		 	 registration successful - handle
-		 	window.open('/', '_self');
-		 } catch (err) {
-		 	 handle the error properly
-		 	console.log(err.response); // {status = HTTP STATUS CODE, data: Defined data {message, error}}
-		 }
-		 */
+		/**
+		try {
+			await axios.post('/user/new', values);
+			//  registration successful - handle
+			window.open('/', '_self');
+		} catch (err) {
+			//  handle the error properly
+			console.log(err.response); // {status = HTTP STATUS CODE, data: Defined data {message, error}}
+		}
+		*/
 	};
 
 	useEffect(() => {
@@ -179,10 +179,7 @@ export default function RegisterForm() {
 						</FormikForm>
 					)}
 				</Formik>
-				<Rect3 />
-				<Rect1 />
-				<Rect2 />
-				<MiddleRect />
+				<BackgroundStripes />
 			</FormContainer>
 			<Footer />
 		</>
@@ -308,25 +305,6 @@ const Input = styled(Field)`
 		box-shadow: ${props => `3px 3px 20px ${props.theme.primary}50`};
 	}
 `;
-const MiddleRect = styled.div`
-	position: absolute;
-	top: 48.2%;
-	left: -6rem;
-	background-color: #0048aa;
-	width: 20rem;
-	height: 1rem;
-	transform: skew(0deg, -15deg);
-	z-index: -1;
-
-	@media (max-width: 1000px) {
-		width: 16rem;
-	}
-
-	@media (max-width: 700px) {
-		display: none;
-	}
-`;
-
 const RadioContainer = styled.div`
 	display: flex;
 	flex-direction: row;
@@ -387,65 +365,6 @@ const RadioGroup = styled.div`
 
 	.radio__group-input:checked ~ .radio__group-label .radio__group-button::after {
 		opacity: 1;
-	}
-`;
-
-const Rect1 = styled.div`
-	position: absolute;
-	top: 45%;
-	left: -6rem;
-	background-color: ${colors.tertiary};
-	width: 20rem;
-	height: 4rem;
-	transform: skew(0deg, -15deg);
-	z-index: -1;
-
-	@media (max-width: 1000px) {
-		width: 16rem;
-	}
-
-	@media (max-width: 700px) {
-		display: none;
-	}
-`;
-
-const Rect2 = styled.div`
-	position: absolute;
-	top: 48%;
-	left: -6rem;
-	background-color: #0295dd;
-	width: 27.5rem;
-	height: 4rem;
-	transform: skew(0deg, -15deg);
-	z-index: -1;
-
-	@media (max-width: 1000px) {
-		width: 20rem;
-		top: 48.4%;
-	}
-
-	@media (max-width: 700px) {
-		display: none;
-	}
-`;
-
-const Rect3 = styled.div`
-	position: absolute;
-	top: 20%;
-	right: -4.3%;
-	background-color: ${colors.primary};
-	width: 27.5rem;
-	height: 4rem;
-	transform: skew(0deg, -15deg);
-	z-index: -1;
-
-	@media (max-width: 1000px) {
-		width: 20rem;
-		top: 25.3%;
-	}
-
-	@media (max-width: 700px) {
-		display: none;
 	}
 `;
 
