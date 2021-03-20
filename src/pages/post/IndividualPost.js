@@ -137,7 +137,6 @@ const Button = styled.button`
 	color: ${p => p.theme.black};
 	font-weight: 600;
 	font-size: 1.2rem;
-	margin-right: 2em;
 	font-family: inherit;
 
 	img {

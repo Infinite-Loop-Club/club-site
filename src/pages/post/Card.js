@@ -41,7 +41,7 @@ const Container = styled.div`
 	border-radius: 1em;
 
 	@media only screen and (max-width: 700px) {
-		padding: 1em;
+		padding: 1.5em;
 		margin: 2em;
 	}
 `;
@@ -87,8 +87,12 @@ const Details = styled.div`
 const Center = styled.div`
 	font-size: 1.5rem;
 `;
+
 const Bottom = styled.div`
 	margin-top: 1em;
+	display: flex;
+	align-items: center;
+
 	img {
 		display: inline-block;
 		width: 3rem;
