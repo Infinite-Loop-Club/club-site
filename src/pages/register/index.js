@@ -147,8 +147,8 @@ export default function RegisterForm() {
 										id='phn_num'
 										name='phoneNumber'
 										type='tel'
-										placeholder='4444444444'
-										pattern='[1-9]{1} [0-9]{9}'
+										placeholder='6666666666'
+										pattern='[1-9]{1}[0-9]{9}'
 									/>
 									{errors.phoneNumber && touched.phoneNumber ? (
 										<Error>{errors.phoneNumber}</Error>
@@ -189,12 +189,11 @@ const Avatar = styled.img`
 	width: 10rem;
 	margin-right: 2rem;
 	border-radius: 50%;
-	background-color: ${props => (props.active ? `${colors.primary}` : 'none')};
+	background-color: ${props => (props.active ? `${colors.primary} !important` : 'none')};
 	transition: all 0.2s;
 
 	&:hover {
-		background-color: ${colors.primary};
-		box-shadow: ${props => `3px 3px 20px ${props.theme.secondary}`};
+		background-color: ${colors.slate}50;
 		cursor: pointer;
 	}
 
