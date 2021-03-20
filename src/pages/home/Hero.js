@@ -1,9 +1,9 @@
 import { useRef, useEffect, useState } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import { Button } from '../../components';
-import code from '../../images/hero.svg';
-import LogoImage from '../../images/logo_white_vector.png';
+
+import { logoWhite, hero } from '../../images';
 
 const text =
 	"We're here to dig out your talents and find out what you're passionate about, let's join together and grow together.";
@@ -23,11 +23,12 @@ export default function Home() {
 	function activateInterval() {
 		intervalRef.current = setInterval(() => {
 			if (countRef.current > text.length) {
+				contentRef.current.style = 'position: static';
 				setShowButton(true);
 				return;
 			}
 			writeText();
-		}, 100);
+		}, 80);
 	}
 
 	useEffect(() => {
@@ -44,23 +45,35 @@ export default function Home() {
 			<div className='container'>
 				<div className='hero__content'>
 					<div>
-						<img className='logo' src={LogoImage} alt='logo' />
+						<img className='logo' src={logoWhite} alt='logo' />
 						<h1>Infinite Loop Club</h1>
 						<span>of Anna University Trichy</span>
-						<p ref={contentRef}></p>
+						<div className='animated'>
+							<p ref={contentRef}></p>
 
-						{showButton && (
-							<Button component='link' to='/register'>
-								Register
-							</Button>
-						)}
+							{showButton && (
+								<div className='hero-btn'>
+									<Button component='link' to='/register'>
+										Register
+									</Button>
+								</div>
+							)}
+						</div>
 					</div>
-					<img src={code} alt='Code development'></img>
+					<img src={hero} alt='Code development'></img>
 				</div>
 			</div>
 		</Hero>
 	);
 }
+
+const fade = keyframes`
+	from {
+		opacity: 0;
+	} to {
+		opacity: 1;
+	}
+`;
 
 const Hero = styled.div`
 	min-height: 100vh;
@@ -104,7 +117,7 @@ const Hero = styled.div`
 		@media (max-width: 750px) {
 			grid-template-columns: 1fr;
 
-			div {
+			& > div {
 				place-self: flex-start;
 				grid-row: 1/2;
 				margin-top: 12rem;
@@ -125,6 +138,10 @@ const Hero = styled.div`
 			font-size: 1.3rem;
 		}
 
+		.animated {
+			min-height: 10em;
+		}
+
 		p {
 			margin: 2rem 0;
 		}
@@ -132,5 +149,9 @@ const Hero = styled.div`
 		& img {
 			max-width: 100%;
 		}
+	}
+
+	.hero-btn {
+		animation: ${fade} 0.4s linear;
 	}
 `;

@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
-import { Card, Heading, Footer } from '../components';
-import man from '../images/man.png';
+import { Card, Heading, Footer, Container } from '../components';
+import { man } from '../images';
 
 export default function About() {
 	return (
 		<>
-			<section>
-				<TitleContainer>
-					<Heading>About Us</Heading>
-				</TitleContainer>
+			<Container>
+				<Heading gradient margin='huge'>
+					About Us
+				</Heading>
 				<TeamContainer>
 					<h2>Management Team :</h2>
 					<InnerContainer>
@@ -50,15 +50,11 @@ export default function About() {
 						<Card imgSrc={man} name='man' position='Tech Lead' />
 					</InnerContainer>
 				</TeamContainer>
-			</section>
+			</Container>
 			<Footer />
 		</>
 	);
 }
-
-const TitleContainer = styled.div`
-	text-align: center;
-`;
 
 const TeamContainer = styled.div`
 	padding: 1em;

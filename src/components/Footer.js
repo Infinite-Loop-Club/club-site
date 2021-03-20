@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import { colors } from '../constants/theme';
-import LogoImage from '../images/logo_white_vector.png';
-import BenxeneLogo from '../images/benxene.png'
+
+import { benxene, logoWhite } from '../images';
 
 export default function Footer() {
 	return (
 		<Div>
 			<AboutClub>
 				<div className='club-and-clg'>
-					<img src={LogoImage} alt='logo' />
+					<img src={logoWhite} alt='logo' />
 					<p>
 						University College of Engg.,
 						<br />
@@ -17,16 +17,16 @@ export default function Footer() {
 						Anna University, Trichy - 620024.
 					</p>
 				</div>
+				<hr />
 				<div className='devs'>
 					<p>Made and maintained with ❤️ by</p>
 					<a href='https://github.com/benxene'>
-						<img src={BenxeneLogo} alt='benxene' />
+						<img src={benxene} alt='benxene' />
 					</a>
 				</div>
 			</AboutClub>
 			<Copyright>
-					Copyrights &copy; {new Date().getFullYear()}, Infinite Loop Club of Anna University,
-					Trichy
+				Copyrights &copy; {new Date().getFullYear()}, Infinite Loop Club of Anna University, Trichy
 			</Copyright>
 		</Div>
 	);
@@ -43,12 +43,21 @@ const AboutClub = styled.div`
 	max-width: 120rem;
 	margin: auto;
 	display: flex;
-	flex-wrap: wrap;
 	gap: 3rem;
 	justify-content: space-around;
+	align-items: center;
+
+	hr {
+		background-color: ${props => props.theme.grey}01;
+		align-self: stretch;
+	}
 
 	@media (max-width: 120rem) {
 		max-width: 90%;
+	}
+
+	@media (max-width: 900px) {
+		flex-direction: column;
 	}
 
 	@media (max-width: 600px) {
@@ -75,7 +84,7 @@ const AboutClub = styled.div`
 		img {
 			margin: auto;
 			width: 15rem;
-		}		
+		}
 	}
 `;
 

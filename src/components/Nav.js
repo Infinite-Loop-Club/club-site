@@ -63,7 +63,7 @@ const Nav = styled.div`
 			font-weight: 300;
 			color: ${p => p.theme.white};
 			text-transform: uppercase;
-			padding: 1rem 2rem;
+			padding: 1rem 3rem;
 
 			background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
 
@@ -109,7 +109,7 @@ const Hamburger = styled.div`
 	right: 6rem;
 	background-color: ${p => p.theme.white};
 	z-index: 2000;
-	box-shadow: ${p => `0 1rem 3rem rgba(0, 0, 0, 0.2)`};
+	box-shadow: ${p => `0 0 3rem ${p.theme.slate}30`};
 
 	text-align: center;
 	cursor: pointer;

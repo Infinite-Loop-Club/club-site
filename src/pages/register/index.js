@@ -1,16 +1,11 @@
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Formik, Form, Field } from 'formik';
-import axios from 'axios';
 
-import { Button, Footer } from '../../components';
+import { Button, Footer, Heading, BackgroundStripes } from '../../components';
 import { colors } from '../../constants/theme';
-import male1 from '../../images/male-1.png';
-import male2 from '../../images/male-2.png';
-import male3 from '../../images/male-3.png';
-import female1 from '../../images/female-1.png';
-import female2 from '../../images/female-2.png';
-import female3 from '../../images/female-3.png';
+import { male1, male2, male3, female1, female2, female3 } from '../../images';
 import validationSchema from './validationSchema';
 
 export default function RegisterForm() {
@@ -42,16 +37,16 @@ export default function RegisterForm() {
 			return;
 		}
 
-		/*
-		 try {
-		 	await axios.post('/user/new', values);
-		 	 registration successful - handle
-		 	window.open('/', '_self');
-		 } catch (err) {
-		 	 handle the error properly
-		 	console.log(err.response); // {status = HTTP STATUS CODE, data: Defined data {message, error}}
-		 } 
-		 */
+		/**
+		try {
+			await axios.post('/user/new', values);
+			//  registration successful - handle
+			window.open('/', '_self');
+		} catch (err) {
+			//  handle the error properly
+			console.log(err.response); // {status = HTTP STATUS CODE, data: Defined data {message, error}}
+		}
+		*/
 	};
 
 	useEffect(() => {
@@ -62,7 +57,9 @@ export default function RegisterForm() {
 	return (
 		<>
 			<FormContainer>
-				<h1>Registration</h1>
+				<Heading gradient margin='medium'>
+					Registration
+				</Heading>
 				<Formik
 					initialValues={initialValues}
 					validationSchema={validationSchema}
@@ -150,8 +147,8 @@ export default function RegisterForm() {
 										id='phn_num'
 										name='phoneNumber'
 										type='tel'
-										placeholder='4444444444'
-										pattern='[1-9]{1} [0-9]{9}'
+										placeholder='6666666666'
+										pattern='[1-9]{1}[0-9]{9}'
 									/>
 									{errors.phoneNumber && touched.phoneNumber ? (
 										<Error>{errors.phoneNumber}</Error>
@@ -182,25 +179,22 @@ export default function RegisterForm() {
 						</FormikForm>
 					)}
 				</Formik>
-				<Rect3 />
-				<Rect1 />
-				<Rect2 />
-				<MiddleRect />
+				<BackgroundStripes />
 			</FormContainer>
 			<Footer />
 		</>
 	);
 }
+
 const Avatar = styled.img`
 	width: 10rem;
 	margin-right: 2rem;
 	border-radius: 50%;
-	background-color: ${props => (props.active ? `${colors.primary}` : 'none')};
+	background-color: ${props => (props.active ? `${colors.primary} !important` : 'none')};
 	transition: all 0.2s;
 
 	&:hover {
-		background-color: ${colors.primary};
-		box-shadow: ${props => `3px 3px 20px ${props.theme.secondary}`};
+		background-color: ${colors.slate}50;
 		cursor: pointer;
 	}
 
@@ -257,10 +251,11 @@ const FieldContainer = styled.div`
 		font: inherit;
 		font-size: 1.4rem;
 		margin: 0.5rem auto 3rem auto;
+		height: 3.2em;
 		padding: 0.7rem 1.25rem;
 		border-radius: 0.5rem;
+		background-color: transparent;
 		border: 2px solid transparent;
-		background-color: #f2f2f2;
 		box-shadow: ${props => `1px 1px 10px ${props.theme.primary}50`};
 		transition: all 0.2s;
 
@@ -297,10 +292,10 @@ const Input = styled(Field)`
 	font: inherit;
 	font-size: 1.4rem;
 	margin: 0.5rem auto 1rem auto;
+	height: 3.2em;
 	padding: 0.7rem 1.25rem;
 	border-radius: 0.5rem;
 	border: 2px solid transparent;
-	background-color: ${colors.grey};
 	box-shadow: ${props => `1px 1px 10px ${props.theme.primary}50`};
 	transition: all 0.2s;
 
@@ -311,25 +306,6 @@ const Input = styled(Field)`
 		box-shadow: ${props => `3px 3px 20px ${props.theme.primary}50`};
 	}
 `;
-const MiddleRect = styled.div`
-	position: absolute;
-	top: 48.2%;
-	left: -6rem;
-	background-color: #0048aa;
-	width: 20rem;
-	height: 1rem;
-	transform: skew(0deg, -15deg);
-	z-index: -1;
-
-	@media (max-width: 1000px) {
-		width: 16rem;
-	}
-
-	@media (max-width: 700px) {
-		display: none;
-	}
-`;
-
 const RadioContainer = styled.div`
 	display: flex;
 	flex-direction: row;
@@ -390,65 +366,6 @@ const RadioGroup = styled.div`
 
 	.radio__group-input:checked ~ .radio__group-label .radio__group-button::after {
 		opacity: 1;
-	}
-`;
-
-const Rect1 = styled.div`
-	position: absolute;
-	top: 45%;
-	left: -6rem;
-	background-color: ${colors.tertiary};
-	width: 20rem;
-	height: 4rem;
-	transform: skew(0deg, -15deg);
-	z-index: -1;
-
-	@media (max-width: 1000px) {
-		width: 16rem;
-	}
-
-	@media (max-width: 700px) {
-		display: none;
-	}
-`;
-
-const Rect2 = styled.div`
-	position: absolute;
-	top: 48%;
-	left: -6rem;
-	background-color: #0295dd;
-	width: 27.5rem;
-	height: 4rem;
-	transform: skew(0deg, -15deg);
-	z-index: -1;
-
-	@media (max-width: 1000px) {
-		width: 20rem;
-		top: 48.4%;
-	}
-
-	@media (max-width: 700px) {
-		display: none;
-	}
-`;
-
-const Rect3 = styled.div`
-	position: absolute;
-	top: 20%;
-	right: -4.3%;
-	background-color: ${colors.primary};
-	width: 27.5rem;
-	height: 4rem;
-	transform: skew(0deg, -15deg);
-	z-index: -1;
-
-	@media (max-width: 1000px) {
-		width: 20rem;
-		top: 25.3%;
-	}
-
-	@media (max-width: 700px) {
-		display: none;
 	}
 `;
 

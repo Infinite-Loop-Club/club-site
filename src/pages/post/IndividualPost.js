@@ -1,11 +1,9 @@
-import { useHistory, useLocation } from 'react-router';
 import { useEffect } from 'react';
+import { useHistory, useLocation } from 'react-router';
 import styled from 'styled-components';
 import { Container, Heading } from '../../components';
 
-import share from '../../images/share.svg';
-import link from '../../images/link.svg';
-import logo from '../../images/logo_color_vector.svg';
+import { share, link, logoColored } from '../../images';
 
 export default function Card({ ind }) {
 	const location = useLocation();
@@ -19,10 +17,10 @@ export default function Card({ ind }) {
 
 	return (
 		<ContainerCustom key={ind}>
-			<img className='logo' src={logo} alt='logo'></img>
+			<img className='logo' src={logoColored} alt='logo'></img>
 			<Top>
 				<Left>
-					<Title>Hackathon &nbsp;{location?.state}</Title>
+					<Heading gradient>Hackathon &nbsp;{location?.state}</Heading>
 					<Details>
 						<p>Posted on: 7:30,8th March by @admin</p>
 					</Details>
@@ -99,12 +97,6 @@ const Right = styled.div`
 	}
 `;
 
-const Title = styled(Heading)`
-	font-size: 4rem;
-	padding: 0px;
-	text-align: left;
-`;
-
 const Details = styled.div`
 	p {
 		font-size: 1.2rem;
@@ -139,7 +131,6 @@ const Button = styled.button`
 	color: ${p => p.theme.black};
 	font-weight: 600;
 	font-size: 1.2rem;
-	margin-right: 2em;
 	font-family: inherit;
 
 	img {

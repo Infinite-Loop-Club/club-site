@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { Button, Container } from '../../components';
+import { Button, Container, Heading } from '../../components';
 import { colors } from '../../constants/theme';
 
 export default function Cta() {
 	return (
 		<Div>
 			<Container>
-				<h1>Join Today</h1>
+				<Heading margin='small'>Join Today</Heading>
 				<p>
 					What are you waiting for? Register now and we're sure you would cherish the entire journey
 					with us.
