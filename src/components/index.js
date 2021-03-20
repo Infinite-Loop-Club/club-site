@@ -1,4 +1,4 @@
-export { default as AboutCard } from './aboutCard';
+export { default as AboutCard } from './AboutCard';
 export { default as Button } from './Button';
 export { default as BackgroundStripes } from './BackgroundStripes';
 export { default as Card } from './Card';
@@ -6,3 +6,4 @@ export { default as Container } from './Container';
 export { default as Footer } from './Footer';
 export { default as Heading } from './Heading';
 export { default as NavigationBar } from './Nav';
+export { default as TeamDetails } from './TeamDetails';

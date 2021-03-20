@@ -7,9 +7,9 @@ export default function AboutCard({ imgSrc, name }) {
 			<img src={imgSrc} alt={name}></img>
 			<Content>
 				<h2>Krishna Moorthy</h2>
-				<p>III CSE</p>
-				<p>Tech Lead</p>
-				<p>"call it as things pa"</p>
+				<Text>III CSE</Text>
+				<Text>Tech Lead</Text>
+				<Text bold>"call it as things pa"</Text>
 				<Rect1 />
 				<Rect2 />
 				<Triangle />
@@ -30,6 +30,7 @@ const Container = styled.div`
 	background-color: ${props => props.theme.lightGrey};
 	border-radius: 2rem;
 	z-index: -2;
+	overflow: hidden;
 
 	& img {
 		object-fit: cover;
@@ -71,13 +72,18 @@ const Rect2 = styled.div`
 	z-index: -1;
 `;
 
+const Text = styled.p`
+	font-size: ${props => (props.bold ? '1.3rem' : '1.2rem')};
+	font-weight: ${props => (props.bold ? '700' : '400')};
+`;
+
 const Triangle = styled.div`
 	position: absolute;
 	bottom: 0;
 	right: 0;
 	background-color: ${props => `${props.theme.tertiary}80`};
 	clip-path: polygon(100% 0, 0 100%, 100% 100%);
-	width: 30rem;
-	height: 13rem;
+	width: 25rem;
+	height: 10rem;
 	z-index: -1;
 `;
