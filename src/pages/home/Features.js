@@ -2,10 +2,7 @@ import styled from 'styled-components';
 import { Container, Heading } from '../../components';
 import Feature from './FeatureItem';
 
-import meeting from '../../images/Team meeting.svg';
-import team from '../../images/Project team.svg';
-import developer from '../../images/Developer activity.svg';
-import interview from '../../images/Job Interview.svg';
+import { meeting, team, devStats, interview } from '../../images';
 
 export default function Paget() {
 	return (
@@ -26,7 +23,7 @@ export default function Paget() {
 
 				<Feature
 					title='Learn new things'
-					imgSrc={developer}
+					imgSrc={devStats}
 					para="We all know life's all about learning and experiencing, here we keep you engaged in knowing new things which includes all fields ranging from art to tech."
 				></Feature>
 

@@ -1,11 +1,9 @@
-import { useHistory, useLocation } from 'react-router';
 import { useEffect } from 'react';
+import { useHistory, useLocation } from 'react-router';
 import styled from 'styled-components';
 import { Container, Heading } from '../../components';
 
-import share from '../../images/share.svg';
-import link from '../../images/link.svg';
-import logo from '../../images/logo_color_vector.svg';
+import { share, link, logoColored } from '../../images';
 
 export default function Card({ ind }) {
 	const location = useLocation();
@@ -19,7 +17,7 @@ export default function Card({ ind }) {
 
 	return (
 		<ContainerCustom key={ind}>
-			<img className='logo' src={logo} alt='logo'></img>
+			<img className='logo' src={logoColored} alt='logo'></img>
 			<Top>
 				<Left>
 					<Title>Hackathon &nbsp;{location?.state}</Title>

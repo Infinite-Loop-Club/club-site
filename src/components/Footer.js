@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import { colors } from '../constants/theme';
-import LogoImage from '../images/logo_white_vector.png';
-import BenxeneLogo from '../images/benxene.png'
+
+import { benxene, logoWhite } from '../images';
 
 export default function Footer() {
 	return (
 		<Div>
 			<AboutClub>
 				<div className='club-and-clg'>
-					<img src={LogoImage} alt='logo' />
+					<img src={logoWhite} alt='logo' />
 					<p>
 						University College of Engg.,
 						<br />
@@ -20,13 +20,12 @@ export default function Footer() {
 				<div className='devs'>
 					<p>Made and maintained with ❤️ by</p>
 					<a href='https://github.com/benxene'>
-						<img src={BenxeneLogo} alt='benxene' />
+						<img src={benxene} alt='benxene' />
 					</a>
 				</div>
 			</AboutClub>
 			<Copyright>
-					Copyrights &copy; {new Date().getFullYear()}, Infinite Loop Club of Anna University,
-					Trichy
+				Copyrights &copy; {new Date().getFullYear()}, Infinite Loop Club of Anna University, Trichy
 			</Copyright>
 		</Div>
 	);
@@ -75,7 +74,7 @@ const AboutClub = styled.div`
 		img {
 			margin: auto;
 			width: 15rem;
-		}		
+		}
 	}
 `;
 

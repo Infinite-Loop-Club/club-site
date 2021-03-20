@@ -1,7 +1,7 @@
 import { useHistory } from 'react-router';
 import styled from 'styled-components';
 
-import share from '../../images/share.svg';
+import { share } from '../../images';
 
 export default function Card({ ind }) {
 	const history = useHistory();

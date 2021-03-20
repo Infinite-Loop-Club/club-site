@@ -2,8 +2,8 @@ import { useRef, useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 import { Button } from '../../components';
-import code from '../../images/hero.svg';
-import LogoImage from '../../images/logo_white_vector.png';
+
+import { logoWhite, hero } from '../../images';
 
 const text =
 	"We're here to dig out your talents and find out what you're passionate about, let's join together and grow together.";
@@ -45,7 +45,7 @@ export default function Home() {
 			<div className='container'>
 				<div className='hero__content'>
 					<div>
-						<img className='logo' src={LogoImage} alt='logo' />
+						<img className='logo' src={logoWhite} alt='logo' />
 						<h1>Infinite Loop Club</h1>
 						<span>of Anna University Trichy</span>
 						<div className='animated'>
@@ -60,7 +60,7 @@ export default function Home() {
 							)}
 						</div>
 					</div>
-					<img src={code} alt='Code development'></img>
+					<img src={hero} alt='Code development'></img>
 				</div>
 			</div>
 		</Hero>

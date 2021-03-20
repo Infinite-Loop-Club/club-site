@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { Card, Heading, Footer } from '../components';
-import man from '../images/man.png';
+import { man } from '../images';
 
 export default function About() {
 	return (

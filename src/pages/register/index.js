@@ -1,16 +1,11 @@
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Formik, Form, Field } from 'formik';
-import axios from 'axios';
 
 import { Button, Footer } from '../../components';
 import { colors } from '../../constants/theme';
-import male1 from '../../images/male-1.png';
-import male2 from '../../images/male-2.png';
-import male3 from '../../images/male-3.png';
-import female1 from '../../images/female-1.png';
-import female2 from '../../images/female-2.png';
-import female3 from '../../images/female-3.png';
+import { male1, male2, male3, female1, female2, female3 } from '../../images';
 import validationSchema from './validationSchema';
 
 export default function RegisterForm() {
@@ -50,7 +45,7 @@ export default function RegisterForm() {
 		 } catch (err) {
 		 	 handle the error properly
 		 	console.log(err.response); // {status = HTTP STATUS CODE, data: Defined data {message, error}}
-		 } 
+		 }
 		 */
 	};
 
