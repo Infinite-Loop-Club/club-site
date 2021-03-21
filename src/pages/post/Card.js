@@ -1,34 +1,31 @@
 import { useHistory } from 'react-router';
 import styled from 'styled-components';
+import { format } from 'date-fns';
 
-import { share } from '../../images';
+import Share from './Share';
 
-export default function Card({ ind }) {
+export default function Card({ ind, value }) {
 	const history = useHistory();
 
 	const handleClick = () => {
 		history.push({
 			pathname: '/post/view',
-			state: ind + 1
+			state: value
 		});
 	};
 
 	return (
 		<Container key={ind}>
-			<Top>
-				<Title onClick={handleClick}>Hackathon</Title>
+			<Top onClick={handleClick}>
+				<Title>{value.title}</Title>
 				<Details>
-					<p>Posted on: 7:30,8th March</p>
-					<p>by admin</p>
+					<p>Posted on: {format(new Date(value.createdAt), 'h:m,do LLLL')}</p>
+					<p>by {value.author}</p>
 				</Details>
 			</Top>
-			<Center>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae perferendis ipsam et
-				aliquam laboriosam aut adipisci, beatae asperiores itaque repudiandae, voluptates, explicabo
-				a dicta neque.
-			</Center>
+			<Center onClick={handleClick}>{value.description}</Center>
 			<Bottom>
-				<img src={share} alt={share}></img>
+				<Share value={value} />
 			</Bottom>
 		</Container>
 	);
@@ -89,13 +86,5 @@ const Center = styled.div`
 `;
 
 const Bottom = styled.div`
-	margin-top: 1em;
-	display: flex;
-	align-items: center;
-
-	img {
-		display: inline-block;
-		width: 3rem;
-		cursor: pointer;
-	}
+	margin-top: 1.5em;
 `;
