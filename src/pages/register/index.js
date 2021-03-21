@@ -2,11 +2,14 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Formik, Form, Field } from 'formik';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { Button, Footer, Heading, BackgroundStripes } from '../../components';
 import { colors } from '../../constants/theme';
 import { male1, male2, male3, female1, female2, female3 } from '../../images';
 import validationSchema from './validationSchema';
+import { useHistory } from 'react-router';
 
 export default function RegisterForm() {
 	const [active, setActive] = useState(null);
@@ -31,22 +34,28 @@ export default function RegisterForm() {
 		{ url: female3, gender: 'female', id: 'female3' }
 	];
 
+	const history = useHistory();
+
 	const handleSubmit = async (values, action) => {
 		if (!active || active?.gender !== values.gender) {
 			setAvatarError(true);
 			return;
 		}
 
-		/**
 		try {
-			await axios.post('/user/new', values);
-			//  registration successful - handle
-			window.open('/', '_self');
+			toast('Loading ...', {
+				autoClose: false,
+				closeButton: false,
+				closeOnClick: false,
+				draggable: false
+			});
+			const res = await axios.post('/user/new', values);
+			history.push({ pathname: '/member', state: res.data });
 		} catch (err) {
-			//  handle the error properly
-			console.log(err.response); // {status = HTTP STATUS CODE, data: Defined data {message, error}}
+			toast.error(err.response.data.message);
+			// console.log(err.response);
+			// {status = HTTP STATUS CODE, data: Defined data {message, error}}
 		}
-		*/
 	};
 
 	useEffect(() => {
@@ -66,7 +75,7 @@ export default function RegisterForm() {
 					onSubmit={handleSubmit}
 				>
 					{({ errors, touched, values }) => (
-						<FormikForm style={{ width: '100%' }}>
+						<FormikForm>
 							<Box>
 								<FieldContainer>
 									<label htmlFor='regno'>Register Number</label>
@@ -180,6 +189,13 @@ export default function RegisterForm() {
 					)}
 				</Formik>
 				<BackgroundStripes />
+				<ToastContainer
+					position='bottom-center'
+					autoClose={5000}
+					pauseOnFocusLoss
+					draggable={false}
+					pauseOnHover
+				/>
 			</FormContainer>
 			<Footer />
 		</>
@@ -283,6 +299,7 @@ const FormContainer = styled.div`
 
 const FormikForm = styled(Form)`
 	display: flex;
+	width: 100%;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;

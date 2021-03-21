@@ -4,10 +4,25 @@ import { exportComponentAsPNG } from 'react-component-export-image';
 import { BackgroundStripes, Button, Heading } from '../../components';
 import { fonts } from '../../constants/theme';
 import { logoTranslucent, male2 } from '../../images';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import { useHistory, useLocation } from 'react-router';
 
 export default function MembershipCard() {
 	const membershipCard = useRef();
+	const location = useLocation();
+	const history = useHistory();
+
+	const {
+		state: {
+			data: { name, registerNumber, email }
+		}
+	} = location;
+
+	useEffect(() => {
+		if (!location.state) {
+			history.push('/');
+		}
+	}, [history, location]);
 
 	return (
 		<SuccessPage>
@@ -20,9 +35,9 @@ export default function MembershipCard() {
 					<figure>
 						<img src={male2} alt='avatar' />
 					</figure>
-					<h4>Krishna Moorthy</h4>
-					<p>810018104041</p>
-					<p className='email'>akrishnamoorthy007@gmail.com</p>
+					<h4>{name}</h4>
+					<p>{registerNumber}</p>
+					<p className='email'>{email}</p>
 				</div>
 				<p className='membership-number'>#00012</p>
 			</Card>
