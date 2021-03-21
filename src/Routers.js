@@ -3,6 +3,7 @@ import { Switch, Route, useLocation } from 'react-router-dom';
 import { NavigationBar } from './components';
 
 import { Home, About, Register, Post, IndividualPost } from './pages';
+import MembershipCard from './pages/register/membership-card';
 
 export default function AppRouter() {
 	const { pathname } = useLocation();
@@ -20,6 +21,7 @@ export default function AppRouter() {
 				<Route path='/about-us' exact component={About} />
 				<Route path='/posts' exact component={Post} />
 				<Route path='/post/view' exact component={IndividualPost} />
+				<Route path='/member' component={MembershipCard} />
 				<Route path='/' component={Home} />
 			</Switch>
 		</>

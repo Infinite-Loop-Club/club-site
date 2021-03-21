@@ -2,10 +2,10 @@ export const colors = {
 	primary: '#0282FB',
 	secondary: '#02EF51',
 	tertiary: '#7AADDD',
-	black: '#000',
+	black: '#000000',
 	slate: '#3f3d56',
 	grey: '#f2f2f2',
-	white: '#fff',
+	white: '#ffffff',
 	tomato: '#E81224'
 };
 

@@ -1,16 +1,20 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Formik, Form, Field } from 'formik';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { Button, Footer, Heading, BackgroundStripes } from '../../components';
 import { colors } from '../../constants/theme';
 import { male1, male2, male3, female1, female2, female3 } from '../../images';
 import validationSchema from './validationSchema';
+import { useHistory } from 'react-router';
 
 export default function RegisterForm() {
 	const [active, setActive] = useState(null);
 	const [avatarError, setAvatarError] = useState(false);
+	const toastId = useRef();
 
 	const initialValues = {
 		name: '',
@@ -31,22 +35,29 @@ export default function RegisterForm() {
 		{ url: female3, gender: 'female', id: 'female3' }
 	];
 
+	const history = useHistory();
+
 	const handleSubmit = async (values, action) => {
 		if (!active || active?.gender !== values.gender) {
 			setAvatarError(true);
 			return;
 		}
 
-		/**
 		try {
-			await axios.post('/user/new', values);
-			//  registration successful - handle
-			window.open('/', '_self');
+			toastId.current = toast('Loading ...', {
+				autoClose: false,
+				closeButton: false,
+				closeOnClick: false,
+				draggable: false
+			});
+			const res = await axios.post('/user/new', { ...values, imageUrl: active.url });
+			history.push({ pathname: '/member', state: res.data });
 		} catch (err) {
-			//  handle the error properly
-			console.log(err.response); // {status = HTTP STATUS CODE, data: Defined data {message, error}}
+			toast.dismiss(toastId.current);
+			toast.error(err.response.data.message);
+			// console.log(err.response);
+			// {status = HTTP STATUS CODE, data: Defined data {message, error}}
 		}
-		*/
 	};
 
 	useEffect(() => {
@@ -180,6 +191,13 @@ export default function RegisterForm() {
 					)}
 				</Formik>
 				<BackgroundStripes />
+				<ToastContainer
+					position='bottom-center'
+					autoClose={5000}
+					pauseOnFocusLoss
+					draggable={false}
+					pauseOnHover
+				/>
 			</FormContainer>
 			<Footer />
 		</>
@@ -229,8 +247,9 @@ const Box = styled.div`
 	border-radius: 3%;
 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
 
-	@media (max-width: 640px) {
+	@media screen and (max-width: 640px) {
 		min-width: 100%;
+		padding: 2rem 0.5rem;
 		box-shadow: none;
 	}
 `;
@@ -282,6 +301,7 @@ const FormContainer = styled.div`
 
 const FormikForm = styled(Form)`
 	display: flex;
+	width: 100%;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
