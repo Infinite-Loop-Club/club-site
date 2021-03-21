@@ -5,4 +5,3 @@ export { default as Container } from './Container';
 export { default as Footer } from './Footer';
 export { default as Heading } from './Heading';
 export { default as NavigationBar } from './Nav';
-export { default as TeamDetails } from '../pages/about/TeamDetails';

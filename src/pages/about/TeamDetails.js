@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
-import { AboutCard, Container } from '../../components';
+import { Container } from '../../components';
 import { man1 } from '../../images';
+import AboutCard from './AboutCard';
 
 export default function TeamDetails({ teamName, img }) {
 	return (
