@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Formik, Form, Field } from 'formik';
 import { ToastContainer, toast } from 'react-toastify';
@@ -14,6 +14,7 @@ import { useHistory } from 'react-router';
 export default function RegisterForm() {
 	const [active, setActive] = useState(null);
 	const [avatarError, setAvatarError] = useState(false);
+	const toastId = useRef();
 
 	const initialValues = {
 		name: '',
@@ -43,7 +44,7 @@ export default function RegisterForm() {
 		}
 
 		try {
-			toast('Loading ...', {
+			toastId.current = toast('Loading ...', {
 				autoClose: false,
 				closeButton: false,
 				closeOnClick: false,
@@ -52,6 +53,7 @@ export default function RegisterForm() {
 			const res = await axios.post('/user/new', { ...values, imageUrl: active.url });
 			history.push({ pathname: '/member', state: res.data });
 		} catch (err) {
+			toast.dismiss(toastId.current);
 			toast.error(err.response.data.message);
 			// console.log(err.response);
 			// {status = HTTP STATUS CODE, data: Defined data {message, error}}
