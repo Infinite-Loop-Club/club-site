@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import { format } from 'date-fns';
 
 import { Container, Heading } from '../../components';
-import { share, link, logoColored } from '../../images';
+import { link, logoColored } from '../../images';
+import Share from './Share';
 
 export default function Card({ ind }) {
 	const { state } = useLocation();
@@ -28,9 +29,6 @@ export default function Card({ ind }) {
 						</p>
 					</Details>
 				</Left>
-				<Right>
-					<img src={share} alt={share}></img>
-				</Right>
 			</Top>
 			<Center>{state.content}</Center>
 			<Bottom>
@@ -40,7 +38,7 @@ export default function Card({ ind }) {
 						Attachment
 					</Button>
 				)}
-				<img src={share} alt={share}></img>
+				<Share value={state} />
 			</Bottom>
 		</ContainerCustom>
 	);
@@ -71,14 +69,6 @@ const Top = styled.div`
 
 const Left = styled.div`
 	text-align: left;
-`;
-
-const Right = styled.div`
-	img {
-		display: inline-block;
-		width: 2.5rem;
-		cursor: pointer;
-	}
 `;
 
 const Details = styled.div`

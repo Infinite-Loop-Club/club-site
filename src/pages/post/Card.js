@@ -2,7 +2,7 @@ import { useHistory } from 'react-router';
 import styled from 'styled-components';
 import { format } from 'date-fns';
 
-import { share } from '../../images';
+import Share from './Share';
 
 export default function Card({ ind, value }) {
 	const history = useHistory();
@@ -25,7 +25,7 @@ export default function Card({ ind, value }) {
 			</Top>
 			<Center onClick={handleClick}>{value.description}</Center>
 			<Bottom>
-				<img src={share} alt={share}></img>
+				<Share value={value} />
 			</Bottom>
 		</Container>
 	);
@@ -86,13 +86,5 @@ const Center = styled.div`
 `;
 
 const Bottom = styled.div`
-	margin-top: 1em;
-	display: flex;
-	align-items: center;
-
-	img {
-		display: inline-block;
-		width: 3rem;
-		cursor: pointer;
-	}
+	margin-top: 1.5em;
 `;
