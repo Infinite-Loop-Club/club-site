@@ -15,7 +15,6 @@ export default function AppRouter() {
 	return (
 		<>
 			<NavigationBar />
-			<NavigationBar />
 			<Switch>
 				<Route path='/register' exact component={Register} />
 				<Route path='/about-us' exact component={About} />
