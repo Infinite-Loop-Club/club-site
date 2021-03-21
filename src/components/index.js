@@ -1,4 +1,3 @@
-export { default as AboutCard } from '../pages/about/AboutCard';
 export { default as Button } from './Button';
 export { default as BackgroundStripes } from './BackgroundStripes';
 export { default as Card } from './Card';
