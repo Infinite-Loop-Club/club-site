@@ -8,9 +8,9 @@ export default function TeamDetails({ teamName, img }) {
 		<Container>
 			<Teamname>{teamName}</Teamname>
 			<TeamContainer>
-				<AboutCard imgSrc={man1} />
-				<AboutCard imgSrc={man1} />
-				<AboutCard imgSrc={man1} />
+				<AboutCard imgSrc={man1} github='/' linkedin='/' mail='/' twitter='/' portfolio='/' />
+				<AboutCard imgSrc={man1} github='/' mail='/' twitter='/' portfolio='/' />
+				<AboutCard imgSrc={man1} linkedin='/' mail='/' twitter='/' />
 			</TeamContainer>
 		</Container>
 	);

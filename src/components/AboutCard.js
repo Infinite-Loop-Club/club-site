@@ -1,19 +1,48 @@
 import styled from 'styled-components';
+import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter, FaGlobe } from 'react-icons/fa';
+
 import { fonts } from '../constants/theme';
 
-export default function AboutCard({ imgSrc, name }) {
+export default function AboutCard({ imgSrc, name, github, linkedin, mail, twitter, portfolio }) {
 	return (
 		<Container>
-			<img src={imgSrc} alt={name}></img>
+			<ProfileImg src={imgSrc} alt={name}></ProfileImg>
 			<Content>
 				<h2>Krishna Moorthy</h2>
+				<Text bold>Tech Lead</Text>
 				<Text>III CSE</Text>
-				<Text>Tech Lead</Text>
-				<Text bold>"call it as things pa"</Text>
-				<Rect1 />
-				<Rect2 />
-				<Triangle />
+				<Text>"call it as things pa"</Text>
+				<IconContainer>
+					{github && (
+						<a href='/'>
+							<FaGithub />
+						</a>
+					)}
+					{linkedin && (
+						<a href='/'>
+							<FaLinkedin />
+						</a>
+					)}
+					{mail && (
+						<a href='/'>
+							<FaEnvelope />
+						</a>
+					)}
+					{twitter && (
+						<a href='/'>
+							<FaTwitter />
+						</a>
+					)}
+					{portfolio && (
+						<a href='/'>
+							<FaGlobe />
+						</a>
+					)}
+				</IconContainer>
 			</Content>
+			<Rect1 />
+			<Rect2 />
+			<Triangle />
 		</Container>
 	);
 }
@@ -29,8 +58,8 @@ const Container = styled.div`
 	justify-content: space-around;
 	background-color: ${props => props.theme.lightGrey};
 	border-radius: 2rem;
-	z-index: -2;
 	overflow: hidden;
+	box-shadow: ${props => `1px 1px 10px ${props.theme.black}00050`};
 
 	@media (max-width: 1200px) {
 		width: 40rem;
@@ -44,13 +73,13 @@ const Container = styled.div`
 
 	@media (max-width: 400px) {
 		width: 28rem;
-		height: 14rem;
+		height: 15rem;
 		justify-content: space-between;
 	}
 
 	@media (max-width: 315px) {
 		width: 22.5rem;
-		height: 11.5rem;
+		height: 13rem;
 	}
 
 	& img {
@@ -69,14 +98,14 @@ const Container = styled.div`
 			height: 12rem;
 		}
 
-		@media (max-width: 970px) {
-			width: 7rem;
-			height: 9rem;
+		@media (max-width: 400px) {
+			width: 8rem;
+			height: 10rem;
 		}
 
 		@media (max-width: 315px) {
-			width: 5rem;
-			height: 7rem;
+			width: 5.5rem;
+			height: 7.5rem;
 		}
 	}
 
@@ -105,6 +134,59 @@ const Container = styled.div`
 const Content = styled.div`
 	display: flex;
 	flex-direction: column;
+	z-index: 1;
+`;
+
+const IconContainer = styled.div`
+	position: relative;
+	display: flex;
+	margin-top: 4rem;
+	z-index: 1;
+
+	@media (max-width: 1200px) {
+		margin-top: 2rem;
+	}
+
+	@media (max-width: 970px) {
+		margin-top: 0rem;
+	}
+
+	& a {
+		position: relative;
+		font-size: 2.5rem;
+		margin-right: 2rem;
+
+		@media (max-width: 1200px) {
+			font-size: 2rem;
+		}
+
+		@media (max-width: 970px) {
+			margin-right: 1.5rem;
+		}
+
+		@media (max-width: 400px) {
+			font-size: 1.5rem;
+			margin-right: 1rem;
+		}
+
+		@media (max-width: 315px) {
+			font-size: 1.3rem;
+			margin-right: 1rem;
+		}
+
+		& svg {
+			transition: all 0.2s;
+
+			&:hover {
+				cursor: pointer;
+				fill: ${props => props.theme.primary};
+			}
+		}
+	}
+`;
+
+const ProfileImg = styled.img`
+	z-index: 1;
 `;
 
 const Rect1 = styled.div`
@@ -112,10 +194,9 @@ const Rect1 = styled.div`
 	top: 45%;
 	left: 0;
 	background-color: ${props => `${props.theme.secondary}80`};
-	width: 24rem;
+	width: 25rem;
 	height: 4rem;
 	transform: skew(0deg, -25deg);
-	z-index: -1;
 
 	@media (max-width: 1200px) {
 		top: 40%;
@@ -125,7 +206,7 @@ const Rect1 = styled.div`
 
 	@media (max-width: 970px) {
 		top: 35%;
-		width: 12rem;
+		width: 14.5rem;
 		height: 3rem;
 	}
 
@@ -148,7 +229,6 @@ const Rect2 = styled.div`
 	width: 18rem;
 	height: 1.5rem;
 	transform: skew(0deg, -25deg);
-	z-index: -1;
 
 	@media (max-width: 1200px) {
 		top: 40%;
@@ -172,6 +252,7 @@ const Rect2 = styled.div`
 const Text = styled.p`
 	font-size: ${props => (props.bold ? '1.3rem' : '1.2rem')};
 	font-weight: ${props => (props.bold ? '700' : '400')};
+	z-index: 1;
 
 	@media (max-width: 1200px) {
 		font-size: ${props => (props.bold ? '1.2rem' : '1.1rem')};
@@ -190,7 +271,6 @@ const Triangle = styled.div`
 	clip-path: polygon(100% 0, 0 100%, 100% 100%);
 	width: 25rem;
 	height: 10rem;
-	z-index: -1;
 
 	@media (max-width: 1200px) {
 		width: 22rem;
