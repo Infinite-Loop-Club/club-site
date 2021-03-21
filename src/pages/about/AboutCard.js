@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter, FaGlobe } from 'react-icons/fa';
 
-import { fonts } from '../constants/theme';
+import { fonts } from '../../constants/theme';
 
 export default function AboutCard({ imgSrc, name, github, linkedin, mail, twitter, portfolio }) {
 	return (
