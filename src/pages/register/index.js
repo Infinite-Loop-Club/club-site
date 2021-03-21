@@ -49,7 +49,7 @@ export default function RegisterForm() {
 				closeOnClick: false,
 				draggable: false
 			});
-			const res = await axios.post('/user/new', values);
+			const res = await axios.post('/user/new', { ...values, imageUrl: active.url });
 			history.push({ pathname: '/member', state: res.data });
 		} catch (err) {
 			toast.error(err.response.data.message);

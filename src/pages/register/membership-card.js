@@ -39,7 +39,9 @@ export default function MembershipCard() {
 					<p>{registerNumber}</p>
 					<p className='email'>{email}</p>
 				</div>
-				<p className='membership-number'>{membershipNumber}</p>
+				<p className='membership-number'>
+					#{'0'.repeat(6 - membershipNumber.toString().length) + membershipNumber}
+				</p>
 			</Card>
 			<Button component='button' onClick={() => exportComponentAsPNG(membershipCard)}>
 				Download
