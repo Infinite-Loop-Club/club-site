@@ -3,7 +3,7 @@ import { exportComponentAsPNG } from 'react-component-export-image';
 
 import { BackgroundStripes, Button, Heading } from '../../components';
 import { fonts } from '../../constants/theme';
-import { logoTranslucent, male2 } from '../../images';
+import { logoTranslucent } from '../../images';
 import { useEffect, useRef } from 'react';
 import { useHistory, useLocation } from 'react-router';
 
@@ -14,7 +14,7 @@ export default function MembershipCard() {
 
 	const {
 		state: {
-			data: { name, registerNumber, email }
+			data: { name, registerNumber, email, imageUrl, membershipNumber }
 		}
 	} = location;
 
@@ -33,13 +33,13 @@ export default function MembershipCard() {
 				<h3>Infinite Loop Club</h3>
 				<div className='content'>
 					<figure>
-						<img src={male2} alt='avatar' />
+						<img src={imageUrl} alt='avatar' />
 					</figure>
 					<h4>{name}</h4>
 					<p>{registerNumber}</p>
 					<p className='email'>{email}</p>
 				</div>
-				<p className='membership-number'>#00012</p>
+				<p className='membership-number'>{membershipNumber}</p>
 			</Card>
 			<Button component='button' onClick={() => exportComponentAsPNG(membershipCard)}>
 				Download
