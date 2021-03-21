@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import { FaEnvelope, FaTwitter, FaFacebookSquare, FaClipboard } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
 
 import { share } from '../../images';
 
@@ -23,28 +25,53 @@ export default function Share({ value, style }) {
 		}
 	};
 
+	const handleCopy = () => {
+		var textField = document.createElement('textarea');
+		textField.innerText = `${window.origin}/post/${value._id}`;
+		document.body.appendChild(textField);
+		textField.select();
+		document.execCommand('copy');
+		textField.remove();
+		setShowModal(false);
+		toast.success('Link Copied to clipboard', {
+			position: 'bottom-center',
+			autoClose: 3000,
+			hideProgressBar: true,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined
+		});
+	};
+
 	return (
 		<Container>
 			<Bottom style={style} onClick={() => handleShare(value)}>
 				<img src={share} alt={share}></img>
 			</Bottom>
+			<ToastContainer />
 			{showModal && (
 				<Modal>
-					<a href={`http://www.facebook.com/sharer.php?u=${window.origin}/post/${value._id}`}>F</a>
+					<a href={`http://www.facebook.com/sharer.php?u=${window.origin}/post/${value._id}`}>
+						<FaFacebookSquare></FaFacebookSquare>
+					</a>
 					<a
 						href={`https://twitter.com/share?url=
 						${window.origin}/post/${value._id}
 						&amp;text=Check%20it%20out&amp;hashtags=infiniteloopclub`}
 					>
-						Tw
+						<FaTwitter />
 					</a>
 
 					<a
 						href={`mailto:?Subject=Club%20post&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20
 						${window.origin}/post/${value._id}`}
 					>
-						M
+						<FaEnvelope />
 					</a>
+					<Copy onClick={handleCopy}>
+						<FaClipboard />
+					</Copy>
 					<Arrow></Arrow>
 				</Modal>
 			)}
@@ -74,7 +101,7 @@ const Modal = styled.div`
 	position: absolute;
 	top: 180%;
 	left: -2%;
-	padding: 2em;
+	padding: 1em;
 	box-shadow: 0px 3px 20px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 0.5em;
 	background-color: ${p => p.theme.white};
@@ -82,11 +109,32 @@ const Modal = styled.div`
 	a {
 		text-decoration: none;
 		margin: 0.5em;
-		border: 2px solid grey;
-		padding: 1em;
-		width: 2em;
-		height: 2em;
-		border-radius: 50%;
+
+		& svg {
+			transition: all 0.2s;
+			font-size: 2rem;
+
+			&:hover {
+				cursor: pointer;
+				fill: ${props => props.theme.primary};
+			}
+		}
+	}
+`;
+
+const Copy = styled.div`
+	margin: 0.5em;
+	cursor: pointer;
+	display: inline-block;
+
+	& svg {
+		transition: all 0.2s;
+		font-size: 2rem;
+
+		&:hover {
+			cursor: pointer;
+			fill: ${props => props.theme.primary};
+		}
 	}
 `;
 
@@ -97,5 +145,5 @@ const Arrow = styled.div`
 	box-shadow: 0px 3px 20px 4px rgba(0, 0, 0, 0.25);
 	clip-path: polygon(50% 0, 25% 100%, 75% 100%);
 	position: absolute;
-	top: -30%;
+	top: -35%;
 `;
