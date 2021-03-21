@@ -61,7 +61,7 @@ const SuccessPage = styled.main`
 
 const Card = styled.div`
 	position: relative;
-	z-index: 1000;
+	z-index: 10;
 	width: 50rem;
 	height: 26rem;
 	border-radius: 2rem;
