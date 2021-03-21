@@ -21,7 +21,7 @@ const TeamContainer = styled.div`
 	grid-template-columns: 1fr 1fr;
 	margin: 0 1rem;
 
-	@media (max-width: 950px) {
+	@media (max-width: 1100px) {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;

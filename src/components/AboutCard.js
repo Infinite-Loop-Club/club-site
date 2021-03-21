@@ -55,7 +55,6 @@ const Container = styled.div`
 	padding: 2rem;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
 	background-color: ${props => props.theme.lightGrey};
 	border-radius: 2rem;
 	overflow: hidden;
@@ -80,32 +79,38 @@ const Container = styled.div`
 	@media (max-width: 315px) {
 		width: 22.5rem;
 		height: 13rem;
+		padding: 1.5rem;
 	}
 
 	& img {
+		margin-right: 4rem;
 		object-fit: cover;
 		object-position: center;
 		border-radius: 10%;
 		border: 0.3rem solid ${props => props.theme.primary};
 
 		@media (max-width: 1200px) {
-			width: 13rem;
-			height: 15rem;
+			margin-right: 3rem;
+			width: 14rem;
+			height: 16rem;
 		}
 
 		@media (max-width: 970px) {
-			width: 10rem;
-			height: 12rem;
+			margin-right: 2.5rem;
+			width: 12rem;
+			height: 13rem;
 		}
 
 		@media (max-width: 400px) {
+			margin-right: 1rem;
 			width: 8rem;
-			height: 10rem;
+			height: 11rem;
 		}
 
 		@media (max-width: 315px) {
-			width: 5.5rem;
-			height: 7.5rem;
+			margin-right: 0.5rem;
+			width: 6rem;
+			height: 9rem;
 		}
 	}
 
