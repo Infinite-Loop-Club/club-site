@@ -22,3 +22,4 @@ export { default as team } from './team.svg';
 
 export { default as logoColored } from './logo-colored.svg';
 export { default as logoWhite } from './logo-white.png';
+export { default as logoTranslucent } from './logo-translucent.png';
