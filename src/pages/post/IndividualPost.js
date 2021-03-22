@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router';
 import styled from 'styled-components';
 import { format } from 'date-fns';
@@ -10,6 +10,13 @@ import Share from './Share';
 export default function Card({ ind }) {
 	const { state } = useLocation();
 	const history = useHistory();
+	const [showModal, setShowModal] = useState(true);
+
+	useEffect(() => {
+		if (navigator.share) {
+			setShowModal(false);
+		}
+	}, []);
 
 	useEffect(() => {
 		if (state === undefined || state === null) {
@@ -54,7 +61,7 @@ export default function Card({ ind }) {
 				</Left>
 			</Top>
 			<Center>{state.content}</Center>
-			<Bottom>
+			<Bottom showModal={showModal}>
 				{state.attachment && (
 					<Button href={state.attachment} download onClick={e => download(e)}>
 						<img src={link} alt={link}></img>
@@ -105,7 +112,8 @@ const Bottom = styled.div`
 	margin-top: 1em;
 	display: flex;
 	gap: 2em;
-	align-items: center;
+	flex-direction: ${p => (p.showModal ? 'column' : 'row')};
+	align-items: ${p => (p.showModal ? 'flex-start' : 'center')};
 	img {
 		display: inline-block;
 		width: 3rem;

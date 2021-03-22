@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { FaEnvelope, FaTwitter, FaFacebookSquare, FaClipboard } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
@@ -6,7 +6,13 @@ import { ToastContainer, toast } from 'react-toastify';
 import { share } from 'images';
 
 export default function Share({ value, style }) {
-	const [showModal, setShowModal] = useState(false);
+	const [showModal, setShowModal] = useState(true);
+
+	useEffect(() => {
+		if (navigator.share) {
+			setShowModal(false);
+		}
+	}, []);
 
 	const handleShare = value => {
 		if (navigator.share) {
@@ -18,10 +24,9 @@ export default function Share({ value, style }) {
 				})
 				.catch(error => {
 					console.log(error);
-					setShowModal(old => !old);
 				});
 		} else {
-			setShowModal(old => !old);
+			setShowModal(true);
 		}
 	};
 
@@ -46,12 +51,14 @@ export default function Share({ value, style }) {
 
 	return (
 		<Container>
-			<Bottom style={style} onClick={() => handleShare(value)}>
-				<img src={share} alt={share}></img>
-			</Bottom>
 			<ToastContainer />
-			{showModal && (
+			{!showModal ? (
+				<Bottom style={style} onClick={() => handleShare(value)}>
+					<img src={share} alt={share}></img>
+				</Bottom>
+			) : (
 				<Modal>
+					<p>Share</p>
 					<a href={`http://www.facebook.com/sharer.php?u=${window.origin}/post/${value._id}`}>
 						<FaFacebookSquare></FaFacebookSquare>
 					</a>
@@ -72,7 +79,6 @@ export default function Share({ value, style }) {
 					<Copy onClick={handleCopy}>
 						<FaClipboard />
 					</Copy>
-					<Arrow></Arrow>
 				</Modal>
 			)}
 		</Container>
@@ -98,13 +104,18 @@ const Bottom = styled.div`
 `;
 
 const Modal = styled.div`
-	position: absolute;
-	top: 180%;
-	left: -2%;
 	padding: 1em;
-	box-shadow: 0px 3px 20px 4px rgba(0, 0, 0, 0.25);
+	padding-left: 0px;
 	border-radius: 0.5em;
 	background-color: ${p => p.theme.white};
+
+	p {
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-image: ${p =>
+			`linear-gradient(90deg, ${p.theme.primary} 20%, ${p.theme.secondary} 80%)`};
+	}
 
 	a {
 		text-decoration: none;
@@ -136,14 +147,4 @@ const Copy = styled.div`
 			fill: ${props => props.theme.primary};
 		}
 	}
-`;
-
-const Arrow = styled.div`
-	width: 2em;
-	height: 1.8em;
-	background-color: ${p => p.theme.primary};
-	box-shadow: 0px 3px 20px 4px rgba(0, 0, 0, 0.25);
-	clip-path: polygon(50% 0, 25% 100%, 75% 100%);
-	position: absolute;
-	top: -35%;
 `;
