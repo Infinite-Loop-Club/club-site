@@ -33,12 +33,8 @@ const CardInternal = styled.div`
       &>h2 {
         color: white !important;
       }
-  `}
 
-	${({ isSpecial }) =>
-		!isSpecial &&
-		`
-			@media(max-width: 800px) {
+			@media(max-width: 900px){
 				padding: 2rem;
 				min-width: auto;
 
@@ -50,6 +46,44 @@ const CardInternal = styled.div`
 					font-size: 1rem;
 				}
 			}
+
+			@media(max-width: 500px){
+				h2 {
+					font-size: 1.2rem;
+				}
+
+				p{
+					font-size: 0.8rem;
+				}
+			}
+  `}
+
+	${({ isSpecial }) =>
+		!isSpecial &&
+		`
+			@media(max-width: 900px) {
+				padding: 2rem;
+				min-width: auto;
+
+				h2 {
+					font-size: 1.4rem;
+				}
+
+				p{
+					font-size: 1rem;
+				}
+			}
+
+			@media(max-width: 500px){
+				h2 {
+					font-size: 1.2rem;
+				}
+
+				p{
+					font-size: 0.8rem;
+				}
+			}
+
 		`}
 
 	&:hover {
