@@ -11,10 +11,38 @@ import Loader from 'components/Loader';
 
 export default function Card({ ind }) {
 	const [data, setData] = useState(null);
+	const [showModal, setShowModal] = useState(true);
 
 	const history = useHistory();
 
 	const { id } = useParams();
+
+	useEffect(() => {
+		if (navigator.share) {
+			setShowModal(false);
+		}
+	}, []);
+
+	const download = e => {
+		fetch(e.target.href, {
+			method: 'GET',
+			headers: {}
+		})
+			.then(response => {
+				response.arrayBuffer().then(function (buffer) {
+					const url = window.URL.createObjectURL(new Blob([buffer]));
+					const link = document.createElement('a');
+					link.href = url;
+					link.setAttribute('download', 'image.png'); //or any other extension
+					document.body.appendChild(link);
+					link.click();
+					document.body.removeChild(link);
+				});
+			})
+			.catch(err => {
+				console.log(err);
+			});
+	};
 
 	const fetchData = async () => {
 		try {
@@ -39,7 +67,9 @@ export default function Card({ ind }) {
 			<img className='logo' src={logoColored} alt='logo'></img>
 			<Top>
 				<Left>
-					<Heading gradient>{data.title}&nbsp;</Heading>
+					<Heading style={{ textAlign: 'left' }} gradient>
+						{data.title}&nbsp;
+					</Heading>
 					<Details>
 						<p>
 							Posted on: {format(new Date(data.createdAt), 'h:m,do LLLL')} by @{data.author}
@@ -48,11 +78,11 @@ export default function Card({ ind }) {
 				</Left>
 			</Top>
 			<Center>{data.content}</Center>
-			<Bottom>
-				{data.url && (
-					<Button>
+			<Bottom showModal={showModal}>
+				{data.attachment && (
+					<Button href={data.attachment} download onClick={e => download(e)}>
 						<img src={link} alt={link}></img>
-						Attachment
+						Download Attachment
 					</Button>
 				)}
 				<Share value={data} />
@@ -79,9 +109,6 @@ const ContainerCustom = styled(Container)`
 const Top = styled.div`
 	border-bottom: 2px solid #c2c2c2;
 	padding-bottom: 1em;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
 `;
 
 const Left = styled.div`
@@ -102,15 +129,16 @@ const Bottom = styled.div`
 	margin-top: 1em;
 	display: flex;
 	gap: 2em;
-	align-items: center;
+	flex-direction: ${p => (p.showModal ? 'column' : 'row')};
+	align-items: ${p => (p.showModal ? 'flex-start' : 'center')};
 	img {
 		display: inline-block;
 		width: 3rem;
 		cursor: pointer;
 	}
 `;
-const Button = styled.button`
-	outline: none;
+const Button = styled.a`
+	text-decoration: none;
 	display: flex;
 	align-items: center;
 	justify-content: center;
