@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FaEnvelope, FaTwitter, FaFacebookSquare, FaClipboard } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
 
-import { share } from '../../images';
+import { share } from 'images';
 
 export default function Share({ value, style }) {
 	const [showModal, setShowModal] = useState(false);

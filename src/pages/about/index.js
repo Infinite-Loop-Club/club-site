@@ -1,4 +1,4 @@
-import { Heading, Footer, Container } from '../../components';
+import { Heading, Footer, Container } from 'components';
 import TeamDetails from './TeamDetails';
 
 export default function About() {

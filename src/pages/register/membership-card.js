@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { exportComponentAsPNG } from 'react-component-export-image';
-
-import { BackgroundStripes, Button, Heading } from '../../components';
-import { fonts } from '../../constants/theme';
-import { logoTranslucent } from '../../images';
 import { useEffect, useRef } from 'react';
 import { useHistory, useLocation } from 'react-router';
+import { exportComponentAsPNG } from 'react-component-export-image';
+
+import { BackgroundStripes, Button, Heading } from 'components';
+import { logoTranslucent } from 'images';
+import { fonts } from 'constants/theme';
 
 export default function MembershipCard() {
 	const membershipCard = useRef();

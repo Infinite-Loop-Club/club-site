@@ -3,8 +3,8 @@ import { useHistory, useLocation } from 'react-router';
 import styled from 'styled-components';
 import { format } from 'date-fns';
 
-import { Container, Heading } from '../../components';
-import { link, logoColored } from '../../images';
+import { Container, Heading } from 'components';
+import { link, logoColored } from 'images';
 import Share from './Share';
 
 export default function Card({ ind }) {

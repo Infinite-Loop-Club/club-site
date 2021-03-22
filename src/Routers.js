@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { Switch, Route, useLocation } from 'react-router-dom';
-import { NavigationBar } from './components';
+import { NavigationBar } from 'components';
 
-import { Home, About, Register, Post, IndividualPost } from './pages';
-import MembershipCard from './pages/register/membership-card';
+import { Home, About, Register, Post, IndividualPost } from 'pages';
+import MembershipCard from 'pages/register/membership-card';
 
 export default function AppRouter() {
 	const { pathname } = useLocation();

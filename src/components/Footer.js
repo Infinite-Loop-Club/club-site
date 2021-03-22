@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { colors } from '../constants/theme';
-
-import { benxene, logoWhite } from '../images';
+import { colors } from 'constants/theme';
+import { benxene, logoWhite } from 'images';
 
 export default function Footer() {
 	return (

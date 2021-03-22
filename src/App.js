@@ -1,6 +1,6 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { colors, fonts } from './constants/theme';
+import { colors, fonts } from 'constants/theme';
 import Routers from './Routers';
 
 export default function AppRouter() {

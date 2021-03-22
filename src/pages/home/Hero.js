@@ -1,9 +1,8 @@
 import { useRef, useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 
-import { Button } from '../../components';
-
-import { logoWhite, hero } from '../../images';
+import { Button } from 'components';
+import { logoWhite, hero } from 'images';
 
 const text =
 	"We're here to dig out your talents and find out what you're passionate about, let's join together and grow together.";

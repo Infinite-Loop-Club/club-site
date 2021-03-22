@@ -1,15 +1,15 @@
 import axios from 'axios';
 import { useEffect, useRef, useState } from 'react';
+import { useHistory } from 'react-router';
 import styled from 'styled-components';
 import { Formik, Form, Field } from 'formik';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { Button, Footer, Heading, BackgroundStripes } from '../../components';
-import { colors } from '../../constants/theme';
-import { male1, male2, male3, female1, female2, female3 } from '../../images';
+import { Button, Footer, Heading, BackgroundStripes } from 'components';
+import { male1, male2, male3, female1, female2, female3 } from 'images';
+import { colors } from 'constants/theme';
 import validationSchema from './validationSchema';
-import { useHistory } from 'react-router';
 
 export default function RegisterForm() {
 	const [active, setActive] = useState(null);
