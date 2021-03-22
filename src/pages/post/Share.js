@@ -14,7 +14,7 @@ export default function Share({ value, style }) {
 				.share({
 					title: value.title,
 					text: value.description,
-					url: window.location.href
+					url: `${window.origin}/post/${value._id}`
 				})
 				.catch(error => {
 					console.log(error);

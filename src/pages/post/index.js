@@ -1,8 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import styled from 'styled-components';
 
-import { Container, Heading, Footer } from 'components';
+import { Container, Heading, Footer, LoaderContainer } from 'components';
 import Loader from 'components/Loader';
 import Card from './Card';
 
@@ -41,10 +40,3 @@ export default function Post() {
 		</>
 	);
 }
-
-const LoaderContainer = styled.div`
-	min-height: 80vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-`;
