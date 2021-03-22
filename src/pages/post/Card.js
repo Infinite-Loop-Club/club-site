@@ -17,7 +17,7 @@ export default function Card({ ind, value }) {
 	return (
 		<Container key={ind}>
 			<Top onClick={handleClick}>
-				<Title>{value.title}</Title>
+				<Title style={{ textAlign: 'center' }}>{value.title}</Title>
 				<Details>
 					<p>Posted on: {format(new Date(value.createdAt), 'h:m,do LLLL')}</p>
 					<p>by {value.author}</p>
@@ -32,14 +32,14 @@ export default function Card({ ind, value }) {
 }
 
 const Container = styled.div`
-	padding: 2em;
-	margin: 4em;
+	padding: 2rem;
+	margin: 4rem;
 	box-shadow: 0px 3px 20px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 1em;
 
 	@media only screen and (max-width: 700px) {
-		padding: 1.5em;
-		margin: 2em;
+		padding: 1.5rem;
+		margin: 2rem;
 	}
 `;
 
@@ -71,9 +71,10 @@ const Details = styled.div`
 		margin-bottom: 1em;
 	}
 
-	@media only screen and (max-width: 400px) {
+	@media only screen and (max-width: 450px) {
 		flex-direction: column;
 		align-items: flex-start;
+		gap: 0.5em;
 	}
 
 	p {

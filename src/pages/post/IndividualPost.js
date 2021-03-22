@@ -22,7 +22,9 @@ export default function Card({ ind }) {
 			<img className='logo' src={logoColored} alt='logo'></img>
 			<Top>
 				<Left>
-					<Heading gradient>{state.title}&nbsp;</Heading>
+					<Heading style={{ textAlign: 'left' }} gradient>
+						{state.title}&nbsp;
+					</Heading>
 					<Details>
 						<p>
 							Posted on: {format(new Date(state.createdAt), 'h:m,do LLLL')} by @{state.author}
@@ -62,9 +64,6 @@ const ContainerCustom = styled(Container)`
 const Top = styled.div`
 	border-bottom: 2px solid #c2c2c2;
 	padding-bottom: 1em;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
 `;
 
 const Left = styled.div`
