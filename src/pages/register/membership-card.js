@@ -43,7 +43,14 @@ export default function MembershipCard() {
 					#{'0'.repeat(6 - membershipNumber.toString().length) + membershipNumber}
 				</p>
 			</Card>
-			<Button component='button' onClick={() => exportComponentAsPNG(membershipCard)}>
+			<Button
+				component='button'
+				onClick={() =>
+					exportComponentAsPNG(membershipCard, {
+						fileName: `Infinite-Loop-${name.replace(' ', '-')}`
+					})
+				}
+			>
 				Download
 			</Button>
 			<BackgroundStripes />
