@@ -17,6 +17,27 @@ export default function Card({ ind }) {
 		}
 	}, [state, history]);
 
+	const download = e => {
+		fetch(e.target.href, {
+			method: 'GET',
+			headers: {}
+		})
+			.then(response => {
+				response.arrayBuffer().then(function (buffer) {
+					const url = window.URL.createObjectURL(new Blob([buffer]));
+					const link = document.createElement('a');
+					link.href = url;
+					link.setAttribute('download', 'image.png'); //or any other extension
+					document.body.appendChild(link);
+					link.click();
+					document.body.removeChild(link);
+				});
+			})
+			.catch(err => {
+				console.log(err);
+			});
+	};
+
 	return (
 		<ContainerCustom key={ind}>
 			<img className='logo' src={logoColored} alt='logo'></img>
@@ -34,10 +55,10 @@ export default function Card({ ind }) {
 			</Top>
 			<Center>{state.content}</Center>
 			<Bottom>
-				{state.url && (
-					<Button>
+				{state.attachment && (
+					<Button href={state.attachment} download onClick={e => download(e)}>
 						<img src={link} alt={link}></img>
-						Attachment
+						Download Attachment
 					</Button>
 				)}
 				<Share value={state} />
@@ -91,8 +112,8 @@ const Bottom = styled.div`
 		cursor: pointer;
 	}
 `;
-const Button = styled.button`
-	outline: none;
+const Button = styled.a`
+	text-decoration: none;
 	display: flex;
 	align-items: center;
 	justify-content: center;
