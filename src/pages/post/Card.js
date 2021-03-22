@@ -48,7 +48,7 @@ const Top = styled.div`
 	align-items: center;
 	justify-content: space-between;
 
-	@media only screen and (max-width: 500px) {
+	@media only screen and (max-width: 900px) {
 		flex-direction: column;
 		align-items: flex-start;
 	}
@@ -64,7 +64,7 @@ const Details = styled.div`
 	flex-direction: column;
 	align-items: flex-end;
 
-	@media only screen and (max-width: 500px) {
+	@media only screen and (max-width: 900px) {
 		flex-direction: row;
 		gap: 1em;
 		padding: 0px;
