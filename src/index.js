@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 import config from './config/env';
-axios.defaults.baseURL = config.environment.development ? config.dev.api : config.prod.api;
+
+// change condition to work with local db
+axios.defaults.baseURL = process.env.NODE_ENV === 'production' ? config.prod.api : config.dev.api;
 
 ReactDOM.render(<App />, document.getElementById('root'));
