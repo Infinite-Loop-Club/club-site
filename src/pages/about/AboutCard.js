@@ -58,7 +58,7 @@ const Container = styled.div`
 	background-color: ${props => props.theme.lightGrey};
 	border-radius: 2rem;
 	overflow: hidden;
-	box-shadow: ${props => `1px 1px 20px ${props.theme.black}00030`};
+	box-shadow: ${props => `1px 1px 20px ${props.theme.black}30`};
 
 	@media (max-width: 1200px) {
 		width: 40rem;
