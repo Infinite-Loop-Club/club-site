@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Button, Container, Heading } from '../../components';
-import { colors } from '../../constants/theme';
+import { Button, Container, Heading } from 'components';
+import { colors } from 'constants/theme';
 
 export default function Cta() {
 	return (

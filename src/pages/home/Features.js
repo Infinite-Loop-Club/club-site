@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import { Container, Heading } from '../../components';
 import Feature from './FeatureItem';
-
-import { meeting, team, devStats, interview } from '../../images';
+import { Container, Heading } from 'components';
+import { meeting, team, devStats, interview } from 'images';
 
 export default function Paget() {
 	return (

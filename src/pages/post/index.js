@@ -2,8 +2,8 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-import { Container, Heading, Footer } from '../../components';
-import Loader from '../../components/Loader';
+import { Container, Heading, Footer } from 'components';
+import Loader from 'components/Loader';
 import Card from './Card';
 
 export default function Post() {

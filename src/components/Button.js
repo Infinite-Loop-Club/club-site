@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { colors, fonts } from '../constants/theme';
+import { colors, fonts } from 'constants/theme';
 
 export default function Button({ children, component, ...props }) {
 	switch (component) {
