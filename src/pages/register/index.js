@@ -4,6 +4,7 @@ import { useHistory } from 'react-router';
 import styled from 'styled-components';
 import { Formik, Form, Field } from 'formik';
 import { ToastContainer, toast } from 'react-toastify';
+import { PuffLoader } from 'react-spinners';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { Button, Footer, Heading, BackgroundStripes } from 'components';
@@ -15,6 +16,7 @@ export default function RegisterForm() {
 	const [active, setActive] = useState(null);
 	const [avatarError, setAvatarError] = useState(false);
 	const toastId = useRef();
+	const [isLoading, setLoading] = useState(false);
 
 	const initialValues = {
 		name: '',
@@ -37,23 +39,18 @@ export default function RegisterForm() {
 
 	const history = useHistory();
 
-	const handleSubmit = async (values, action) => {
+	const handleSubmit = async (values, _action) => {
 		if (!active || active?.gender !== values.gender) {
 			setAvatarError(true);
 			return;
 		}
 
 		try {
-			toastId.current = toast('Loading ...', {
-				autoClose: false,
-				closeButton: false,
-				closeOnClick: false,
-				draggable: false
-			});
+			setLoading(true);
 			const res = await axios.post('/user/new', { ...values, imageUrl: active.url });
 			history.push({ pathname: '/member', state: res.data });
 		} catch (err) {
-			toast.dismiss(toastId.current);
+			setLoading(false);
 			toast.error(err.response.data.message);
 			// console.log(err.response);
 			// {status = HTTP STATUS CODE, data: Defined data {message, error}}
@@ -61,9 +58,23 @@ export default function RegisterForm() {
 	};
 
 	useEffect(() => {
-		// hit the server to wake it up
-		axios.get('/');
-	}, []);
+		if (!isLoading) {
+			return toast.dismiss(toastId.current);
+		}
+
+		toastId.current = toast(
+			<div style={{ display: 'flex', alignItems: 'center' }}>
+				<PuffLoader color={colors.primary} loading={true} size={40} />
+				<p style={{ marginLeft: '1rem' }}>Loading...</p>
+			</div>,
+			{
+				autoClose: false,
+				closeButton: false,
+				closeOnClick: false,
+				draggable: false
+			}
+		);
+	}, [isLoading]);
 
 	return (
 		<>
@@ -186,7 +197,9 @@ export default function RegisterForm() {
 									{errors.dept && touched.dept ? <Error>{errors.dept}</Error> : null}
 								</FieldContainer>
 							</Box>
-							<SubmitButton type='submit'>Submit</SubmitButton>
+							<SubmitButton disabled={isLoading} type='submit'>
+								Submit
+							</SubmitButton>
 						</FormikForm>
 					)}
 				</Formik>
