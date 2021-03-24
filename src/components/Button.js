@@ -4,15 +4,13 @@ import { colors, fonts } from 'constants/theme';
 
 export default function Button({ children, component, ...props }) {
 	switch (component) {
-		case 'button':
-			return <Btn {...props}>{children}</Btn>;
-
 		case 'anchor':
 			return <Anchor {...props}>{children}</Anchor>;
 
 		case 'link':
 			return <CustomLink {...props}>{children}</CustomLink>;
 
+		case 'button':
 		default:
 			return <Btn {...props}>{children}</Btn>;
 	}
@@ -54,7 +52,15 @@ const buttonStyleString = `
 
 	&:active {
 		box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.3);
-	}`;
+	}
+
+	&[disabled=true], &:disabled {
+		pointer-events: none;
+		background: ${colors.slate};
+		cursor: default;
+		box-shadow: none;
+	}
+	`;
 
 const [Btn, Anchor, CustomLink] = [
 	styled.button`
