@@ -43,7 +43,14 @@ export default function MembershipCard() {
 					#{'0'.repeat(6 - membershipNumber.toString().length) + membershipNumber}
 				</p>
 			</Card>
-			<Button component='button' onClick={() => exportComponentAsPNG(membershipCard)}>
+			<Button
+				component='button'
+				onClick={() =>
+					exportComponentAsPNG(membershipCard, {
+						fileName: `Infinite-Loop-${name.replace(' ', '-')}`
+					})
+				}
+			>
 				Download
 			</Button>
 			<BackgroundStripes />
@@ -69,7 +76,13 @@ const Card = styled.div`
 	color: ${({ theme }) => theme.white};
 
 	@media (max-width: 600px) {
-		transform: scale(0.6);
+		width: 97vw;
+		height: 23rem;
+		font-size: 1.4rem;
+
+		h3 {
+			margin: 0.5rem auto !important;
+		}
 	}
 
 	.gradient {
@@ -126,6 +139,18 @@ const Card = styled.div`
 		grid-template-columns: 0.8fr 1fr;
 		grid-template-rows: repeat(3, 3.5rem);
 		align-items: center;
+
+		@media (max-width: 600px) {
+			grid-gap: 1rem;
+			figure {
+				margin-left: 5rem !important;
+			}
+
+			font-size: 1.2rem;
+			.email {
+				font-size: 1rem !important;
+			}
+		}
 
 		figure {
 			width: 12rem;
