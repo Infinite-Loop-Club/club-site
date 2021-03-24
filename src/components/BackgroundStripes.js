@@ -72,7 +72,7 @@ const Rect2 = styled.div`
 const Rect3 = styled.div`
 	position: absolute;
 	top: 20%;
-	right: -4.3%;
+	right: 0;
 	background-color: ${({ theme }) => theme.primary};
 	width: 27.5rem;
 	height: 4rem;
