@@ -35,26 +35,20 @@ const CardInternal = styled.div`
       }
 
 			@media(max-width: 900px){
-				padding: 2rem;
+				padding: 2.5rem;
 				min-width: auto;
+			}
 
-				h2 {
-					font-size: 1.4rem;
-				}
-
-				p{
-					font-size: 1rem;
-				}
+			@media(max-width: 800px){
+				width: 40%;
 			}
 
 			@media(max-width: 500px){
-				h2 {
-					font-size: 1.2rem;
-				}
+				width: 50%;
+			}
 
-				p{
-					font-size: 0.8rem;
-				}
+			@media(max-width: 400px){
+				width: 60%;
 			}
   `}
 
@@ -62,28 +56,21 @@ const CardInternal = styled.div`
 		!isSpecial &&
 		`
 			@media(max-width: 900px) {
-				padding: 2rem;
+				padding: 2.5rem;
 				min-width: auto;
+			}
 
-				h2 {
-					font-size: 1.4rem;
-				}
-
-				p{
-					font-size: 1rem;
-				}
+			@media(max-width: 800px){
+				width: 40%;
 			}
 
 			@media(max-width: 500px){
-				h2 {
-					font-size: 1.2rem;
-				}
-
-				p{
-					font-size: 0.8rem;
-				}
+				width: 50%;
 			}
 
+			@media(max-width: 400px){
+				width: 60%;
+			}
 		`}
 
 	&:hover {
