@@ -165,13 +165,7 @@ export default function RegisterForm() {
 								</FieldContainer>
 								<FieldContainer>
 									<label htmlFor='phn_num'>Phone Number</label>
-									<Input
-										id='phn_num'
-										name='phoneNumber'
-										type='tel'
-										placeholder='6666666666'
-										pattern='[1-9]{1}[0-9]{9}'
-									/>
+									<Input id='phn_num' name='phoneNumber' type='tel' pattern='[1-9]{1}[0-9]{9}' />
 									{errors.phoneNumber && touched.phoneNumber ? (
 										<Error>{errors.phoneNumber}</Error>
 									) : null}
