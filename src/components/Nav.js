@@ -16,12 +16,10 @@ export default function NavigationBar() {
 		<>
 			<Background active={openHam}>&nbsp;</Background>
 			<Hamburger active={openHam} onClick={() => setOpenHam(old => !old)}>
-				<span active={openHam} className='icon'>
-					&nbsp;
-				</span>
+				<span className='icon'>&nbsp;</span>
 			</Hamburger>
 			<Nav active={openHam}>
-				<ul active={openHam}>
+				<ul>
 					<li onClick={() => handleClick('/')}>Home</li>
 					<li onClick={() => handleClick('/posts')}>Posts</li>
 					<li onClick={() => handleClick('about-us')}>About us</li>
@@ -57,19 +55,15 @@ const Nav = styled.div`
 
 		li {
 			display: inline-block;
-
 			text-decoration: none;
 			font-size: 3rem;
 			font-weight: 300;
 			color: ${p => p.theme.white};
 			text-transform: uppercase;
 			padding: 1rem 3rem;
-
 			background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
-
 			background-size: 250%;
 			cursor: pointer;
-
 			transition: all 0.4s;
 
 			&:hover {
