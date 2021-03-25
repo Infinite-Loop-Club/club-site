@@ -17,6 +17,7 @@ export default function Post() {
 			setLoad(false);
 			setPosts(data.data);
 		} catch (err) {
+			setLoad(false);
 			console.error(err);
 		}
 	};
@@ -29,17 +30,19 @@ export default function Post() {
 		<>
 			<Container>
 				<Heading gradient>Posts</Heading>
-				{load && (
+				{load ? (
 					<LoaderContainer>
 						<Loader />
 					</LoaderContainer>
+				) : (
+					posts.length === 0 && (
+						<Empty>
+							<img className='logo' src={logoColored} alt='logo'></img>
+							<h2>Currently no post available</h2>
+						</Empty>
+					)
 				)}
-				{posts.length === 0 && (
-					<Empty>
-						<img className='logo' src={logoColored} alt='logo'></img>
-						<h2>Currently no post available</h2>
-					</Empty>
-				)}
+
 				{posts.map((val, ind) => {
 					return <Card key={ind} value={val} ind={ind} />;
 				})}
