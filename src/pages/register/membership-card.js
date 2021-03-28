@@ -7,6 +7,11 @@ import { BackgroundStripes, Button, Heading } from 'components';
 import { logoTranslucent } from 'images';
 import { fonts } from 'constants/theme';
 
+const FRAME_SIZE = {
+	height: 275,
+	width: 520
+};
+
 export default function MembershipCard() {
 	const membershipCard = useRef();
 	const location = useLocation();
@@ -27,27 +32,30 @@ export default function MembershipCard() {
 	return (
 		<SuccessPage>
 			<Heading gradient>Congrats 💥</Heading>
-			<Card ref={membershipCard}>
-				<div className='gradient' />
-				<div src={logoTranslucent} alt='logo' className='logo' />
-				<h3>Infinite Loop Club</h3>
-				<div className='content'>
-					<figure>
-						<img src={imageUrl} alt='avatar' />
-					</figure>
-					<h4>{name}</h4>
-					<p>{registerNumber}</p>
-					<p className='email'>{email}</p>
-				</div>
-				<p className='membership-number'>
-					#{'0'.repeat(6 - membershipNumber.toString().length) + membershipNumber}
-				</p>
-			</Card>
+			<ExportFrame ref={membershipCard}>
+				<Card>
+					<div className='gradient' />
+					<div src={logoTranslucent} alt='logo' className='logo' />
+					<h3>Infinite Loop Club</h3>
+					<div className='content'>
+						<figure>
+							<img src={imageUrl} alt='avatar' />
+						</figure>
+						<h4>{name}</h4>
+						<p>{registerNumber}</p>
+						<p className='email'>{email}</p>
+					</div>
+					<p className='membership-number'>
+						#{'0'.repeat(6 - membershipNumber.toString().length) + membershipNumber}
+					</p>
+				</Card>
+			</ExportFrame>
 			<Button
 				component='button'
 				onClick={() =>
 					exportComponentAsPNG(membershipCard, {
-						fileName: `Infinite-Loop-${name.replace(' ', '-')}`
+						fileName: `Infinite-Loop-${name.replace(' ', '-')}`,
+						html2CanvasOptions: { ...FRAME_SIZE }
 					})
 				}
 			>
@@ -69,13 +77,14 @@ const SuccessPage = styled.main`
 const Card = styled.div`
 	position: relative;
 	z-index: 10;
-	width: 50rem;
-	height: 26rem;
+	width: 500px;
+	height: 275px;
+	margin: auto;
 	border-radius: 2rem;
 	overflow: hidden;
 	color: ${({ theme }) => theme.white};
 
-	@media (max-width: 600px) {
+	/* @media (max-width: 600px) {
 		width: 97vw;
 		height: 23rem;
 		font-size: 1.4rem;
@@ -83,7 +92,7 @@ const Card = styled.div`
 		h3 {
 			margin: 0.5rem auto !important;
 		}
-	}
+	} */
 
 	.gradient {
 		position: absolute;
@@ -140,7 +149,7 @@ const Card = styled.div`
 		grid-template-rows: repeat(3, 3.5rem);
 		align-items: center;
 
-		@media (max-width: 600px) {
+		/* @media (max-width: 600px) {
 			grid-gap: 1rem;
 			figure {
 				margin-left: 5rem !important;
@@ -150,7 +159,7 @@ const Card = styled.div`
 			.email {
 				font-size: 1rem !important;
 			}
-		}
+		} */
 
 		figure {
 			width: 12rem;
@@ -189,4 +198,14 @@ const Card = styled.div`
 			font-size: 1.3rem;
 		}
 	}
+`;
+
+const ExportFrame = styled.div`
+	width: ${FRAME_SIZE.width}px;
+	height: ${FRAME_SIZE.height}px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	overflow: hidden;
 `;
