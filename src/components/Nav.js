@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import styled from 'styled-components';
 
@@ -11,6 +11,15 @@ export default function NavigationBar() {
 		setOpenHam(false);
 		history.push(path);
 	};
+
+	useEffect(() => {
+		window.onscroll = () => {
+			setOpenHam(false);
+		};
+		return () => {
+			window.onscroll = null;
+		};
+	}, []);
 
 	return (
 		<>
