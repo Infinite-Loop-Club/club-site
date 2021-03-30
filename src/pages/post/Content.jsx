@@ -6,6 +6,7 @@ import { Container, Heading } from 'components';
 import { link, logoColored } from 'images';
 import { format } from 'date-fns';
 import Share from './Share';
+import { colors, fonts } from 'constants/theme';
 
 export default function Content({ data }) {
 	const [showModal, setShowModal] = useState(true);
@@ -77,6 +78,32 @@ const ContainerCustom = styled(Container)`
 
 		@media only screen and (max-width: 600px) {
 			width: 7rem;
+		}
+	}
+
+	a {
+		text-decoration: none;
+		display: inline-block;
+		font-size: 1.6rem;
+		font-family: ${fonts.sansSerif};
+		padding: 1rem 2rem;
+		background-color: ${colors.black};
+		color: ${colors.white};
+		box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.3);
+		outline: none;
+		border: none;
+		text-transform: uppercase;
+		border-radius: 2rem;
+		cursor: pointer;
+		transition: all 0.3s;
+
+		&:hover {
+			box-shadow: 0 0.4rem 1.1rem rgba(0, 0, 0, 0.5);
+			transform: translateY(-0.3em);
+		}
+
+		&:active {
+			box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.3);
 		}
 	}
 `;
