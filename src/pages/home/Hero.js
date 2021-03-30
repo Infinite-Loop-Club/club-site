@@ -14,9 +14,10 @@ export default function Home() {
 	const [showButton, setShowButton] = useState(false);
 
 	function writeText() {
-		contentRef.current.innerText = text.slice(0, countRef.current);
-
-		countRef.current++;
+		if (contentRef.current) {
+			contentRef.current.innerText = text.slice(0, countRef.current);
+			countRef.current++;
+		}
 	}
 
 	function activateInterval() {
