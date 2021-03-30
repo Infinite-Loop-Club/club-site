@@ -19,7 +19,7 @@ export default function Card({ ind, value }) {
 			<Top onClick={handleClick}>
 				<Title style={{ textAlign: 'center' }}>{value.title}</Title>
 				<Details>
-					<p>Posted on: {format(new Date(value.createdAt), 'h:m,do LLLL')}</p>
+					<p>Posted on: {format(new Date(value.createdAt), 'hh:mm,do LLLL')}</p>
 					<p>by {value.author}</p>
 				</Details>
 			</Top>
