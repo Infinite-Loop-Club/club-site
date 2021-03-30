@@ -85,7 +85,7 @@ const ContainerCustom = styled(Container)`
 		text-decoration: none;
 		display: inline-block;
 		font-size: 1.6rem;
-		font-family: ${fonts.sansSerif};
+		font-family: ${fonts.monospace};
 		padding: 1rem 2rem;
 		background-color: ${colors.black};
 		color: ${colors.white};
