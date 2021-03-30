@@ -56,10 +56,10 @@ export default function Content({ data }) {
 			<Center>{ReactHtmlParser(data.content)}</Center>
 			<Bottom showModal={showModal}>
 				{data.attachment && (
-					<Button href={data.attachment} download onClick={e => download(e)}>
+					<a className='attachment' href={data.attachment} download onClick={e => download(e)}>
 						<img src={link} alt={link}></img>
 						Download Attachment
-					</Button>
+					</a>
 				)}
 				<Share value={data} />
 			</Bottom>
@@ -138,25 +138,26 @@ const Bottom = styled.div`
 		width: 3rem;
 		cursor: pointer;
 	}
-`;
-const Button = styled.a`
-	text-decoration: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 1em 2em;
-	border-radius: 2em;
-	cursor: pointer;
-	background-color: ${p => `${p.theme.primary}20`};
-	border: ${p => `2px solid ${p.theme.primary}`};
-	color: ${p => p.theme.black};
-	font-weight: 600;
-	font-size: 1.2rem;
-	font-family: inherit;
 
-	img {
-		display: inline-block;
-		width: 2rem;
-		margin-right: 1em;
+	.attachment {
+		text-decoration: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 1em 2em;
+		border-radius: 2em;
+		cursor: pointer;
+		background-color: ${p => `${p.theme.primary}20`};
+		border: ${p => `2px solid ${p.theme.primary}`};
+		color: ${p => p.theme.black};
+		font-weight: 600;
+		font-size: 1.2rem;
+		font-family: inherit;
+
+		img {
+			display: inline-block;
+			width: 2rem;
+			margin-right: 1em;
+		}
 	}
 `;
