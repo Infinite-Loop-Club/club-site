@@ -32,6 +32,7 @@ export default function MembershipCard() {
 	return (
 		<SuccessPage>
 			<Heading gradient>Congrats 💥</Heading>
+
 			<ExportFrame ref={membershipCard}>
 				<Card>
 					<div className='gradient' />
@@ -50,6 +51,7 @@ export default function MembershipCard() {
 					</p>
 				</Card>
 			</ExportFrame>
+
 			<Button
 				component='button'
 				onClick={() =>
@@ -61,14 +63,29 @@ export default function MembershipCard() {
 			>
 				Download
 			</Button>
+
 			<BackgroundStripes />
+			<DiscordInvite>
+				<iframe
+					title='discord invite'
+					src='https://discord.com/widget?id=825272850964414484&theme=dark'
+					width='350'
+					height='500'
+					allowtransparency='true'
+					frameborder='0'
+					sandbox='allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts'
+				></iframe>
+			</DiscordInvite>
 		</SuccessPage>
 	);
 }
 
+const DiscordInvite = styled.div`
+	margin-bottom: 1.5rem;
+`;
+
 const SuccessPage = styled.main`
 	display: grid;
-	height: 100vh;
 	place-content: center;
 	place-items: center;
 	grid-gap: 4rem;
