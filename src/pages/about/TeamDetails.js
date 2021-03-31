@@ -1,17 +1,26 @@
 import styled from 'styled-components';
 
 import { Container } from 'components';
-import { man1 } from 'images';
 import AboutCard from './AboutCard';
 
-export default function TeamDetails({ teamName, img }) {
+export default function TeamDetails({ title, data }) {
 	return (
 		<Container>
-			<Teamname>{teamName}</Teamname>
+			<Teamname>{title}</Teamname>
 			<TeamContainer>
-				<AboutCard imgSrc={man1} github='/' linkedin='/' mail='/' twitter='/' portfolio='/' />
-				<AboutCard imgSrc={man1} github='/' mail='/' twitter='/' portfolio='/' />
-				<AboutCard imgSrc={man1} linkedin='/' mail='/' twitter='/' />
+				{data &&
+					data.map(({ name, profile, designation, year, tag, socialLinks }) => {
+						return (
+							<AboutCard
+								name={name}
+								profile={profile}
+								designation={designation}
+								year={year}
+								tag={tag}
+								socialLinks={socialLinks}
+							/>
+						);
+					})}
 			</TeamContainer>
 		</Container>
 	);

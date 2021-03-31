@@ -3,42 +3,44 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter, FaGlobe } from 'react-icon
 
 import { fonts } from 'constants/theme';
 
-export default function AboutCard({ imgSrc, name, github, linkedin, mail, twitter, portfolio }) {
+export default function AboutCard({ profile, name, designation, year, tag, socialLinks }) {
 	return (
 		<Container>
-			<ProfileImg src={imgSrc} alt={name}></ProfileImg>
+			<ProfileImg src={profile} alt={name}></ProfileImg>
 			<Content>
-				<h2>Krishna Moorthy</h2>
-				<Text bold>Tech Lead</Text>
-				<Text>III CSE</Text>
-				<Text>"call it as things pa"</Text>
-				<IconContainer>
-					{github && (
-						<a href='/'>
-							<FaGithub />
-						</a>
-					)}
-					{linkedin && (
-						<a href='/'>
-							<FaLinkedin />
-						</a>
-					)}
-					{mail && (
-						<a href='/'>
-							<FaEnvelope />
-						</a>
-					)}
-					{twitter && (
-						<a href='/'>
-							<FaTwitter />
-						</a>
-					)}
-					{portfolio && (
-						<a href='/'>
-							<FaGlobe />
-						</a>
-					)}
-				</IconContainer>
+				<h2>{name}</h2>
+				<Text bold>{designation}</Text>
+				{year && <Text>{year}</Text>}
+				{tag && <Text>"{tag}"</Text>}
+				{socialLinks && (
+					<IconContainer>
+						{socialLinks.github && (
+							<a href={socialLinks.github}>
+								<FaGithub />
+							</a>
+						)}
+						{socialLinks.linkedin && (
+							<a href={socialLinks.linkedin}>
+								<FaLinkedin />
+							</a>
+						)}
+						{socialLinks.email && (
+							<a href={socialLinks.email}>
+								<FaEnvelope />
+							</a>
+						)}
+						{socialLinks.twitter && (
+							<a href={socialLinks.twitter}>
+								<FaTwitter />
+							</a>
+						)}
+						{socialLinks.portfolio && (
+							<a href={socialLinks.portfolio}>
+								<FaGlobe />
+							</a>
+						)}
+					</IconContainer>
+				)}
 			</Content>
 			<Rect1 />
 			<Rect2 />

@@ -1,5 +1,6 @@
 import { Heading, Footer, Container } from 'components';
 import TeamDetails from './TeamDetails';
+import details from './members';
 
 export default function About() {
 	return (
@@ -8,11 +9,9 @@ export default function About() {
 				<Heading gradient margin='huge'>
 					About Us
 				</Heading>
-				<TeamDetails teamName='Management Team :' />
-				<TeamDetails teamName='Technical Team :' />
-				<TeamDetails teamName='Staff Team :' />
-				<TeamDetails teamName='External Affairs Team :' />
-				<TeamDetails teamName='Teaching Team :' />
+				{details.map(({ title, data }) => {
+					return <TeamDetails title={title} data={data} />;
+				})}
 			</Container>
 			<Footer />
 		</>

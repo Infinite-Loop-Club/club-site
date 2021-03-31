@@ -9,9 +9,9 @@ export default function Members() {
 				Our core members
 			</Heading>
 			<CoreBox>
-				<Card imgSrc={man} name='Bheem' position='Vice President' />
-				<Card imgSrc={man} name='Bheem' position='President' isSpecial />
-				<Card imgSrc={man} name='Bheem' position='Tech Lead' />
+				<Card imgSrc={man} name='Santhosh' position='Vice President' />
+				<Card imgSrc={man} name='Kirthika' position='President' isSpecial />
+				<Card imgSrc={man} name='Krishna Moorthy' position='Tech Lead' />
 			</CoreBox>
 		</CardContainer>
 	);
