@@ -165,6 +165,8 @@ const Card = styled.div`
 		grid-template-columns: 0.8fr 1fr;
 		grid-template-rows: repeat(3, 3.5rem);
 		align-items: center;
+		overflow-wrap: break-word;
+		padding-right: 1rem;
 
 		/* @media (max-width: 600px) {
 			grid-gap: 1rem;
@@ -212,6 +214,7 @@ const Card = styled.div`
 		}
 
 		.email {
+			overflow-wrap: anywhere;
 			font-size: 1.3rem;
 		}
 	}
