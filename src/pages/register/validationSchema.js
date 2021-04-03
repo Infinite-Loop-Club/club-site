@@ -14,5 +14,5 @@ export default Yup.object({
 		.required('Required'),
 	year: Yup.number().required('Required').min(1).max(4),
 	gender: Yup.string().required('Required'),
-	dept: Yup.string().required('Required')
+	department: Yup.string().required('Required')
 });
