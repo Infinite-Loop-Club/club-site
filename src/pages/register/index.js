@@ -8,7 +8,6 @@ import { PuffLoader } from 'react-spinners';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { Button, Footer, Heading, BackgroundStripes } from 'components';
-import { male1, male2, male3, female1, female2, female3 } from 'images';
 import { colors } from 'constants/theme';
 import validationSchema from './validationSchema';
 
@@ -25,16 +24,16 @@ export default function RegisterForm() {
 		phoneNumber: '',
 		year: '',
 		gender: '',
-		dept: ''
+		department: ''
 	};
 
 	const avatars = [
-		{ url: male1, gender: 'male', id: 'male1' },
-		{ url: male2, gender: 'male', id: 'male2' },
-		{ url: male3, gender: 'male', id: 'male3' },
-		{ url: female1, gender: 'female', id: 'female1' },
-		{ url: female2, gender: 'female', id: 'female2' },
-		{ url: female3, gender: 'female', id: 'female3' }
+		{ url: '/images/male-1.png', gender: 'male', id: 'male1' },
+		{ url: '/images/male-2.png', gender: 'male', id: 'male2' },
+		{ url: '/images/male-3.png', gender: 'male', id: 'male3' },
+		{ url: '/images/female-1.png', gender: 'female', id: 'female1' },
+		{ url: '/images/female-2.png', gender: 'female', id: 'female2' },
+		{ url: '/images/female-3.png', gender: 'female', id: 'female3' }
 	];
 
 	const history = useHistory();
@@ -44,7 +43,6 @@ export default function RegisterForm() {
 			setAvatarError(true);
 			return;
 		}
-
 		try {
 			setLoading(true);
 			const res = await axios.post('/user/new', { ...values, imageUrl: active.url });
@@ -52,8 +50,7 @@ export default function RegisterForm() {
 		} catch (err) {
 			setLoading(false);
 			toast.error(err.response.data.message);
-			// console.log(err.response);
-			// {status = HTTP STATUS CODE, data: Defined data {message, error}}
+			console.log(err);
 		}
 	};
 
@@ -144,7 +141,7 @@ export default function RegisterForm() {
 															<Avatar
 																key={value.id}
 																src={value.url}
-																alt='male'
+																alt={value.id}
 																onClick={() => {
 																	setActive(value);
 																	setAvatarError(false);
@@ -182,13 +179,15 @@ export default function RegisterForm() {
 									{errors.year && touched.year ? <Error>{errors.year}</Error> : null}
 								</FieldContainer>
 								<FieldContainer>
-									<label htmlFor='dept'>Department</label>
-									<Field name='dept' as='select' className='select'>
+									<label htmlFor='department'>Department</label>
+									<Field name='department' as='select' className='select'>
 										<option value=''>-- Select --</option>
 										<option value='CSE'>CSE</option>
 										<option value='IT'>IT</option>
 									</Field>
-									{errors.dept && touched.dept ? <Error>{errors.dept}</Error> : null}
+									{errors.department && touched.department ? (
+										<Error>{errors.department}</Error>
+									) : null}
 								</FieldContainer>
 							</Box>
 							<SubmitButton disabled={isLoading} type='submit'>
