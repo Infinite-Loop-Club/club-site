@@ -1,3 +1,5 @@
+import { Container } from 'components';
+
 export default function Voting() {
-	return <div>Hello</div>;
+	return <Container>Hello</Container>;
 }

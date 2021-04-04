@@ -43,7 +43,7 @@ export default function Login() {
 						<LoginForm>
 							{otp ? (
 								<>
-									<h2>Enter the Verification Code</h2>
+									<OtpTitle>Enter the Verification Code</OtpTitle>
 									<Otp
 										value={otpValue}
 										onChange={handleChange}
@@ -71,6 +71,12 @@ export default function Login() {
 	);
 }
 
+const OtpTitle = styled.h2`
+	@media screen and (max-width: 450px) {
+		font-size: 1.7rem;
+	}
+`;
+
 const Otp = styled(OtpInput)`
 	margin: 1rem auto 0rem;
 
@@ -81,6 +87,15 @@ const Otp = styled(OtpInput)`
 		font-size: 2rem;
 		border-radius: 4px;
 		border: 1px solid rgba(0, 0, 0, 0.3);
+
+		@media screen and (max-width: 400px) {
+			width: 2rem !important;
+			height: 2rem;
+		}
+	}
+
+	@media screen and (max-width: 400px) {
+		margin: 1rem auto 1rem;
 	}
 `;
 
@@ -95,10 +110,9 @@ const Box = styled.div`
 	border-radius: 3%;
 	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
 
-	@media screen and (max-width: 640px) {
-		min-width: 100%;
+	@media screen and (max-width: 450px) {
+		min-width: 90%;
 		padding: 2rem 0.5rem;
-		box-shadow: none;
 	}
 `;
 
@@ -150,9 +164,5 @@ const LoginForm = styled(Form)`
 
 const SubmitButton = styled(Button)`
 	width: 50%;
-	margin-top: 3rem;
-
-	@media (max-width: 700px) {
-		margin-top: 0rem;
-	}
+	margin-top: 2rem;
 `;
