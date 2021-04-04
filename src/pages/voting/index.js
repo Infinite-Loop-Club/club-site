@@ -25,8 +25,16 @@ export default function Voting() {
 	return (
 		<VotingContainer>
 			<Heading gradient>Choose your Candidate!</Heading>
-			{details.map(({ title, data }) => {
-				return <TeamDetails title={title} data={data} handleClick={handleClick} vote={vote} />;
+			{details.map(({ title, data }, index) => {
+				return (
+					<TeamDetails
+						key={index}
+						title={title}
+						data={data}
+						handleClick={handleClick}
+						vote={vote}
+					/>
+				);
 			})}
 			<ButtonContainer>
 				<SubmitButton

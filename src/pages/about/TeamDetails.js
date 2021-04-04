@@ -9,9 +9,10 @@ export default function TeamDetails({ title, data, handleClick, vote }) {
 			<Teamname>{title}</Teamname>
 			<TeamContainer>
 				{data &&
-					data.map(({ id, name, profile, designation, year, tag, socialLinks, role }) => {
+					data.map(({ id, name, profile, designation, year, tag, socialLinks, role }, index) => {
 						return (
 							<AboutCard
+								key={index}
 								id={id}
 								name={name}
 								profile={profile}
