@@ -2,10 +2,23 @@ import styled from 'styled-components';
 import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter, FaGlobe } from 'react-icons/fa';
 
 import { fonts } from 'constants/theme';
+import { voteLogo } from 'images';
 
-export default function AboutCard({ profile, name, designation, year, tag, socialLinks }) {
+export default function AboutCard({
+	id,
+	profile,
+	name,
+	designation,
+	year,
+	tag,
+	socialLinks,
+	handleClick,
+	role,
+	vote
+}) {
 	return (
-		<Container>
+		<Container id={id} onClick={() => handleClick(role, id)}>
+			{vote[role] === id && <VotedLogo src={voteLogo} alt='vote' />}
 			<ProfileImg src={profile} alt={name}></ProfileImg>
 			<Content>
 				<h2>{name}</h2>
@@ -61,6 +74,7 @@ const Container = styled.div`
 	border-radius: 2rem;
 	overflow: hidden;
 	box-shadow: ${props => `1px 1px 20px ${props.theme.black}30`};
+	cursor: ${props => (props.id ? 'pointer' : 'default')};
 
 	@media (max-width: 1200px) {
 		width: 40rem;
@@ -293,4 +307,14 @@ const Triangle = styled.div`
 		width: 10rem;
 		height: 3.5rem;
 	}
+`;
+
+const VotedLogo = styled.img`
+	position: absolute;
+	border: none !important;
+	height: 80%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
 `;

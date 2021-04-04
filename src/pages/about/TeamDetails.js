@@ -3,21 +3,25 @@ import styled from 'styled-components';
 import { Container } from 'components';
 import AboutCard from './AboutCard';
 
-export default function TeamDetails({ title, data }) {
+export default function TeamDetails({ title, data, handleClick, vote }) {
 	return (
 		<Container>
 			<Teamname>{title}</Teamname>
 			<TeamContainer>
 				{data &&
-					data.map(({ name, profile, designation, year, tag, socialLinks }) => {
+					data.map(({ id, name, profile, designation, year, tag, socialLinks, role }) => {
 						return (
 							<AboutCard
+								id={id}
 								name={name}
 								profile={profile}
 								designation={designation}
 								year={year}
 								tag={tag}
 								socialLinks={socialLinks}
+								handleClick={handleClick}
+								role={role}
+								vote={vote}
 							/>
 						);
 					})}
