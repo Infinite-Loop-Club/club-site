@@ -1,9 +1,20 @@
+import { useEffect } from 'react';
 import styled from 'styled-components';
+import { useHistory, useLocation } from 'react-router';
 
 import { voteSuccess } from 'images';
 import { Heading } from 'components';
 
 export default function Success() {
+	const location = useLocation();
+	const history = useHistory();
+
+	useEffect(() => {
+		if (!location.state) {
+			history.push('/voting/login');
+		}
+	}, [location, history]);
+
 	return (
 		<SuccessContainer>
 			<img src={voteSuccess} alt='voteSuccess' />

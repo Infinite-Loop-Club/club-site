@@ -47,12 +47,12 @@ export default function Voting() {
 			});
 			if (data.done) {
 				toast.dismiss();
-				toast.success('You voted successfully');
-				setTimeout(() => {
-					history.push({
-						pathname: '/'
-					});
-				}, 3000);
+				history.replace({
+					...location,
+					state: {
+						done: true
+					}
+				});
 			}
 		} catch (err) {
 			toast.dismiss();
@@ -69,7 +69,9 @@ export default function Voting() {
 					err.response.data &&
 					err.response.data.message === 'Request Timeout ! please try again later'
 				) {
-					history.push('/voting/login');
+					setTimeout(() => {
+						history.push('/voting/login');
+					}, 3000);
 				}
 			}
 			console.log(err);
@@ -78,6 +80,15 @@ export default function Voting() {
 
 	useEffect(() => {
 		if (!location.state) {
+			history.push('/voting/login');
+		} else if (location.state.done) {
+			history.push({
+				pathname: '/voting/success',
+				state: {
+					done: true
+				}
+			});
+		} else if (!location.state.token) {
 			history.push('/voting/login');
 		}
 	}, [location, history]);
