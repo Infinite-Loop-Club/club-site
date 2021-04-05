@@ -17,8 +17,13 @@ export default function AboutCard({
 	vote
 }) {
 	return (
-		<Container id={id} onClick={() => handleClick(role, id)}>
-			{vote[role] === id && <VotedLogo src={voteLogo} alt='vote' />}
+		<Container
+			id={id}
+			onClick={() => {
+				handleClick && handleClick(role, id);
+			}}
+		>
+			{vote && vote[role] === id && <VotedLogo src={voteLogo} alt='vote' />}
 			<ProfileImg src={profile} alt={name}></ProfileImg>
 			<Content>
 				<h2>{name}</h2>
