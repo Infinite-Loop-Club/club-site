@@ -1,14 +1,20 @@
-import { Button } from 'components';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import OtpInput from 'react-otp-input';
 import { useHistory } from 'react-router';
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import { PuffLoader } from 'react-spinners';
+
+import { Button } from 'components';
+import { colors } from 'constants/theme';
 
 export default function Login() {
 	const [otp, setOtp] = useState(false);
 	const [otpValue, setOtpValue] = useState('');
+	const [userID, setUserID] = useState('');
 	const history = useHistory();
 
 	const initialValues = {
@@ -26,9 +32,93 @@ export default function Login() {
 		setOtpValue(e);
 	};
 
-	const handleSubmit = e => {
-		otp ? history.push({ pathname: '/voting' }) : setOtp(true);
-		e.preventDefault();
+	const handleSubmit = async value => {
+		try {
+			toast(
+				<div style={{ display: 'flex', alignItems: 'center' }}>
+					<PuffLoader color={colors.primary} loading={true} size={40} />
+					<p style={{ marginLeft: '1rem' }}>Loading...</p>
+				</div>,
+				{
+					autoClose: false,
+					closeButton: false,
+					closeOnClick: false,
+					draggable: false
+				}
+			);
+			const { data } = await axios.post('/vote/sendOtp', {
+				registerNumber: value.registerNumber
+			});
+			toast.dismiss();
+			if (data.done) {
+				setUserID(data.userID);
+				setOtp(true);
+				toast.success('✔ Checkout your mail ', {
+					position: 'bottom-center',
+					autoClose: 5000,
+					hideProgressBar: true,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined
+				});
+			}
+		} catch (err) {
+			toast.dismiss();
+			if (err.response) {
+				// Request made and server responded
+				toast.error(
+					err.response.data
+						? err.response.data.message
+							? err.response.data.message
+							: 'Please try again later !'
+						: 'Please try again later !'
+				);
+			}
+			console.log(err);
+		}
+	};
+
+	const handleOTPSubmit = async () => {
+		try {
+			toast(
+				<div style={{ display: 'flex', alignItems: 'center' }}>
+					<PuffLoader color={colors.primary} loading={true} size={40} />
+					<p style={{ marginLeft: '1rem' }}>Loading...</p>
+				</div>,
+				{
+					autoClose: false,
+					closeButton: false,
+					closeOnClick: false,
+					draggable: false
+				}
+			);
+			const { data } = await axios.post('/vote/verifyOtp', {
+				userID,
+				otp: otpValue
+			});
+			if (data.done) {
+				history.push({
+					pathname: '/voting',
+					state: {
+						token: data.token
+					}
+				});
+			}
+		} catch (err) {
+			toast.dismiss();
+			if (err.response) {
+				// Request made and server responded
+				toast.error(
+					err.response.data
+						? err.response.data.message
+							? err.response.data.message
+							: 'Please try again later !'
+						: 'Please try again later !'
+				);
+			}
+			console.log(err);
+		}
 	};
 
 	return (
@@ -49,6 +139,7 @@ export default function Login() {
 										onChange={handleChange}
 										numInputs={6}
 										separator={<span>-</span>}
+										isInputNum={true}
 									/>
 								</>
 							) : (
@@ -60,13 +151,32 @@ export default function Login() {
 									) : null}
 								</FieldContainer>
 							)}
-
-							{/* disabled={isLoading} */}
-							<SubmitButton type='submit'>{otp ? 'Submit' : 'Send OTP'}</SubmitButton>
+							{!otp ? (
+								<SubmitButton type='submit'>Send OTP</SubmitButton>
+							) : (
+								<SubmitButton
+									type='button'
+									disabled={otpValue.length !== 6}
+									onClick={handleOTPSubmit}
+								>
+									Submit
+								</SubmitButton>
+							)}
 						</LoginForm>
 					)}
 				</Formik>
 			</Box>
+			<ToastContainer
+				position='bottom-center'
+				autoClose={5000}
+				hideProgressBar
+				newestOnTop={false}
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+			/>
 		</LoginContainer>
 	);
 }
@@ -87,6 +197,7 @@ const Otp = styled(OtpInput)`
 		font-size: 2rem;
 		border-radius: 4px;
 		border: 1px solid rgba(0, 0, 0, 0.3);
+		box-shadow: ${props => `1px 1px 10px ${props.theme.primary}50`};
 
 		@media screen and (max-width: 400px) {
 			width: 2rem !important;
