@@ -18,7 +18,7 @@ export default function Success() {
 	return (
 		<SuccessContainer>
 			<img src={voteSuccess} alt='voteSuccess' />
-			<Heading gradient>Voted Successfully!</Heading>
+			<Heading gradient>Vote casted Successfully!</Heading>
 		</SuccessContainer>
 	);
 }

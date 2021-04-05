@@ -53,7 +53,7 @@ export default function Login() {
 			if (data.done) {
 				setUserID(data.userID);
 				setOtp(true);
-				toast.success('✔ Checkout your mail ', {
+				toast.success('✔ Check your email ', {
 					position: 'bottom-center',
 					autoClose: 5000,
 					hideProgressBar: true,
