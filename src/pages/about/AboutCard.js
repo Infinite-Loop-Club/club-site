@@ -312,14 +312,27 @@ const Triangle = styled.div`
 		width: 10rem;
 		height: 3.5rem;
 	}
+
+	.vectorLogo {
+		position: absolute;
+		border: none !important;
+		height: 80%;
+		object-fit: cover;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 30;
+	}
 `;
 
 const VotedLogo = styled.img`
 	position: absolute;
 	border: none !important;
-	height: 80%;
+	height: 80% !important;
+	width: auto !important;
+	object-fit: cover;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	z-index: 2;
+	z-index: 30;
 `;
