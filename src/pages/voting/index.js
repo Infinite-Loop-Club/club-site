@@ -67,7 +67,7 @@ export default function Voting() {
 				);
 				if (
 					err.response.data &&
-					err.response.data.message === 'Request Timeout ! please try again later'
+					err.response.data.message === 'Request timed out, please try again later'
 				) {
 					setTimeout(() => {
 						history.push('/voting/login');
