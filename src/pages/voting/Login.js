@@ -8,7 +8,7 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import { PuffLoader } from 'react-spinners';
 
-import { Button } from 'components';
+import { Button, Heading } from 'components';
 import { colors } from 'constants/theme';
 
 export default function Login() {
@@ -123,6 +123,7 @@ export default function Login() {
 
 	return (
 		<LoginContainer>
+			<Heading style={{ color: 'white', marginBottom: '1rem' }}>Choose your Candidate!</Heading>
 			<Box>
 				<Formik
 					initialValues={initialValues}
@@ -260,9 +261,12 @@ const Input = styled(Field)`
 
 const LoginContainer = styled.div`
 	display: flex;
+	padding: 2em;
 	align-items: center;
+	flex-direction: column;
+	gap: 2em;
 	justify-content: center;
-	height: 100vh;
+	min-height: 100vh;
 	background-image: linear-gradient(25deg, rgba(2, 130, 251, 1) 40%, rgba(2, 239, 81, 1) 100%);
 `;
 
