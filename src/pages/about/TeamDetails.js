@@ -34,7 +34,7 @@ export default function TeamDetails({ title, data, handleClick, vote }) {
 const TeamContainer = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	margin: 0 1rem;
+	grid-gap: 2.5rem;
 
 	@media (max-width: 1100px) {
 		display: flex;

@@ -130,5 +130,5 @@ const SubmitButton = styled(Button)`
 `;
 
 const VotingContainer = styled.div`
-	margin: 8rem auto auto;
+	margin: 8rem auto auto; /* left, horizontal, bottom */
 `;

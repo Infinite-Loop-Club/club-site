@@ -76,7 +76,6 @@ const Container = styled.div`
 	position: relative;
 	width: 50rem;
 	height: 23rem;
-	margin: 1rem;
 	padding: 2rem;
 	display: flex;
 	flex-direction: row;
@@ -108,7 +107,7 @@ const Container = styled.div`
 	}
 
 	& img {
-		margin-right: 4rem;
+		margin: auto 4rem auto 0;
 		object-fit: cover;
 		object-position: top center;
 		border-radius: 10%;
