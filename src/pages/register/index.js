@@ -4,11 +4,11 @@ import { useHistory } from 'react-router';
 import styled from 'styled-components';
 import { Formik, Form, Field } from 'formik';
 import { ToastContainer, toast } from 'react-toastify';
-import { PuffLoader } from 'react-spinners';
 import 'react-toastify/dist/ReactToastify.css';
 
 // import { Button, Footer, Heading, BackgroundStripes } from 'components';
 import { Footer, Heading, BackgroundStripes } from 'components';
+import LoadingToast, { LoadingToastOptions } from 'components/LoadingToast';
 import { closed } from 'images';
 import { colors } from 'constants/theme';
 import validationSchema from './validationSchema';
@@ -61,18 +61,7 @@ export default function RegisterForm() {
 			return toast.dismiss(toastId.current);
 		}
 
-		toastId.current = toast(
-			<div style={{ display: 'flex', alignItems: 'center' }}>
-				<PuffLoader color={colors.primary} loading={true} size={40} />
-				<p style={{ marginLeft: '1rem' }}>Loading...</p>
-			</div>,
-			{
-				autoClose: false,
-				closeButton: false,
-				closeOnClick: false,
-				draggable: false
-			}
-		);
+		toastId.current = toast(LoadingToast, LoadingToastOptions);
 	}, [isLoading]);
 
 	return (

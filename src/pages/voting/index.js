@@ -4,11 +4,10 @@ import { Button, Footer, Heading } from 'components';
 import axios from 'axios';
 import { useHistory, useLocation } from 'react-router';
 import { ToastContainer, toast } from 'react-toastify';
-import { PuffLoader } from 'react-spinners';
 
 import TeamDetails from 'pages/about/TeamDetails';
 import details from './nominees';
-import { colors } from 'constants/theme';
+import LoadingToast, { LoadingToastOptions } from 'components/LoadingToast';
 
 export default function Voting() {
 	const [vote, setVote] = useState({
@@ -29,18 +28,7 @@ export default function Voting() {
 
 	const handleSubmit = async () => {
 		try {
-			toast(
-				<div style={{ display: 'flex', alignItems: 'center' }}>
-					<PuffLoader color={colors.primary} loading={true} size={40} />
-					<p style={{ marginLeft: '1rem' }}>Loading...</p>
-				</div>,
-				{
-					autoClose: false,
-					closeButton: false,
-					closeOnClick: false,
-					draggable: false
-				}
-			);
+			toast(LoadingToast, LoadingToastOptions);
 			const { data } = await axios.post('/vote/make', {
 				token: location.state.token,
 				...vote
