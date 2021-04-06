@@ -7,7 +7,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import { PuffLoader } from 'react-spinners';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { Button, Footer, Heading, BackgroundStripes } from 'components';
+// import { Button, Footer, Heading, BackgroundStripes } from 'components';
+import { Footer, Heading, BackgroundStripes } from 'components';
 import { closed } from 'images';
 import { colors } from 'constants/theme';
 import validationSchema from './validationSchema';
@@ -419,10 +420,10 @@ const RadioGroup = styled.div`
 	}
 `;
 
-const SubmitButton = styled(Button)`
-	margin-top: 3rem;
+// const SubmitButton = styled(Button)`
+// 	margin-top: 3rem;
 
-	@media (max-width: 700px) {
-		margin-top: 0rem;
-	}
-`;
+// 	@media (max-width: 700px) {
+// 		margin-top: 0rem;
+// 	}
+// `;
