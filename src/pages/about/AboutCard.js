@@ -29,7 +29,12 @@ export default function AboutCard({
 				<h2>{name}</h2>
 				<Text bold>{designation}</Text>
 				{year && <Text>{year}</Text>}
-				{tag && <Text>"{tag}"</Text>}
+				{tag && (
+					<Text>
+						"{tag.substring(0, 60)}
+						{tag.length > 60 && `...`}"
+					</Text>
+				)}
 				{socialLinks && (
 					<IconContainer>
 						{socialLinks.github && (
@@ -94,10 +99,9 @@ const Container = styled.div`
 	@media (max-width: 400px) {
 		width: 28rem;
 		height: 15rem;
-		justify-content: space-between;
 	}
 
-	@media (max-width: 315px) {
+	@media (max-width: 400px) {
 		width: 22.5rem;
 		height: 13rem;
 		padding: 1.5rem;
@@ -106,9 +110,12 @@ const Container = styled.div`
 	& img {
 		margin-right: 4rem;
 		object-fit: cover;
-		object-position: center;
+		object-position: top center;
 		border-radius: 10%;
 		border: 0.3rem solid ${props => props.theme.primary};
+
+		width: 16rem;
+		height: 18rem;
 
 		@media (max-width: 1200px) {
 			margin-right: 3rem;
@@ -128,7 +135,7 @@ const Container = styled.div`
 			height: 11rem;
 		}
 
-		@media (max-width: 315px) {
+		@media (max-width: 400px) {
 			margin-right: 0.5rem;
 			width: 6rem;
 			height: 9rem;
@@ -151,8 +158,8 @@ const Container = styled.div`
 			font-size: 1.8rem;
 		}
 
-		@media (max-width: 315px) {
-			font-size: 1.5rem;
+		@media (max-width: 400px) {
+			font-size: 1.2rem;
 		}
 	}
 `;
@@ -195,7 +202,7 @@ const IconContainer = styled.div`
 			margin-right: 1rem;
 		}
 
-		@media (max-width: 315px) {
+		@media (max-width: 400px) {
 			font-size: 1.3rem;
 			margin-right: 1rem;
 		}
@@ -241,7 +248,7 @@ const Rect1 = styled.div`
 		height: 2.5rem;
 	}
 
-	@media (max-width: 315px) {
+	@media (max-width: 400px) {
 		width: 7.5rem;
 		height: 2rem;
 	}
@@ -270,21 +277,21 @@ const Rect2 = styled.div`
 		width: 14rem;
 	}
 
-	@media (max-width: 315px) {
+	@media (max-width: 400px) {
 		width: 11rem;
 	}
 `;
 
 const Text = styled.p`
 	font-size: ${props => (props.bold ? '1.3rem' : '1.2rem')};
-	font-weight: ${props => (props.bold ? '700' : '400')};
+	font-weight: ${props => (props.bold ? '700' : '600')};
 	z-index: 1;
 
 	@media (max-width: 1200px) {
 		font-size: ${props => (props.bold ? '1.2rem' : '1.1rem')};
 	}
 
-	@media (max-width: 315px) {
+	@media (max-width: 400px) {
 		font-size: ${props => (props.bold ? '.9rem' : '0.8rem')};
 	}
 `;
