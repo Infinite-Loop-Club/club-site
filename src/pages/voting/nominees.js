@@ -8,7 +8,7 @@ const data = [
 				name: 'Kiruthika R',
 				profile: 'https://drive.google.com/uc?export=view&id=1mtIe1U88UpBuV8WpW9IqHeeJ0YeWqhH1',
 				tag: 'To enhance peer-peer learning through networking',
-				year: 'IV CSE'
+				year: 'IV - CSE'
 			}
 		]
 	},
@@ -21,7 +21,7 @@ const data = [
 				name: 'Mugundhan B',
 				profile: 'https://drive.google.com/uc?export=view&id=15NoSJaPEm5kKkHgj7Sfeic6wZfGQ9ll-',
 				tag: 'POWERFULL PEOPLE MAKES CLUB POWERFULL',
-				year: 'III CSE'
+				year: 'III - CSE'
 			},
 			{
 				id: 12,
@@ -29,7 +29,7 @@ const data = [
 				name: 'Thirukumaran R',
 				profile: 'https://drive.google.com/uc?export=view&id=1eQC-ZccRoV5Jhk3IBRl1VZCO2bhYfyZF',
 				tag: 'Career guidance ',
-				year: 'III CSE'
+				year: 'III - CSE'
 			},
 			{
 				id: 13,
@@ -37,7 +37,7 @@ const data = [
 				name: 'Ezhilarasi D',
 				profile: 'https://drive.google.com/uc?export=view&id=11yvjPR1kiX_fgPYzYVuQHauehOkA6QMJ',
 				tag: 'Skills take you far, together you go infinite.',
-				year: 'III CSE'
+				year: 'III - CSE'
 			},
 			{
 				id: 14,
@@ -46,7 +46,7 @@ const data = [
 				profile: 'https://drive.google.com/uc?export=view&id=1LhHClnmJnTVNjTB_DXcTXfY1BHP89-D9',
 				tag:
 					'My faith is in people. Individuals. And I’m happy to say for the most part, they haven’t let me down. Which is why I can’t let them down either.',
-				year: 'III CSE'
+				year: 'III - CSE'
 			}
 		]
 	},
@@ -117,7 +117,7 @@ const data = [
 				name: 'Prabhu Raam R.G',
 				profile: 'https://drive.google.com/uc?export=view&id=1E80eeBDP1gfIrqNNQymwWeMJ56dzbdrU',
 				tag: 'My motto is to Maintain a better programming community among aspiring coders',
-				year: 'II - CSE'
+				year: 'II - IT'
 			}
 		]
 	},
@@ -127,21 +127,13 @@ const data = [
 			{
 				id: 31,
 				role: 'youthRepresentative',
-				name: 'Melton.N',
-				profile: 'https://drive.google.com/uc?export=view&id=1vE2yP1aPYodprVf7wcQ1qKJST1DkumqH',
-				tag: '',
-				year: 'I - CSE'
-			},
-			{
-				id: 32,
-				role: 'youthRepresentative',
 				name: 'Barath S',
 				profile: 'https://drive.google.com/uc?export=view&id=1961Ld295dg0xYoB9mmhjow36m7ePLZJS',
 				tag: 'To help in the betterment of the club and all of its principles...',
 				year: 'I - IT'
 			},
 			{
-				id: 33,
+				id: 32,
 				role: 'youthRepresentative',
 				name: 'Krishna Sangavi S',
 				profile: 'https://drive.google.com/uc?export=view&id=1-7ihsLuOzoW6kJnSq2ikwU_qXcseL5HO',
@@ -149,7 +141,7 @@ const data = [
 				year: 'I - IT'
 			},
 			{
-				id: 34,
+				id: 33,
 				role: 'youthRepresentative',
 				name: 'Deepak Barani P',
 				profile: 'https://drive.google.com/uc?export=view&id=1gzLRlPPCx8EG7ojnEvUW_NsevvxFDVwQ',
@@ -157,7 +149,7 @@ const data = [
 				year: 'I - IT'
 			},
 			{
-				id: 35,
+				id: 34,
 				role: 'youthRepresentative',
 				name: 'Ramya R',
 				profile: 'https://drive.google.com/uc?export=view&id=1gKrEioi5UBfGaJS6n0NWRY1Uqmp-GQDP',
