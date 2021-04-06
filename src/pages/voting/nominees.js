@@ -45,7 +45,7 @@ const data = [
 				name: 'Pranav G',
 				profile: 'https://drive.google.com/uc?export=view&id=1LhHClnmJnTVNjTB_DXcTXfY1BHP89-D9',
 				tag:
-					'My faith is in people. Individuals. And I’m happy to say for the most part, they haven’t let me down. Which is why I can’t let them down either.',
+					'I’m happy to say for the most part, my friends haven’t let me down. Which is why I can’t let them down either.',
 				year: 'III - CSE'
 			}
 		]
@@ -114,7 +114,7 @@ const data = [
 			{
 				id: 28,
 				role: 'secretary',
-				name: 'Prabhu Raam R.G',
+				name: 'Prabhu Raam R G',
 				profile: 'https://drive.google.com/uc?export=view&id=1E80eeBDP1gfIrqNNQymwWeMJ56dzbdrU',
 				tag: 'My motto is to Maintain a better programming community among aspiring coders',
 				year: 'II - IT'
