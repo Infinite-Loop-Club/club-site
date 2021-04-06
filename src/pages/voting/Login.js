@@ -1,15 +1,13 @@
+import axios from 'axios';
 import { useState } from 'react';
-import styled from 'styled-components';
+import { useHistory } from 'react-router';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import styled from 'styled-components';
 import OtpInput from 'react-otp-input';
-import { useHistory } from 'react-router';
-import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
-import { PuffLoader } from 'react-spinners';
 
 import { Button, Heading, LoadingToast } from 'components';
-import { colors } from 'constants/theme';
 import { LoadingToastOptions } from 'components/LoadingToast';
 
 export default function Login() {
@@ -66,18 +64,7 @@ export default function Login() {
 
 	const handleOTPSubmit = async () => {
 		try {
-			toast(
-				<div style={{ display: 'flex', alignItems: 'center' }}>
-					<PuffLoader color={colors.primary} loading={true} size={40} />
-					<p style={{ marginLeft: '1rem' }}>Loading...</p>
-				</div>,
-				{
-					autoClose: false,
-					closeButton: false,
-					closeOnClick: false,
-					draggable: false
-				}
-			);
+			toast(LoadingToast, LoadingToastOptions);
 			const { data } = await axios.post('/vote/verifyOtp', {
 				userID,
 				otp: otpValue
