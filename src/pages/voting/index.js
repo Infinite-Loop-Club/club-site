@@ -57,18 +57,10 @@ export default function Voting() {
 		} catch (err) {
 			toast.dismiss();
 			if (err.response) {
+				const { message } = err.response?.data;
 				// Request made and server responded
-				toast.error(
-					err.response.data
-						? err.response.data.message
-							? err.response.data.message
-							: 'Please try again later !'
-						: 'Please try again later !'
-				);
-				if (
-					err.response.data &&
-					err.response.data.message === 'Request timed out, please try again later'
-				) {
+				toast.error(message ?? 'Please try again later!');
+				if (message === 'Request timed out, please try again later') {
 					setTimeout(() => {
 						history.push('/voting/login');
 					}, 3000);
