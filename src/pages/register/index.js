@@ -7,7 +7,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import { PuffLoader } from 'react-spinners';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { Button, Footer, Heading, BackgroundStripes } from 'components';
+// import { Button, Footer, Heading, BackgroundStripes } from 'components';
+import { Footer, Heading, BackgroundStripes } from 'components';
+import { closed } from 'images';
 import { colors } from 'constants/theme';
 import validationSchema from './validationSchema';
 
@@ -76,6 +78,9 @@ export default function RegisterForm() {
 	return (
 		<>
 			<FormContainer>
+				<Overlay>
+					<img src={closed} alt='closed'></img>
+				</Overlay>
 				<Heading gradient margin='medium'>
 					Registration
 				</Heading>
@@ -190,9 +195,9 @@ export default function RegisterForm() {
 									) : null}
 								</FieldContainer>
 							</Box>
-							<SubmitButton disabled={isLoading} type='submit'>
+							{/* <SubmitButton disabled={isLoading} type='submit'>
 								Submit
-							</SubmitButton>
+							</SubmitButton> */}
 						</FormikForm>
 					)}
 				</Formik>
@@ -240,6 +245,26 @@ const AvatarContainer = styled.div`
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+`;
+
+const Overlay = styled.div`
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.7);
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	img {
+		width: 30%;
+		display: inline-block;
+
+		@media screen and (max-width: 600px) {
+			width: 60%;
+		}
+	}
 `;
 
 const Box = styled.div`
@@ -395,10 +420,10 @@ const RadioGroup = styled.div`
 	}
 `;
 
-const SubmitButton = styled(Button)`
-	margin-top: 3rem;
+// const SubmitButton = styled(Button)`
+// 	margin-top: 3rem;
 
-	@media (max-width: 700px) {
-		margin-top: 0rem;
-	}
-`;
+// 	@media (max-width: 700px) {
+// 		margin-top: 0rem;
+// 	}
+// `;
