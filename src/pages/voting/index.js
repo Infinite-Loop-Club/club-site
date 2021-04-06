@@ -107,6 +107,7 @@ export default function Voting() {
 					/>
 				);
 			})}
+			<p style={{ padding: '1em' }}>** select one candidate from each category **</p>
 			<ButtonContainer>
 				<SubmitButton
 					disabled={
