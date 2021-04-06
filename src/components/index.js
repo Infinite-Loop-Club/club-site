@@ -2,6 +2,7 @@ export { default as Button } from './Button';
 export { default as BackgroundStripes } from './BackgroundStripes';
 export { default as Card } from './Card';
 export { default as Container } from './Container';
+export { default as ElectionBanner } from './ElectionBanner';
 export { default as LoadingToast } from './LoadingToast';
 export { default as LoaderContainer } from './LoaderContainer';
 export { default as Footer } from './Footer';

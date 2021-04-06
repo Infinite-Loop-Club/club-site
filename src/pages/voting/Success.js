@@ -11,7 +11,7 @@ export default function Success() {
 
 	useEffect(() => {
 		if (!location.state) {
-			history.push('/voting/login');
+			history.push('/vote/login');
 		}
 	}, [location, history]);
 

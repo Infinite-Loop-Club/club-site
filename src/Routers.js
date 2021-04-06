@@ -33,9 +33,9 @@ export default function AppRouter() {
 				<Route path='/post/view' exact component={IndividualPost} />
 				<Route path='/post/:id' exact component={CustomPost} />
 				<Route path='/member' component={MembershipCard} />
-				<Route path='/voting' exact component={Voting} />
-				<Route path='/voting/login' exact component={Login} />
-				<Route path='/voting/success' exact component={Success} />
+				<Route path='/vote' exact component={Voting} />
+				<Route path='/vote/login' exact component={Login} />
+				<Route path='/vote/success' exact component={Success} />
 				<Redirect to='/' />
 			</Switch>
 		</>

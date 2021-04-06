@@ -50,7 +50,7 @@ export default function Voting() {
 				toast.error(message ?? 'Please try again later!');
 				if (message === 'Request timed out, please try again later') {
 					setTimeout(() => {
-						history.push('/voting/login');
+						history.push('/vote/login');
 					}, 3000);
 				}
 			}
@@ -60,16 +60,16 @@ export default function Voting() {
 
 	useEffect(() => {
 		if (!location.state) {
-			history.push('/voting/login');
+			history.push('/vote/login');
 		} else if (location.state.done) {
 			history.push({
-				pathname: '/voting/success',
+				pathname: '/vote/success',
 				state: {
 					done: true
 				}
 			});
 		} else if (!location.state.token) {
-			history.push('/voting/login');
+			history.push('/vote/login');
 		}
 	}, [location, history]);
 

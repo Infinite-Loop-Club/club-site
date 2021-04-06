@@ -99,7 +99,7 @@ export default function Login() {
 			});
 			if (data.done) {
 				history.push({
-					pathname: '/voting',
+					pathname: '/vote',
 					state: {
 						token: data.token
 					}
