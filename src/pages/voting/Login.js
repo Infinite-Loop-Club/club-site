@@ -103,7 +103,9 @@ export default function Login() {
 
 	return (
 		<LoginContainer>
-			<Heading style={{ color: 'white', marginBottom: '1rem' }}>Choose your Candidate!</Heading>
+			<Heading style={{ color: 'white', marginBottom: '1rem' }}>
+				Board of Directors Election 2021
+			</Heading>
 			<Box>
 				<Formik
 					initialValues={initialValues}
