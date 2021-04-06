@@ -8,8 +8,9 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import { PuffLoader } from 'react-spinners';
 
-import { Button, Heading } from 'components';
+import { Button, Heading, LoadingToast } from 'components';
 import { colors } from 'constants/theme';
+import { LoadingToastOptions } from 'components/LoadingToast';
 
 export default function Login() {
 	const [otp, setOtp] = useState(false);
@@ -34,18 +35,7 @@ export default function Login() {
 
 	const handleSubmit = async value => {
 		try {
-			toast(
-				<div style={{ display: 'flex', alignItems: 'center' }}>
-					<PuffLoader color={colors.primary} loading={true} size={40} />
-					<p style={{ marginLeft: '1rem' }}>Loading...</p>
-				</div>,
-				{
-					autoClose: false,
-					closeButton: false,
-					closeOnClick: false,
-					draggable: false
-				}
-			);
+			toast(LoadingToast, LoadingToastOptions);
 			const { data } = await axios.post('/vote/sendOtp', {
 				registerNumber: value.registerNumber
 			});
@@ -67,13 +57,8 @@ export default function Login() {
 			toast.dismiss();
 			if (err.response) {
 				// Request made and server responded
-				toast.error(
-					err.response.data
-						? err.response.data.message
-							? err.response.data.message
-							: 'Please try again later !'
-						: 'Please try again later !'
-				);
+				const { message } = err.response?.data;
+				toast.error(message ?? 'Please try again later!');
 			}
 			console.log(err);
 		}
@@ -109,13 +94,8 @@ export default function Login() {
 			toast.dismiss();
 			if (err.response) {
 				// Request made and server responded
-				toast.error(
-					err.response.data
-						? err.response.data.message
-							? err.response.data.message
-							: 'Please try again later !'
-						: 'Please try again later !'
-				);
+				const { message } = err.response?.data;
+				toast.error(message ?? 'Please try again later!');
 			}
 			console.log(err);
 		}
