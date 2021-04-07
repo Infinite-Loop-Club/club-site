@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Button, Footer, Heading } from 'components';
@@ -134,3 +135,8 @@ const SubmitButton = styled(Button)`
 const VotingContainer = styled.div`
 	margin: 8rem auto auto; /* left, horizontal, bottom */
 `;
+=======
+export default function Voting() {
+	return <div>Hello</div>;
+}
+>>>>>>> e712dae... Login page designed

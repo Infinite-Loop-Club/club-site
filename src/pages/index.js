@@ -6,4 +6,7 @@ export { default as IndividualPost } from './post/IndividualPost';
 export { default as CustomPost } from './post/CustomPost';
 export { default as Voting } from './voting';
 export { default as Login } from './voting/Login';
+<<<<<<< HEAD
 export { default as Success } from './voting/Success';
+=======
+>>>>>>> e712dae... Login page designed
