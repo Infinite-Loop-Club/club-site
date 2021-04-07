@@ -45,6 +45,20 @@ const data = [
 					portfolio: '/',
 					email: '/'
 				}
+			},
+			{
+				name: 'Member4',
+				profile: man1,
+				designation: 'Youth Representative',
+				year: 'I CSE',
+				tag: 'call it as things pa',
+				socialLinks: {
+					github: 'https://github.com',
+					linkedin: '/',
+					twitter: '/',
+					portfolio: '/',
+					email: '/'
+				}
 			}
 		]
 	},

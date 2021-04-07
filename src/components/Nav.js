@@ -31,6 +31,7 @@ export default function NavigationBar() {
 				<ul>
 					<li onClick={() => handleClick('/')}>Home</li>
 					<li onClick={() => handleClick('/posts')}>Posts</li>
+					<li onClick={() => handleClick('/vote')}>Cast your vote</li>
 					<li onClick={() => handleClick('about-us')}>About us</li>
 					<li onClick={() => handleClick('/register')}>Register</li>
 				</ul>

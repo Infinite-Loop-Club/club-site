@@ -2,16 +2,39 @@ import styled from 'styled-components';
 import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter, FaGlobe } from 'react-icons/fa';
 
 import { fonts } from 'constants/theme';
+import { voteLogo } from 'images';
 
-export default function AboutCard({ profile, name, designation, year, tag, socialLinks }) {
+export default function AboutCard({
+	id,
+	profile,
+	name,
+	designation,
+	year,
+	tag,
+	socialLinks,
+	handleClick,
+	role,
+	vote
+}) {
 	return (
-		<Container>
+		<Container
+			id={id}
+			onClick={() => {
+				handleClick && handleClick(role, id);
+			}}
+		>
+			{vote && vote[role] === id && <VotedLogo src={voteLogo} alt='vote' />}
 			<ProfileImg src={profile} alt={name}></ProfileImg>
 			<Content>
 				<h2>{name}</h2>
 				<Text bold>{designation}</Text>
 				{year && <Text>{year}</Text>}
-				{tag && <Text>"{tag}"</Text>}
+				{tag && (
+					<Text>
+						"{tag.substring(0, 60)}
+						{tag.length > 60 && `...`}"
+					</Text>
+				)}
 				{socialLinks && (
 					<IconContainer>
 						{socialLinks.github && (
@@ -53,7 +76,6 @@ const Container = styled.div`
 	position: relative;
 	width: 50rem;
 	height: 23rem;
-	margin: 1rem;
 	padding: 2rem;
 	display: flex;
 	flex-direction: row;
@@ -61,6 +83,7 @@ const Container = styled.div`
 	border-radius: 2rem;
 	overflow: hidden;
 	box-shadow: ${props => `1px 1px 20px ${props.theme.black}30`};
+	cursor: ${props => (props.id ? 'pointer' : 'default')};
 
 	@media (max-width: 1200px) {
 		width: 40rem;
@@ -75,21 +98,23 @@ const Container = styled.div`
 	@media (max-width: 400px) {
 		width: 28rem;
 		height: 15rem;
-		justify-content: space-between;
 	}
 
-	@media (max-width: 315px) {
+	@media (max-width: 400px) {
 		width: 22.5rem;
 		height: 13rem;
 		padding: 1.5rem;
 	}
 
 	& img {
-		margin-right: 4rem;
+		margin: auto 4rem auto 0;
 		object-fit: cover;
-		object-position: center;
+		object-position: top center;
 		border-radius: 10%;
 		border: 0.3rem solid ${props => props.theme.primary};
+
+		width: 16rem;
+		height: 18rem;
 
 		@media (max-width: 1200px) {
 			margin-right: 3rem;
@@ -109,7 +134,7 @@ const Container = styled.div`
 			height: 11rem;
 		}
 
-		@media (max-width: 315px) {
+		@media (max-width: 400px) {
 			margin-right: 0.5rem;
 			width: 6rem;
 			height: 9rem;
@@ -132,8 +157,8 @@ const Container = styled.div`
 			font-size: 1.8rem;
 		}
 
-		@media (max-width: 315px) {
-			font-size: 1.5rem;
+		@media (max-width: 400px) {
+			font-size: 1.2rem;
 		}
 	}
 `;
@@ -176,7 +201,7 @@ const IconContainer = styled.div`
 			margin-right: 1rem;
 		}
 
-		@media (max-width: 315px) {
+		@media (max-width: 400px) {
 			font-size: 1.3rem;
 			margin-right: 1rem;
 		}
@@ -222,7 +247,7 @@ const Rect1 = styled.div`
 		height: 2.5rem;
 	}
 
-	@media (max-width: 315px) {
+	@media (max-width: 400px) {
 		width: 7.5rem;
 		height: 2rem;
 	}
@@ -251,21 +276,21 @@ const Rect2 = styled.div`
 		width: 14rem;
 	}
 
-	@media (max-width: 315px) {
+	@media (max-width: 400px) {
 		width: 11rem;
 	}
 `;
 
 const Text = styled.p`
 	font-size: ${props => (props.bold ? '1.3rem' : '1.2rem')};
-	font-weight: ${props => (props.bold ? '700' : '400')};
+	font-weight: ${props => (props.bold ? '700' : '600')};
 	z-index: 1;
 
 	@media (max-width: 1200px) {
 		font-size: ${props => (props.bold ? '1.2rem' : '1.1rem')};
 	}
 
-	@media (max-width: 315px) {
+	@media (max-width: 400px) {
 		font-size: ${props => (props.bold ? '.9rem' : '0.8rem')};
 	}
 `;
@@ -293,4 +318,27 @@ const Triangle = styled.div`
 		width: 10rem;
 		height: 3.5rem;
 	}
+
+	.vectorLogo {
+		position: absolute;
+		border: none !important;
+		height: 80%;
+		object-fit: cover;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 30;
+	}
+`;
+
+const VotedLogo = styled.img`
+	position: absolute;
+	border: none !important;
+	height: 80% !important;
+	width: auto !important;
+	object-fit: cover;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 30;
 `;
