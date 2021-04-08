@@ -2,17 +2,7 @@ import { useEffect } from 'react';
 import { Switch, Route, useLocation, Redirect } from 'react-router-dom';
 import { NavigationBar } from 'components';
 
-import {
-	Home,
-	About,
-	Register,
-	Post,
-	IndividualPost,
-	CustomPost,
-	Voting,
-	Login,
-	Success
-} from 'pages';
+import { Home, About, Register, Post, IndividualPost, CustomPost } from 'pages';
 import MembershipCard from 'pages/register/membership-card';
 
 export default function AppRouter() {
@@ -33,9 +23,6 @@ export default function AppRouter() {
 				<Route path='/post/view' exact component={IndividualPost} />
 				<Route path='/post/:id' exact component={CustomPost} />
 				<Route path='/member' component={MembershipCard} />
-				<Route path='/vote' exact component={Voting} />
-				<Route path='/vote/login' exact component={Login} />
-				<Route path='/vote/success' exact component={Success} />
 				<Redirect to='/' />
 			</Switch>
 		</>

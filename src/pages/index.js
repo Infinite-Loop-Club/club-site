@@ -4,6 +4,3 @@ export { default as Register } from './register';
 export { default as Post } from './post';
 export { default as IndividualPost } from './post/IndividualPost';
 export { default as CustomPost } from './post/CustomPost';
-export { default as Voting } from './voting';
-export { default as Login } from './voting/Login';
-export { default as Success } from './voting/Success';
