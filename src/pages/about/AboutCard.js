@@ -177,7 +177,7 @@ const IconContainer = styled.div`
 	z-index: 1;
 
 	@media (max-width: 1200px) {
-		margin-top: 2rem;
+		margin-top: 1rem;
 	}
 
 	@media (max-width: 970px) {
@@ -288,7 +288,11 @@ const Text = styled.p`
 	z-index: 1;
 
 	@media (max-width: 1200px) {
-		font-size: ${props => (props.bold ? '1.2rem' : '1.1rem')};
+		font-size: ${props => (props.bold ? '1.2rem' : '1rem')};
+	}
+
+	@media (max-width: 970px) {
+		font-size: ${props => (props.bold ? '1rem' : '.9rem')};
 	}
 
 	@media (max-width: 400px) {
