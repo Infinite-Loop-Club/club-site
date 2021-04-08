@@ -119,7 +119,7 @@ const Container = styled.div`
 		@media (max-width: 1200px) {
 			margin-right: 3rem;
 			width: 14rem;
-			height: 16rem;
+			height: 18rem;
 		}
 
 		@media (max-width: 970px) {
@@ -171,8 +171,9 @@ const Content = styled.div`
 
 const IconContainer = styled.div`
 	position: relative;
+	flex: 1;
 	display: flex;
-	margin-top: 4rem;
+	align-items: flex-end;
 	z-index: 1;
 
 	@media (max-width: 1200px) {
