@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter, FaGlobe } from 'react-icons/fa';
 
 import { fonts } from 'constants/theme';
-import { voteLogo } from 'images';
+import { benxeneWithoutName, voteLogo } from 'images';
 
 export default function AboutCard({
 	id,
@@ -14,11 +14,13 @@ export default function AboutCard({
 	socialLinks,
 	handleClick,
 	role,
-	vote
+	vote,
+	fromBenxene
 }) {
 	return (
 		<Container
 			id={id}
+			key={id}
 			onClick={() => {
 				handleClick && handleClick(role, id);
 			}}
@@ -67,7 +69,7 @@ export default function AboutCard({
 			</Content>
 			<Rect1 />
 			<Rect2 />
-			<Triangle />
+			<Triangle>{fromBenxene && <img src={benxeneWithoutName} alt='benxene' />}</Triangle>
 		</Container>
 	);
 }
@@ -119,7 +121,7 @@ const Container = styled.div`
 		@media (max-width: 1200px) {
 			margin-right: 3rem;
 			width: 14rem;
-			height: 18rem;
+			height: 16rem;
 		}
 
 		@media (max-width: 970px) {
@@ -324,15 +326,14 @@ const Triangle = styled.div`
 		height: 3.5rem;
 	}
 
-	.vectorLogo {
+	img {
+		height: 60%;
+		width: auto;
 		position: absolute;
-		border: none !important;
-		height: 80%;
-		object-fit: cover;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		z-index: 30;
+		top: 30%;
+		right: -10%;
+		display: inline-block;
+		border: none;
 	}
 `;
 

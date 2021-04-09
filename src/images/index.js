@@ -1,4 +1,5 @@
 export { default as benxene } from './benxene.png';
+export { default as benxeneWithoutName } from './benxene-without-name.png';
 
 export { default as man } from './man.png';
 export { default as man1 } from './man1.png';

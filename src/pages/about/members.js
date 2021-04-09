@@ -1,5 +1,3 @@
-import { man1 } from 'images';
-
 const data = [
 	{
 		title: 'Management Team',
@@ -23,11 +21,11 @@ const data = [
 				year: 'III - CSE',
 				tag: 'POWERFULL PEOPLE MAKES CLUB POWERFULL',
 				socialLinks: {
-					github: 'https://github.com',
-					linkedin: '/',
-					twitter: '/',
-					portfolio: '/',
-					email: '/'
+					github: 'https://github.com/MUGUNDHAN-BALASUBRAMANIAN',
+					linkedin: 'https://www.linkedin.com/in/mugundhan-balasubramanian-72b42420b/',
+					twitter: 'https://twitter.com/mugumugu20',
+					portfolio: 'https://10digit.ml/',
+					email: 'mailto:bjmugundhan@icloud.com'
 				}
 			},
 			{
@@ -37,11 +35,10 @@ const data = [
 				year: 'II - CSE',
 				tag: 'ALL THINGS ARE POSSIBLE',
 				socialLinks: {
-					github: 'https://github.com/MUGUNDHAN-BALASUBRAMANIAN',
-					linkedin: '/',
-					twitter: '/',
-					portfolio: '/',
-					email: '/'
+					github: 'https://github.com/Thiru104',
+					linkedin: 'https://www.linkedin.com/in/thirumuruganm104/',
+					twitter: 'https://twitter.com/engg_thiru',
+					email: 'mailto:thiru10042002@gmail.com'
 				}
 			},
 			{
@@ -51,11 +48,10 @@ const data = [
 				year: 'I - IT',
 				tag: 'To work genuinely!',
 				socialLinks: {
-					github: 'https://github.com',
-					linkedin: '/',
-					twitter: '/',
-					portfolio: '/',
-					email: '/'
+					github: 'https://github.com/Krishna-02',
+					twitter: 'https://mobile.twitter.com/krishna_sangavi',
+					linkedin: 'https://www.linkedin.com/in/krishna-sangavi-66953420b/',
+					email: 'mailto:sangavikrishna02@gmail.com'
 				}
 			}
 		]
@@ -64,55 +60,77 @@ const data = [
 		title: 'Technical Team',
 		data: [
 			{
-				name: 'Member1',
-				profile: man1,
-				designation: 'Tech Lead',
-				year: 'II CSE',
-				tag: 'call it as things pa',
+				name: 'Santhosh K',
+				profile: 'https://avatars.githubusercontent.com/u/51191409?v=4',
+				designation: 'Full Stack Developer',
+				year: 'III - CSE',
+				tag: 'Truth can only be found in one place: the code.',
 				socialLinks: {
-					linkedin: '/',
-					twitter: '/',
-					portfolio: '/',
-					email: '/'
-				}
+					github: 'https://github.com/sank2000',
+					linkedin: 'https://www.linkedin.com/in/santhosh-k-589203178/',
+					twitter: 'https://twitter.com/santhoshvelr',
+					portfolio: 'https://sandev.tech',
+					email: 'mailto:santhoshvelr@gmail.com'
+				},
+				fromBenxene: true
 			},
 			{
-				name: 'Member2',
-				profile: man1,
-				designation: 'Web Dev Team Lead',
-				year: 'IV CSE',
+				name: 'Krishna Moorthy A',
+				profile: 'https://avatars.githubusercontent.com/u/41967554?v=4',
+				designation: 'Full Stack Developer',
+				year: 'III - CSE',
 				tag: 'call it as things pa',
 				socialLinks: {
 					github: 'https://github.com',
-					linkedin: '/',
-					portfolio: '/',
-					email: '/'
-				}
+					twitter: 'https://twitter.com/krish_the_dev',
+					linkedin: 'https://www.linkedin.com/in/akrishnamoorthy007/',
+					portfolio: 'https://devkrish.tech',
+					email: 'mailto:akrishnamoorthy007@gmail.com'
+				},
+				fromBenxene: true
 			},
 			{
-				name: 'Member3',
-				profile: man1,
-				designation: 'Mobile App Dev Team Lead',
-				year: 'III IT',
+				name: 'Pranav G',
+				profile: 'https://drive.google.com/uc?export=view&id=1LhHClnmJnTVNjTB_DXcTXfY1BHP89-D9',
+				designation: 'Full Stack Developer',
+				year: 'III - CSE',
 				tag: 'call it as things pa',
 				socialLinks: {
-					github: 'https://github.com',
-					linkedin: '/',
-					twitter: '/',
-					email: '/'
-				}
+					github: 'https://github.com/PranavGPR',
+					linkedin: 'https://www.linkedin.com/in/pranav-g-7122111b5/',
+					twitter: 'https://twitter.com/pranavgpr',
+					portfolio: 'https://realgpr.tech',
+					email: 'mailto:pranav.gnanasekar23@gmail.com'
+				},
+				fromBenxene: true
 			},
 			{
-				name: 'Member4',
-				profile: man1,
-				designation: 'Networking Team Lead',
-				year: 'I CSE',
+				name: 'Deepan Raj E',
+				profile: 'https://avatars.githubusercontent.com/u/54098698?v=4',
+				designation: 'Front End Developer',
+				year: 'III - CSE',
 				tag: 'call it as things pa',
 				socialLinks: {
-					github: 'https://github.com',
+					github: 'https://github.com/DeepAnraj285',
 					twitter: '/',
 					email: '/'
-				}
+				},
+				fromBenxene: true
+			},
+			{
+				name: 'Laksmi V',
+				profile: 'https://avatars.githubusercontent.com/u/59364250?v=4',
+				designation: 'Content Writer',
+				year: 'III - CSE',
+				tag: 'call it as things pa',
+				socialLinks: {
+					github: 'https://github.com/Lakshmi2k1',
+					linkedin: 'https://www.linkedin.com/in/lakshmi-venkatakrishnan-924298199/',
+					twitter: 'https://twitter.com/Lakshmi2k1',
+					email: 'mailto:lakshmilatha342@gmail.com',
+					portfolio: 'https://www.yourquote.in/latha-lakshmi-bgfwp/quotes'
+				},
+				fromBenxene: true
 			}
 		]
 	},
@@ -120,36 +138,31 @@ const data = [
 		title: 'Staff Team',
 		data: [
 			{
-				name: 'Member1',
-				profile: man1,
-				designation: 'Faculty Advisor',
+				name: 'Dr. G. Annapoorani',
+				profile: 'https://drive.google.com/uc?export=view&id=1HW8Np7_bCvr3PG6Wg8zhO-oJb3ulGoEW',
+				designation: 'Assistant Professor',
+				tag: 'Faculty Advisor',
 				socialLinks: {
-					github: 'https://github.com',
-					twitter: '/',
-					email: '/'
+					email: 'mailto:pooranikrish@gmail.com'
 				}
 			},
 			{
-				name: 'Member2',
-				profile: man1,
-				designation: 'Faculty Advisor',
+				name: 'Dr. M. Padma',
+				profile: 'https://drive.google.com/uc?export=view&id=1juBNo6PyDQ26hDFmVPC5U6S05WpLKDcZ',
+				designation: 'Teaching Fellow',
+				tag: 'Faculty Advisor',
 				socialLinks: {
-					github: 'https://github.com',
-					linkedin: '/',
-					portfolio: '/',
-					email: '/'
+					email: 'mailto:padmamayan@gmail.com'
 				}
 			},
 			{
-				name: 'Member3',
-				profile: man1,
-				designation: 'Faculty Advisor',
+				name: 'Mr. C. Sankar Ram',
+				profile: 'https://drive.google.com/uc?export=view&id=1eiLk_BiLTJDyVviEj8ni3nWwS7LW04uU',
+				designation: 'Assistant Professor CSE',
+				tag: 'Faculty Advisor',
 				socialLinks: {
-					github: 'https://github.com',
-					linkedin: '/',
-					twitter: '/',
-					portfolio: '/',
-					email: '/'
+					linkedin: 'https://www.linkedin.com/in/dr-sankar-ram-chellappa-697b1b8b/',
+					email: 'mailto:csankarraam@gmail.com'
 				}
 			}
 		]
