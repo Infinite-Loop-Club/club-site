@@ -20,7 +20,11 @@ export default function Members() {
 					position='President'
 					isSpecial
 				/>
-				<Card imgSrc={man} name='Member3' position='Tech Lead' />
+				<Card
+					imgSrc='https://drive.google.com/uc?export=view&id=1pELo9uh1k60NTOf2HWDwproNNjaBuj8s'
+					name='Thirumurugan M'
+					position='Secretary'
+				/>
 			</CoreBox>
 		</CardContainer>
 	);
