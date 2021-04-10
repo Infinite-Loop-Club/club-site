@@ -9,8 +9,8 @@ export default function About() {
 				<Heading gradient margin='huge'>
 					About Us
 				</Heading>
-				{details.map(({ title, data }) => {
-					return <TeamDetails title={title} data={data} />;
+				{details.map(({ title, data }, ind) => {
+					return <TeamDetails title={title} data={data} key={ind} />;
 				})}
 			</Container>
 			<Footer />

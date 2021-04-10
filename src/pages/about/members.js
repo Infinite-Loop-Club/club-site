@@ -1,63 +1,57 @@
-import { man1 } from 'images';
-
 const data = [
 	{
 		title: 'Management Team',
 		data: [
 			{
-				name: 'Member1',
-				profile: man1,
+				name: 'Kiruthika R',
+				profile: 'https://drive.google.com/uc?export=view&id=1mtIe1U88UpBuV8WpW9IqHeeJ0YeWqhH1',
 				designation: 'President',
-				year: 'IV CSE',
-				tag: 'call it as things pa',
+				year: 'IV - CSE',
+				tag: 'To enhance peer-peer learning through networking',
 				socialLinks: {
-					github: 'https://github.com',
-					linkedin: '/',
-					twitter: '/',
-					portfolio: '/',
-					email: '/'
+					github: 'https://github.com/kiruthika-r',
+					linkedin: 'https://www.linkedin.com/in/kiruthika-r-718460189/',
+					email: 'mailto:kiruthika0419@gmail.com'
 				}
 			},
 			{
-				name: 'Member2',
-				profile: man1,
+				name: 'Mugundhan B',
+				profile: 'https://drive.google.com/uc?export=view&id=15NoSJaPEm5kKkHgj7Sfeic6wZfGQ9ll-',
 				designation: 'Vice President',
-				year: 'III CSE',
-				tag: 'call it as things pa',
+				year: 'III - CSE',
+				tag: 'POWERFULL PEOPLE MAKES CLUB POWERFULL',
 				socialLinks: {
-					github: 'https://github.com',
-					linkedin: '/',
-					twitter: '/',
-					portfolio: '/',
-					email: '/'
+					github: 'https://github.com/MUGUNDHAN-BALASUBRAMANIAN',
+					linkedin: 'https://www.linkedin.com/in/mugundhan-balasubramanian-72b42420b/',
+					twitter: 'https://twitter.com/mugumugu20',
+					portfolio: 'https://10digit.ml/',
+					email: 'mailto:bjmugundhan@icloud.com'
 				}
 			},
 			{
-				name: 'Member3',
-				profile: man1,
+				name: 'Thirumurugan M',
+				profile: 'https://drive.google.com/uc?export=view&id=1pELo9uh1k60NTOf2HWDwproNNjaBuj8s',
 				designation: 'Secretary',
-				year: 'II IT',
-				tag: 'call it as things pa',
+				year: 'II - CSE',
+				tag: 'ALL THINGS ARE POSSIBLE',
 				socialLinks: {
-					github: 'https://github.com',
-					linkedin: '/',
-					twitter: '/',
-					portfolio: '/',
-					email: '/'
+					github: 'https://github.com/Thiru104',
+					linkedin: 'https://www.linkedin.com/in/thirumuruganm104/',
+					twitter: 'https://twitter.com/engg_thiru',
+					email: 'mailto:thiru10042002@gmail.com'
 				}
 			},
 			{
-				name: 'Member4',
-				profile: man1,
+				name: 'Krishna Sangavi S',
+				profile: 'https://drive.google.com/uc?export=view&id=1-7ihsLuOzoW6kJnSq2ikwU_qXcseL5HO',
 				designation: 'Youth Representative',
-				year: 'I CSE',
-				tag: 'call it as things pa',
+				year: 'I - IT',
+				tag: 'To work genuinely!',
 				socialLinks: {
-					github: 'https://github.com',
-					linkedin: '/',
-					twitter: '/',
-					portfolio: '/',
-					email: '/'
+					github: 'https://github.com/Krishna-02',
+					twitter: 'https://mobile.twitter.com/krishna_sangavi',
+					linkedin: 'https://www.linkedin.com/in/krishna-sangavi-66953420b/',
+					email: 'mailto:sangavikrishna02@gmail.com'
 				}
 			}
 		]
@@ -66,55 +60,78 @@ const data = [
 		title: 'Technical Team',
 		data: [
 			{
-				name: 'Member1',
-				profile: man1,
-				designation: 'Tech Lead',
-				year: 'II CSE',
-				tag: 'call it as things pa',
+				name: 'Santhosh K',
+				profile: 'https://drive.google.com/uc?export=view&id=1nI5Wm2v5PvIRrH1920Ev2C16f03C3Cit',
+				designation: 'Full Stack Developer',
+				year: 'III - CSE',
+				tag: `SELECT * FROM WORLD WHERE 'Someone' LIKE '%YOU%'`,
 				socialLinks: {
-					linkedin: '/',
-					twitter: '/',
-					portfolio: '/',
-					email: '/'
-				}
+					github: 'https://github.com/sank2000',
+					linkedin: 'https://www.linkedin.com/in/santhosh-k-589203178/',
+					twitter: 'https://twitter.com/santhoshvelr',
+					portfolio: 'https://sandev.tech',
+					email: 'mailto:santhoshvelr@gmail.com'
+				},
+				fromBenxene: true
 			},
 			{
-				name: 'Member2',
-				profile: man1,
-				designation: 'Web Dev Team Lead',
-				year: 'IV CSE',
-				tag: 'call it as things pa',
+				name: 'Krishna Moorthy A',
+				profile: 'https://avatars.githubusercontent.com/u/41967554?v=4',
+				designation: 'Full Stack Developer',
+				year: 'III - CSE',
+				tag: 'Things aren’t always #000000 and #FFFFFF',
 				socialLinks: {
 					github: 'https://github.com',
-					linkedin: '/',
-					portfolio: '/',
-					email: '/'
-				}
+					twitter: 'https://twitter.com/krish_the_dev',
+					linkedin: 'https://www.linkedin.com/in/akrishnamoorthy007/',
+					portfolio: 'https://devkrish.tech',
+					email: 'mailto:akrishnamoorthy007@gmail.com'
+				},
+				fromBenxene: true
 			},
 			{
-				name: 'Member3',
-				profile: man1,
-				designation: 'Mobile App Dev Team Lead',
-				year: 'III IT',
-				tag: 'call it as things pa',
+				name: 'Pranav G',
+				profile: 'https://drive.google.com/uc?export=view&id=1LhHClnmJnTVNjTB_DXcTXfY1BHP89-D9',
+				designation: 'Full Stack Developer',
+				year: 'III - CSE',
+				tag: `Before software can be reusable it first has to be usable.`,
 				socialLinks: {
-					github: 'https://github.com',
-					linkedin: '/',
-					twitter: '/',
-					email: '/'
-				}
+					github: 'https://github.com/PranavGPR',
+					linkedin: 'https://www.linkedin.com/in/pranav-g-7122111b5/',
+					twitter: 'https://twitter.com/pranavgpr',
+					portfolio: 'https://realgpr.tech',
+					email: 'mailto:pranav.gnanasekar23@gmail.com'
+				},
+				fromBenxene: true
 			},
 			{
-				name: 'Member4',
-				profile: man1,
-				designation: 'Networking Team Lead',
-				year: 'I CSE',
-				tag: 'call it as things pa',
+				name: 'Deepan Raj E',
+				profile: 'https://drive.google.com/uc?export=view&id=1eWearKyaOxLDPow25o7iDZWtECMi2syX',
+				designation: 'Front End Developer',
+				year: 'III - CSE',
+				tag: '404 - tagline not found',
 				socialLinks: {
-					github: 'https://github.com',
-					twitter: '/',
-					email: '/'
-				}
+					github: 'https://github.com/DeepAnraj285',
+					email: 'mailto:deepandhoni473@gmail.com',
+					linkedin: 'https://www.linkedin.com/in/deepan-raj-83181620b',
+					twitter: 'https://twitter.com/DeepAn_Dj28?s=01'
+				},
+				fromBenxene: true
+			},
+			{
+				name: 'Laksmi V',
+				profile: 'https://drive.google.com/uc?export=view&id=1Sch_50l9SIQafM_ekUGFIaeaprabeWVI',
+				designation: 'Content Writer',
+				year: 'III - CSE',
+				tag: 'I reborn when my pen kissed paper',
+				socialLinks: {
+					github: 'https://github.com/Lakshmi2k1',
+					linkedin: 'https://www.linkedin.com/in/lakshmi-venkatakrishnan-924298199/',
+					twitter: 'https://twitter.com/Lakshmi2k1',
+					email: 'mailto:lakshmilatha342@gmail.com',
+					portfolio: 'https://www.yourquote.in/latha-lakshmi-bgfwp/quotes'
+				},
+				fromBenxene: true
 			}
 		]
 	},
@@ -122,36 +139,31 @@ const data = [
 		title: 'Staff Team',
 		data: [
 			{
-				name: 'Member1',
-				profile: man1,
-				designation: 'Faculty Advisor',
+				name: 'Dr. G. Annapoorani',
+				profile: 'https://drive.google.com/uc?export=view&id=1HW8Np7_bCvr3PG6Wg8zhO-oJb3ulGoEW',
+				designation: 'Assistant Professor',
+				year: 'Faculty Advisor',
 				socialLinks: {
-					github: 'https://github.com',
-					twitter: '/',
-					email: '/'
+					email: 'mailto:pooranikrish@gmail.com'
 				}
 			},
 			{
-				name: 'Member2',
-				profile: man1,
-				designation: 'Faculty Advisor',
+				name: 'Dr. M. Padma',
+				profile: 'https://drive.google.com/uc?export=view&id=1juBNo6PyDQ26hDFmVPC5U6S05WpLKDcZ',
+				designation: 'Teaching Fellow',
+				year: 'Faculty Advisor',
 				socialLinks: {
-					github: 'https://github.com',
-					linkedin: '/',
-					portfolio: '/',
-					email: '/'
+					email: 'mailto:padmamayan@gmail.com'
 				}
 			},
 			{
-				name: 'Member3',
-				profile: man1,
-				designation: 'Faculty Advisor',
+				name: 'Mr. C. Sankar Ram',
+				profile: 'https://drive.google.com/uc?export=view&id=1eiLk_BiLTJDyVviEj8ni3nWwS7LW04uU',
+				designation: 'Assistant Professor CSE',
+				year: 'Faculty Advisor',
 				socialLinks: {
-					github: 'https://github.com',
-					linkedin: '/',
-					twitter: '/',
-					portfolio: '/',
-					email: '/'
+					linkedin: 'https://www.linkedin.com/in/dr-sankar-ram-chellappa-697b1b8b/',
+					email: 'mailto:csankarraam@gmail.com'
 				}
 			}
 		]

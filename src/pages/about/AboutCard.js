@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter, FaGlobe } from 'react-icons/fa';
 
 import { fonts } from 'constants/theme';
-import { voteLogo } from 'images';
+import { benxeneWithoutName, voteLogo } from 'images';
 
 export default function AboutCard({
 	id,
@@ -14,11 +14,13 @@ export default function AboutCard({
 	socialLinks,
 	handleClick,
 	role,
-	vote
+	vote,
+	fromBenxene
 }) {
 	return (
 		<Container
 			id={id}
+			key={id}
 			onClick={() => {
 				handleClick && handleClick(role, id);
 			}}
@@ -67,7 +69,7 @@ export default function AboutCard({
 			</Content>
 			<Rect1 />
 			<Rect2 />
-			<Triangle />
+			<Triangle>{fromBenxene && <img src={benxeneWithoutName} alt='benxene' />}</Triangle>
 		</Container>
 	);
 }
@@ -171,12 +173,13 @@ const Content = styled.div`
 
 const IconContainer = styled.div`
 	position: relative;
+	flex: 1;
 	display: flex;
-	margin-top: 4rem;
+	align-items: flex-end;
 	z-index: 1;
 
 	@media (max-width: 1200px) {
-		margin-top: 2rem;
+		margin-top: 1rem;
 	}
 
 	@media (max-width: 970px) {
@@ -287,7 +290,11 @@ const Text = styled.p`
 	z-index: 1;
 
 	@media (max-width: 1200px) {
-		font-size: ${props => (props.bold ? '1.2rem' : '1.1rem')};
+		font-size: ${props => (props.bold ? '1.2rem' : '1rem')};
+	}
+
+	@media (max-width: 970px) {
+		font-size: ${props => (props.bold ? '1rem' : '.9rem')};
 	}
 
 	@media (max-width: 400px) {
@@ -319,15 +326,18 @@ const Triangle = styled.div`
 		height: 3.5rem;
 	}
 
-	.vectorLogo {
+	img {
+		height: 60%;
+		width: auto;
 		position: absolute;
-		border: none !important;
-		height: 80%;
-		object-fit: cover;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		z-index: 30;
+		top: 30%;
+		right: -10%;
+		display: inline-block;
+		border: none;
+
+		@media (max-width: 400px) {
+			right: 0%;
+		}
 	}
 `;
 

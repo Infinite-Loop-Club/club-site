@@ -11,19 +11,23 @@ export default function Cta() {
 				style={{ position: 'absolute', left: 0, height: '100%', width: '100%' }}
 				params={{
 					particles: {
-						number: {
-							value: 50
+						value: 40,
+						density: {
+							enable: true,
+							value_area: 800
 						},
 						size: {
 							value: 3
 						}
 					},
 					interactivity: {
+						detect_on: 'window',
 						events: {
 							onhover: {
 								enable: true,
 								mode: 'repulse'
-							}
+							},
+							resize: true
 						}
 					}
 				}}
@@ -50,6 +54,10 @@ const Div = styled.div`
 	position: relative;
 	overflow: hidden;
 	height: 30rem;
+
+	@media (max-width: 600px) {
+		height: 35rem;
+	}
 
 	& p {
 		margin: 1rem 0 3.5rem 0;

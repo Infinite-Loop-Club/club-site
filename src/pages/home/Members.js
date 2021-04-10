@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Card, Container, Heading } from 'components';
-import { man } from 'images';
 
 export default function Members() {
 	return (
@@ -9,9 +8,22 @@ export default function Members() {
 				Our core members
 			</Heading>
 			<CoreBox>
-				<Card imgSrc={man} name='Member1' position='Vice President' />
-				<Card imgSrc={man} name='Member2' position='President' isSpecial />
-				<Card imgSrc={man} name='Member3' position='Tech Lead' />
+				<Card
+					imgSrc='https://drive.google.com/uc?export=view&id=15NoSJaPEm5kKkHgj7Sfeic6wZfGQ9ll-'
+					name='Mugundhan B'
+					position='Vice President'
+				/>
+				<Card
+					imgSrc='https://drive.google.com/uc?export=view&id=1mtIe1U88UpBuV8WpW9IqHeeJ0YeWqhH1'
+					name='Kiruthika R'
+					position='President'
+					isSpecial
+				/>
+				<Card
+					imgSrc='https://drive.google.com/uc?export=view&id=1pELo9uh1k60NTOf2HWDwproNNjaBuj8s'
+					name='Thirumurugan M'
+					position='Secretary'
+				/>
 			</CoreBox>
 		</CardContainer>
 	);
@@ -27,7 +39,7 @@ const CoreBox = styled.div`
 	justify-content: center;
 	gap: 3rem;
 
-	@media (max-width: 800px) {
+	@media (max-width: 1000px) {
 		& > div:nth-child(even) {
 			order: -1;
 		}
