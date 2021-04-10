@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Card, Container, Heading } from 'components';
-import { man } from 'images';
 
 export default function Members() {
 	return (
