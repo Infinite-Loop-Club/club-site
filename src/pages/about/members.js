@@ -61,10 +61,10 @@ const data = [
 		data: [
 			{
 				name: 'Santhosh K',
-				profile: 'https://avatars.githubusercontent.com/u/51191409?v=4',
+				profile: 'https://drive.google.com/uc?export=view&id=1nI5Wm2v5PvIRrH1920Ev2C16f03C3Cit',
 				designation: 'Full Stack Developer',
 				year: 'III - CSE',
-				tag: 'Truth can only be found in one place: the code.',
+				tag: `SELECT * FROM WORLD WHERE 'Someone' LIKE '%YOU%'`,
 				socialLinks: {
 					github: 'https://github.com/sank2000',
 					linkedin: 'https://www.linkedin.com/in/santhosh-k-589203178/',
@@ -79,7 +79,7 @@ const data = [
 				profile: 'https://avatars.githubusercontent.com/u/41967554?v=4',
 				designation: 'Full Stack Developer',
 				year: 'III - CSE',
-				tag: 'call it as things pa',
+				tag: 'Things aren’t always #000000 and #FFFFFF',
 				socialLinks: {
 					github: 'https://github.com',
 					twitter: 'https://twitter.com/krish_the_dev',
@@ -94,7 +94,7 @@ const data = [
 				profile: 'https://drive.google.com/uc?export=view&id=1LhHClnmJnTVNjTB_DXcTXfY1BHP89-D9',
 				designation: 'Full Stack Developer',
 				year: 'III - CSE',
-				tag: 'call it as things pa',
+				tag: `Before software can be reusable it first has to be usable.`,
 				socialLinks: {
 					github: 'https://github.com/PranavGPR',
 					linkedin: 'https://www.linkedin.com/in/pranav-g-7122111b5/',
@@ -109,20 +109,19 @@ const data = [
 				profile: 'https://avatars.githubusercontent.com/u/54098698?v=4',
 				designation: 'Front End Developer',
 				year: 'III - CSE',
-				tag: 'call it as things pa',
+				tag: '404 - tagline not found',
 				socialLinks: {
 					github: 'https://github.com/DeepAnraj285',
-					twitter: '/',
-					email: '/'
+					email: 'mailto:deepandhoni473@gmail.com'
 				},
 				fromBenxene: true
 			},
 			{
 				name: 'Laksmi V',
-				profile: 'https://avatars.githubusercontent.com/u/59364250?v=4',
+				profile: 'https://drive.google.com/uc?export=view&id=1Sch_50l9SIQafM_ekUGFIaeaprabeWVI',
 				designation: 'Content Writer',
 				year: 'III - CSE',
-				tag: 'call it as things pa',
+				tag: 'I reborn when my pen kissed paper',
 				socialLinks: {
 					github: 'https://github.com/Lakshmi2k1',
 					linkedin: 'https://www.linkedin.com/in/lakshmi-venkatakrishnan-924298199/',

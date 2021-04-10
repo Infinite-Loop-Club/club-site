@@ -26,7 +26,7 @@ export default function TeamContainer({ title, data, handleClick, vote }) {
 					) => {
 						return (
 							<AboutCard
-								key={index}
+								key={name}
 								id={id}
 								name={name}
 								profile={profile}

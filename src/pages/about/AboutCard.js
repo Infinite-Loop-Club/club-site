@@ -334,6 +334,10 @@ const Triangle = styled.div`
 		right: -10%;
 		display: inline-block;
 		border: none;
+
+		@media (max-width: 400px) {
+			right: 0%;
+		}
 	}
 `;
 
