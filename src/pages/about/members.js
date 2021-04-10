@@ -106,13 +106,15 @@ const data = [
 			},
 			{
 				name: 'Deepan Raj E',
-				profile: 'https://avatars.githubusercontent.com/u/54098698?v=4',
+				profile: 'https://drive.google.com/uc?export=view&id=1eWearKyaOxLDPow25o7iDZWtECMi2syX',
 				designation: 'Front End Developer',
 				year: 'III - CSE',
 				tag: '404 - tagline not found',
 				socialLinks: {
 					github: 'https://github.com/DeepAnraj285',
-					email: 'mailto:deepandhoni473@gmail.com'
+					email: 'mailto:deepandhoni473@gmail.com',
+					linkedin: 'https://www.linkedin.com/in/deepan-raj-83181620b',
+					twitter: 'https://twitter.com/DeepAn_Dj28?s=01'
 				},
 				fromBenxene: true
 			},
@@ -140,7 +142,7 @@ const data = [
 				name: 'Dr. G. Annapoorani',
 				profile: 'https://drive.google.com/uc?export=view&id=1HW8Np7_bCvr3PG6Wg8zhO-oJb3ulGoEW',
 				designation: 'Assistant Professor',
-				tag: 'Faculty Advisor',
+				year: 'Faculty Advisor',
 				socialLinks: {
 					email: 'mailto:pooranikrish@gmail.com'
 				}
@@ -149,7 +151,7 @@ const data = [
 				name: 'Dr. M. Padma',
 				profile: 'https://drive.google.com/uc?export=view&id=1juBNo6PyDQ26hDFmVPC5U6S05WpLKDcZ',
 				designation: 'Teaching Fellow',
-				tag: 'Faculty Advisor',
+				year: 'Faculty Advisor',
 				socialLinks: {
 					email: 'mailto:padmamayan@gmail.com'
 				}
@@ -158,7 +160,7 @@ const data = [
 				name: 'Mr. C. Sankar Ram',
 				profile: 'https://drive.google.com/uc?export=view&id=1eiLk_BiLTJDyVviEj8ni3nWwS7LW04uU',
 				designation: 'Assistant Professor CSE',
-				tag: 'Faculty Advisor',
+				year: 'Faculty Advisor',
 				socialLinks: {
 					linkedin: 'https://www.linkedin.com/in/dr-sankar-ram-chellappa-697b1b8b/',
 					email: 'mailto:csankarraam@gmail.com'
