@@ -16,10 +16,10 @@ const data = [
 			},
 			{
 				name: 'Mugundhan B',
-				profile: 'https://drive.google.com/uc?export=view&id=15NoSJaPEm5kKkHgj7Sfeic6wZfGQ9ll-',
+				profile: 'https://drive.google.com/uc?export=view&id=18uB2tXYtCFhBp-Kjreu118pjDx9TJQPm',
 				designation: 'Vice President',
 				year: 'III - CSE',
-				tag: 'POWERFULL PEOPLE MAKES CLUB POWERFULL',
+				tag: 'A NEO NEO',
 				socialLinks: {
 					github: 'https://github.com/MUGUNDHAN-BALASUBRAMANIAN',
 					linkedIn: 'https://www.linkedin.com/in/mugundhan-balasubramanian-72b42420b/',
@@ -79,7 +79,7 @@ const data = [
 				profile: 'https://avatars.githubusercontent.com/u/41967554?v=4',
 				designation: 'Full Stack Developer',
 				year: 'III - CSE',
-				tag: 'Things aren’t always #000000 and #FFFFFF',
+				tag: '(caffeine, chocolate, music) => code;',
 				socialLinks: {
 					github: 'https://github.com',
 					twitter: 'https://twitter.com/krish_the_dev',
@@ -105,11 +105,11 @@ const data = [
 				fromBenxene: true
 			},
 			{
-				name: 'Deepan Raj E',
+				name: 'Deepanraj E',
 				profile: 'https://drive.google.com/uc?export=view&id=1eWearKyaOxLDPow25o7iDZWtECMi2syX',
-				designation: 'Front End Developer',
+				designation: 'Frontend Developer',
 				year: 'III - CSE',
-				tag: '404 - tagline not found',
+				tag: 'Life recruits different versions of you',
 				socialLinks: {
 					github: 'https://github.com/DeepAnraj285',
 					email: 'mailto:deepandhoni473@gmail.com',
@@ -119,7 +119,7 @@ const data = [
 				fromBenxene: true
 			},
 			{
-				name: 'Laksmi V',
+				name: 'Lakshmi V',
 				profile: 'https://drive.google.com/uc?export=view&id=1Sch_50l9SIQafM_ekUGFIaeaprabeWVI',
 				designation: 'Content Writer',
 				year: 'III - CSE',
@@ -141,7 +141,7 @@ const data = [
 			{
 				name: 'Dr. G. Annapoorani',
 				profile: 'https://drive.google.com/uc?export=view&id=1HW8Np7_bCvr3PG6Wg8zhO-oJb3ulGoEW',
-				designation: 'Assistant Professor',
+				designation: 'Head of the Department',
 				year: 'Faculty Advisor',
 				socialLinks: {
 					email: 'mailto:pooranikrish@gmail.com'
