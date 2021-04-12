@@ -3,7 +3,7 @@ import Feature from './FeatureItem';
 import { Container, Heading } from 'components';
 import { meeting, team, devStats, interview } from 'images';
 
-export default function Paget() {
+export default function Features() {
 	return (
 		<Container>
 			<Heading gradient>What do we do?</Heading>

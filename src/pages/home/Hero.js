@@ -36,7 +36,6 @@ export default function Home() {
 		return () => {
 			clearInterval(intervalRef.current);
 		};
-
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 

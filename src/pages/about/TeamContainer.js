@@ -18,30 +18,26 @@ export default function TeamContainer({ title, data, handleClick, vote }) {
 
 	return (
 		<Container>
-			{list &&
-				list.map(
-					(
-						{ id, name, profile, designation, year, tag, socialLinks, role, fromBenxene },
-						index
-					) => {
-						return (
-							<AboutCard
-								key={name}
-								id={id}
-								name={name}
-								profile={profile}
-								designation={designation}
-								year={year}
-								tag={tag}
-								socialLinks={socialLinks}
-								handleClick={handleClick}
-								role={role}
-								vote={vote}
-								fromBenxene={fromBenxene}
-							/>
-						);
-					}
-				)}
+			{list?.map(
+				({ id, name, profile, designation, year, tag, socialLinks, role, fromBenxene }) => {
+					return (
+						<AboutCard
+							key={name}
+							id={id}
+							name={name}
+							profile={profile}
+							designation={designation}
+							year={year}
+							tag={tag}
+							socialLinks={socialLinks}
+							handleClick={handleClick}
+							role={role}
+							vote={vote}
+							fromBenxene={fromBenxene}
+						/>
+					);
+				}
+			)}
 		</Container>
 	);
 }

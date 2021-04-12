@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-export default function Feature(props) {
+export default function Feature({ title, para, imgSrc }) {
 	return (
 		<Container>
-			<img alt='feat-img' src={props.imgSrc} />
+			<img alt={title} src={imgSrc} />
 			<div>
-				<h3>{props.title}</h3>
-				<p>{props.para}</p>
+				<h3>{title}</h3>
+				<p>{para}</p>
 			</div>
 		</Container>
 	);
