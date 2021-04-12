@@ -2,10 +2,10 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-import { Container, Heading, Footer, LoaderContainer } from 'components';
-import Loader from 'components/Loader';
-import Card from './Card';
+import { Container, Heading, Footer, LoaderContainer, Loader } from 'components';
 import { logoColored } from 'images';
+import Card from './Card';
+import { fonts } from 'constants/theme';
 
 export default function Post() {
 	const [load, setLoad] = useState(true);
@@ -14,11 +14,11 @@ export default function Post() {
 	const getPost = async () => {
 		try {
 			const { data } = await axios.get('/post/all');
-			setLoad(false);
 			setPosts(data.data);
 		} catch (err) {
-			setLoad(false);
 			console.error(err);
+		} finally {
+			setLoad(false);
 		}
 	};
 
@@ -38,7 +38,7 @@ export default function Post() {
 					posts.length === 0 && (
 						<Empty>
 							<img className='logo' src={logoColored} alt='logo'></img>
-							<h2>Currently no post available</h2>
+							<h2>Such emptiness 😶</h2>
 						</Empty>
 					)
 				)}
@@ -60,7 +60,8 @@ const Empty = styled.div`
 	justify-content: center;
 	h2 {
 		text-align: center;
-		text-transform: uppercase;
+		font-family: ${fonts.monospace};
+		/* text-transform: uppercase; */
 	}
 
 	img {

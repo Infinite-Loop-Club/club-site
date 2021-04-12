@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import ReactHtmlParser from 'react-html-parser';
+import { format } from 'date-fns';
 
 import { Container, Heading } from 'components';
-import { link, logoColored } from 'images';
-import { format } from 'date-fns';
-import Share from './Share';
 import { colors, fonts } from 'constants/theme';
+import { link, logoColored } from 'images';
+import Share from './Share';
 
 export default function Content({ data }) {
 	const [showModal, setShowModal] = useState(true);
@@ -18,10 +18,7 @@ export default function Content({ data }) {
 	}, []);
 
 	const download = e => {
-		fetch(e.target.href, {
-			method: 'GET',
-			headers: {}
-		})
+		fetch(e.target.href)
 			.then(response => {
 				response.arrayBuffer().then(function (buffer) {
 					const url = window.URL.createObjectURL(new Blob([buffer]));
