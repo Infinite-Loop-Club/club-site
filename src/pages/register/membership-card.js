@@ -101,16 +101,6 @@ const Card = styled.div`
 	overflow: hidden;
 	color: ${({ theme }) => theme.white};
 
-	/* @media (max-width: 600px) {
-		width: 97vw;
-		height: 23rem;
-		font-size: 1.4rem;
-
-		h3 {
-			margin: 0.5rem auto !important;
-		}
-	} */
-
 	.gradient {
 		position: absolute;
 		z-index: -1;
@@ -167,18 +157,6 @@ const Card = styled.div`
 		align-items: center;
 		overflow-wrap: break-word;
 		padding-right: 1rem;
-
-		/* @media (max-width: 600px) {
-			grid-gap: 1rem;
-			figure {
-				margin-left: 5rem !important;
-			}
-
-			font-size: 1.2rem;
-			.email {
-				font-size: 1rem !important;
-			}
-		} */
 
 		figure {
 			width: 12rem;

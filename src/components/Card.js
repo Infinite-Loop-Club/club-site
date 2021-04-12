@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { colors } from 'constants/theme';
 
@@ -33,8 +32,6 @@ const CardInternal = styled.div`
       &>h2 {
         color: white !important;
       }
-
-
   `}
 
 	&:hover {

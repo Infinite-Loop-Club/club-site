@@ -8,15 +8,13 @@ import Content from './Content';
 
 export default function CustomPost() {
 	const [data, setData] = useState(null);
-
 	const history = useHistory();
-
 	const { id } = useParams();
 
 	const fetchData = async () => {
 		try {
-			const { data } = await axios.get(`/post/${id}`);
-			setData(data.data);
+			const { data: response } = await axios.get(`/post/${id}`);
+			setData(response.data);
 		} catch (err) {
 			history.push('/posts');
 		}

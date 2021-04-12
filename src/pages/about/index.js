@@ -1,6 +1,6 @@
 import { Heading, Footer, Container } from 'components';
 import TeamDetails from './TeamDetails';
-import details from './members';
+import details from 'data/members';
 
 export default function About() {
 	return (

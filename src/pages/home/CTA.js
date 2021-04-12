@@ -53,11 +53,6 @@ const Div = styled.div`
 	color: ${colors.white};
 	position: relative;
 	overflow: hidden;
-	height: 30rem;
-
-	@media (max-width: 600px) {
-		height: 35rem;
-	}
 
 	& p {
 		margin: 1rem 0 3.5rem 0;

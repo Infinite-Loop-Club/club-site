@@ -10,7 +10,7 @@ const data = [
 				tag: 'To enhance peer-peer learning through networking',
 				socialLinks: {
 					github: 'https://github.com/kiruthika-r',
-					linkedin: 'https://www.linkedin.com/in/kiruthika-r-718460189/',
+					linkedIn: 'https://www.linkedin.com/in/kiruthika-r-718460189/',
 					email: 'mailto:kiruthika0419@gmail.com'
 				}
 			},
@@ -22,10 +22,10 @@ const data = [
 				tag: 'A NEO NEO',
 				socialLinks: {
 					github: 'https://github.com/MUGUNDHAN-BALASUBRAMANIAN',
-					linkedin: 'https://www.linkedin.com/in/mugundhan-balasubramanian-72b42420b/',
+					linkedIn: 'https://www.linkedin.com/in/mugundhan-balasubramanian-72b42420b/',
 					twitter: 'https://twitter.com/mugumugu20',
-					portfolio: 'https://10digit.ml/',
-					email: 'mailto:bjmugundhan@icloud.com'
+					email: 'mailto:bjmugundhan@icloud.com',
+					portfolio: 'https://10digit.ml/'
 				}
 			},
 			{
@@ -36,7 +36,7 @@ const data = [
 				tag: 'ALL THINGS ARE POSSIBLE',
 				socialLinks: {
 					github: 'https://github.com/Thiru104',
-					linkedin: 'https://www.linkedin.com/in/thirumuruganm104/',
+					linkedIn: 'https://www.linkedin.com/in/thirumuruganm104/',
 					twitter: 'https://twitter.com/engg_thiru',
 					email: 'mailto:thiru10042002@gmail.com'
 				}
@@ -50,7 +50,7 @@ const data = [
 				socialLinks: {
 					github: 'https://github.com/Krishna-02',
 					twitter: 'https://mobile.twitter.com/krishna_sangavi',
-					linkedin: 'https://www.linkedin.com/in/krishna-sangavi-66953420b/',
+					linkedIn: 'https://www.linkedin.com/in/krishna-sangavi-66953420b/',
 					email: 'mailto:sangavikrishna02@gmail.com'
 				}
 			}
@@ -67,10 +67,10 @@ const data = [
 				tag: `SELECT * FROM WORLD WHERE 'Someone' LIKE '%YOU%'`,
 				socialLinks: {
 					github: 'https://github.com/sank2000',
-					linkedin: 'https://www.linkedin.com/in/santhosh-k-589203178/',
+					linkedIn: 'https://www.linkedin.com/in/santhosh-k-589203178/',
 					twitter: 'https://twitter.com/santhoshvelr',
-					portfolio: 'https://sandev.tech',
-					email: 'mailto:santhoshvelr@gmail.com'
+					email: 'mailto:santhoshvelr@gmail.com',
+					portfolio: 'https://sandev.tech'
 				},
 				fromBenxene: true
 			},
@@ -83,9 +83,9 @@ const data = [
 				socialLinks: {
 					github: 'https://github.com',
 					twitter: 'https://twitter.com/krish_the_dev',
-					linkedin: 'https://www.linkedin.com/in/akrishnamoorthy007/',
-					portfolio: 'https://devkrish.tech',
-					email: 'mailto:akrishnamoorthy007@gmail.com'
+					linkedIn: 'https://www.linkedin.com/in/akrishnamoorthy007/',
+					email: 'mailto:akrishnamoorthy007@gmail.com',
+					portfolio: 'https://devkrish.tech'
 				},
 				fromBenxene: true
 			},
@@ -97,10 +97,10 @@ const data = [
 				tag: `Before software can be reusable it first has to be usable.`,
 				socialLinks: {
 					github: 'https://github.com/PranavGPR',
-					linkedin: 'https://www.linkedin.com/in/pranav-g-7122111b5/',
+					linkedIn: 'https://www.linkedin.com/in/pranav-g-7122111b5/',
 					twitter: 'https://twitter.com/pranavgpr',
-					portfolio: 'https://realgpr.tech',
-					email: 'mailto:pranav.gnanasekar23@gmail.com'
+					email: 'mailto:pranav.gnanasekar23@gmail.com',
+					portfolio: 'https://realgpr.tech'
 				},
 				fromBenxene: true
 			},
@@ -113,7 +113,7 @@ const data = [
 				socialLinks: {
 					github: 'https://github.com/DeepAnraj285',
 					email: 'mailto:deepandhoni473@gmail.com',
-					linkedin: 'https://www.linkedin.com/in/deepan-raj-83181620b',
+					linkedIn: 'https://www.linkedin.com/in/deepan-raj-83181620b',
 					twitter: 'https://twitter.com/DeepAn_Dj28?s=01'
 				},
 				fromBenxene: true
@@ -126,7 +126,7 @@ const data = [
 				tag: 'I reborn when my pen kissed paper',
 				socialLinks: {
 					github: 'https://github.com/Lakshmi2k1',
-					linkedin: 'https://www.linkedin.com/in/lakshmi-venkatakrishnan-924298199/',
+					linkedIn: 'https://www.linkedin.com/in/lakshmi-venkatakrishnan-924298199/',
 					twitter: 'https://twitter.com/Lakshmi2k1',
 					email: 'mailto:lakshmilatha342@gmail.com',
 					portfolio: 'https://www.yourquote.in/latha-lakshmi-bgfwp/quotes'
@@ -162,7 +162,7 @@ const data = [
 				designation: 'Assistant Professor CSE',
 				year: 'Faculty Advisor',
 				socialLinks: {
-					linkedin: 'https://www.linkedin.com/in/dr-sankar-ram-chellappa-697b1b8b/',
+					linkedIn: 'https://www.linkedin.com/in/dr-sankar-ram-chellappa-697b1b8b/',
 					email: 'mailto:csankarraam@gmail.com'
 				}
 			}

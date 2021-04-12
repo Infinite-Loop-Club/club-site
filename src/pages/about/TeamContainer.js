@@ -18,30 +18,26 @@ export default function TeamContainer({ title, data, handleClick, vote }) {
 
 	return (
 		<Container>
-			{list &&
-				list.map(
-					(
-						{ id, name, profile, designation, year, tag, socialLinks, role, fromBenxene },
-						index
-					) => {
-						return (
-							<AboutCard
-								key={name}
-								id={id}
-								name={name}
-								profile={profile}
-								designation={designation}
-								year={year}
-								tag={tag}
-								socialLinks={socialLinks}
-								handleClick={handleClick}
-								role={role}
-								vote={vote}
-								fromBenxene={fromBenxene}
-							/>
-						);
-					}
-				)}
+			{list?.map(
+				({ id, name, profile, designation, year, tag, socialLinks, role, fromBenxene }) => {
+					return (
+						<AboutCard
+							key={name}
+							id={id}
+							name={name}
+							profile={profile}
+							designation={designation}
+							year={year}
+							tag={tag}
+							socialLinks={socialLinks}
+							handleClick={handleClick}
+							role={role}
+							vote={vote}
+							fromBenxene={fromBenxene}
+						/>
+					);
+				}
+			)}
 		</Container>
 	);
 }
@@ -51,14 +47,14 @@ const Container = styled.div`
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 2.5rem;
 
-	@media (max-width: 1100px) {
+	@media only screen and (max-width: 1100px) {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 	}
 
-	@media (max-width: 400px) {
+	@media only screen and (max-width: 400px) {
 		margin: 0;
 	}
 `;

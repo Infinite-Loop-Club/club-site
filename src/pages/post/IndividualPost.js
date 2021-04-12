@@ -7,7 +7,7 @@ export default function IndividualPost() {
 	const history = useHistory();
 
 	useEffect(() => {
-		if (state === undefined || state === null) {
+		if (!state) {
 			history.push('/posts');
 		}
 	}, [state, history]);

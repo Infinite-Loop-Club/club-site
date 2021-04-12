@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-export default function Feature(props) {
+export default function Feature({ title, para, imgSrc }) {
 	return (
 		<Container>
-			<img alt='feat-img' src={props.imgSrc} />
+			<img alt={title} src={imgSrc} />
 			<div>
-				<h3>{props.title}</h3>
-				<p>{props.para}</p>
+				<h3>{title}</h3>
+				<p>{para}</p>
 			</div>
 		</Container>
 	);
@@ -16,19 +16,19 @@ const Container = styled.div`
 	display: flex;
 	align-items: center;
 
-	@media (max-width: 750px) {
+	@media only screen and (max-width: 750px) {
 		flex-direction: column;
 	}
 
 	@supports (gap: 3rem) {
 		gap: 6rem;
 
-		@media (max-width: 750px) {
+		@media only screen and (max-width: 750px) {
 			gap: 3rem;
 		}
 	}
 
-	@media (max-width: 750px) {
+	@media only screen and (max-width: 750px) {
 		text-align: center;
 
 		& img {
@@ -36,7 +36,7 @@ const Container = styled.div`
 		}
 	}
 
-	@media (min-width: 750px) {
+	@media only screen and (min-width: 750px) {
 		&:nth-child(even) {
 			flex-direction: row-reverse;
 			img {
@@ -49,7 +49,7 @@ const Container = styled.div`
 					margin-right: 6rem;
 					margin-left: 0;
 
-					@media (max-width: 750px) {
+					@media only screen and (max-width: 750px) {
 						margin: 0;
 						margin-top: 3rem;
 					}

@@ -16,7 +16,7 @@ const TeamName = styled.h2`
 	font-size: 2.5rem;
 	margin-bottom: 1.8rem;
 
-	@media (max-width: 600px) {
+	@media only screen and (max-width: 600px) {
 		font-size: 2rem;
 	}
 `;

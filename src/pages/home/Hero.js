@@ -36,7 +36,6 @@ export default function Home() {
 		return () => {
 			clearInterval(intervalRef.current);
 		};
-
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
@@ -87,7 +86,7 @@ const Hero = styled.div`
 		width: 8rem;
 		display: none;
 
-		@media (max-width: 750px) {
+		@media only screen and (max-width: 750px) {
 			display: block;
 			margin-bottom: 3em;
 		}
@@ -98,11 +97,11 @@ const Hero = styled.div`
 		height: 100%;
 		margin: 0 auto;
 
-		@media (max-width: 120rem) {
+		@media only screen and (max-width: 120rem) {
 			max-width: 90%;
 		}
 
-		@media (max-width: 600px) {
+		@media only screen and (max-width: 600px) {
 			max-width: 95%;
 		}
 	}
@@ -114,7 +113,7 @@ const Hero = styled.div`
 		align-items: center;
 		color: white;
 
-		@media (max-width: 750px) {
+		@media only screen and (max-width: 750px) {
 			grid-template-columns: 1fr;
 
 			& > div {

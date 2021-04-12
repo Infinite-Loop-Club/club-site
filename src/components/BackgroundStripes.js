@@ -21,11 +21,11 @@ const MiddleRect = styled.div`
 	transform: skew(0deg, -15deg);
 	z-index: -1;
 
-	@media (max-width: 1000px) {
+	@media only screen and (max-width: 1000px) {
 		width: 16rem;
 	}
 
-	@media (max-width: 700px) {
+	@media only screen and (max-width: 700px) {
 		display: none;
 	}
 `;
@@ -40,11 +40,11 @@ const Rect1 = styled.div`
 	transform: skew(0deg, -15deg);
 	z-index: -1;
 
-	@media (max-width: 1000px) {
+	@media only screen and (max-width: 1000px) {
 		width: 16rem;
 	}
 
-	@media (max-width: 700px) {
+	@media only screen and (max-width: 700px) {
 		display: none;
 	}
 `;
@@ -59,12 +59,12 @@ const Rect2 = styled.div`
 	transform: skew(0deg, -15deg);
 	z-index: -1;
 
-	@media (max-width: 1000px) {
+	@media only screen and (max-width: 1000px) {
 		width: 20rem;
 		top: 48.4%;
 	}
 
-	@media (max-width: 700px) {
+	@media only screen and (max-width: 700px) {
 		display: none;
 	}
 `;
@@ -79,12 +79,12 @@ const Rect3 = styled.div`
 	transform: skew(0deg, -15deg);
 	z-index: -1;
 
-	@media (max-width: 1000px) {
+	@media only screen and (max-width: 1000px) {
 		width: 20rem;
 		top: 25.3%;
 	}
 
-	@media (max-width: 700px) {
+	@media only screen and (max-width: 700px) {
 		display: none;
 	}
 `;
