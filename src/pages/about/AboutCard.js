@@ -4,6 +4,14 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter, FaGlobe } from 'react-icon
 import { fonts } from 'constants/theme';
 import { benxeneWithoutName, voteLogo } from 'images';
 
+const Icons = {
+	github: <FaGithub />,
+	linkedIn: <FaLinkedin />,
+	email: <FaEnvelope />,
+	twitter: <FaTwitter />,
+	portfolio: <FaGlobe />
+};
+
 export default function AboutCard({
 	id,
 	profile,
@@ -22,7 +30,7 @@ export default function AboutCard({
 			id={id}
 			key={id}
 			onClick={() => {
-				handleClick && handleClick(role, id);
+				handleClick?.(role, id);
 			}}
 		>
 			{vote && vote[role] === id && <VotedLogo src={voteLogo} alt='vote' />}
@@ -34,36 +42,14 @@ export default function AboutCard({
 				{tag && (
 					<Text>
 						"{tag.substring(0, 60)}
-						{tag.length > 60 && `...`}"
+						{tag.length > 60 && '...'}"
 					</Text>
 				)}
 				{socialLinks && (
 					<IconContainer>
-						{socialLinks.github && (
-							<a href={socialLinks.github}>
-								<FaGithub />
-							</a>
-						)}
-						{socialLinks.linkedin && (
-							<a href={socialLinks.linkedin}>
-								<FaLinkedin />
-							</a>
-						)}
-						{socialLinks.email && (
-							<a href={socialLinks.email}>
-								<FaEnvelope />
-							</a>
-						)}
-						{socialLinks.twitter && (
-							<a href={socialLinks.twitter}>
-								<FaTwitter />
-							</a>
-						)}
-						{socialLinks.portfolio && (
-							<a href={socialLinks.portfolio}>
-								<FaGlobe />
-							</a>
-						)}
+						{Object.entries(socialLinks).map(item => (
+							<a href={item[1]}>{Icons[item[0]]}</a>
+						))}
 					</IconContainer>
 				)}
 			</Content>
