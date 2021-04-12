@@ -3,17 +3,9 @@ import styled from 'styled-components';
 import { colors, fonts } from 'constants/theme';
 
 export default function Button({ children, component, ...props }) {
-	switch (component) {
-		case 'anchor':
-			return <Anchor {...props}>{children}</Anchor>;
+	const BtnComponent = component === 'anchor' ? Anchor : component === 'link' ? CustomLink : Btn;
 
-		case 'link':
-			return <CustomLink {...props}>{children}</CustomLink>;
-
-		case 'button':
-		default:
-			return <Btn {...props}>{children}</Btn>;
-	}
+	return <BtnComponent {...props}>{children}</BtnComponent>;
 }
 
 const buttonStyleString = `
@@ -62,14 +54,12 @@ const buttonStyleString = `
 	}
 	`;
 
-const [Btn, Anchor, CustomLink] = [
-	styled.button`
-		${buttonStyleString}
-	`,
-	styled.a`
-		${buttonStyleString}
-	`,
-	styled(Link)`
-		${buttonStyleString}
-	`
-];
+const Btn = styled.button`
+	${buttonStyleString}
+`;
+const Anchor = styled.a`
+	${buttonStyleString}
+`;
+const CustomLink = styled(Link)`
+	${buttonStyleString}
+`;
