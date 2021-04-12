@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Button, Footer, Heading, BackgroundStripes } from 'components';
 import LoadingToast, { LoadingToastOptions } from 'components/LoadingToast';
 import { colors } from 'constants/theme';
+import avatars from 'constants/avatars';
 import validationSchema from './validationSchema';
 
 export default function RegisterForm() {
@@ -16,6 +17,7 @@ export default function RegisterForm() {
 	const [avatarError, setAvatarError] = useState(false);
 	const toastId = useRef();
 	const [isLoading, setLoading] = useState(false);
+	const history = useHistory();
 
 	const initialValues = {
 		name: '',
@@ -26,17 +28,6 @@ export default function RegisterForm() {
 		gender: '',
 		department: ''
 	};
-
-	const avatars = [
-		{ url: '/images/male-1.png', gender: 'male', id: 'male1' },
-		{ url: '/images/male-2.png', gender: 'male', id: 'male2' },
-		{ url: '/images/male-3.png', gender: 'male', id: 'male3' },
-		{ url: '/images/female-1.png', gender: 'female', id: 'female1' },
-		{ url: '/images/female-2.png', gender: 'female', id: 'female2' },
-		{ url: '/images/female-3.png', gender: 'female', id: 'female3' }
-	];
-
-	const history = useHistory();
 
 	const handleSubmit = async (values, _action) => {
 		if (!active || active?.gender !== values.gender) {
@@ -79,14 +70,14 @@ export default function RegisterForm() {
 								<FieldContainer>
 									<label htmlFor='regno'>Register Number</label>
 									<Input id='regno' name='registerNumber' />
-									{errors.registerNumber && touched.registerNumber ? (
+									{errors.registerNumber && touched.registerNumber && (
 										<Error>{errors.registerNumber}</Error>
-									) : null}
+									)}
 								</FieldContainer>
 								<FieldContainer>
 									<label htmlFor='name'>Name of the Student</label>
 									<Input id='name' name='name' />
-									{errors.name && touched.name ? <Error>{errors.name}</Error> : null}
+									{errors.name && touched.name && <Error>{errors.name}</Error>}
 								</FieldContainer>
 								<FieldContainer style={{ marginBottom: '1rem' }}>
 									<label htmlFor='gender'>Gender</label>
@@ -118,7 +109,7 @@ export default function RegisterForm() {
 											</label>
 										</RadioGroup>
 									</RadioContainer>
-									{errors.gender && touched.gender ? <Error>{errors.gender}</Error> : null}
+									{errors.gender && touched.gender && <Error>{errors.gender}</Error>}
 									{values?.gender !== '' && (
 										<>
 											<label htmlFor='avatar'>Select your Avatar</label>
@@ -147,36 +138,36 @@ export default function RegisterForm() {
 								<FieldContainer>
 									<label htmlFor='email'>Email of the Student</label>
 									<Input id='email' name='email' type='email' />
-									{errors.email && touched.email ? <Error>{errors.email}</Error> : null}
+									{errors.email && touched.email && <Error>{errors.email}</Error>}
 								</FieldContainer>
 								<FieldContainer>
 									<label htmlFor='phn_num'>Phone Number</label>
 									<Input id='phn_num' name='phoneNumber' type='tel' pattern='[1-9]{1}[0-9]{9}' />
-									{errors.phoneNumber && touched.phoneNumber ? (
-										<Error>{errors.phoneNumber}</Error>
-									) : null}
+									{errors.phoneNumber && touched.phoneNumber && <Error>{errors.phoneNumber}</Error>}
 								</FieldContainer>
 								<FieldContainer>
 									<label htmlFor='year'>Year</label>
 									<Field name='year' as='select' className='select'>
 										<option value=''>-- Select --</option>
-										<option value='1'>1</option>
-										<option value='2'>2</option>
-										<option value='3'>3</option>
-										<option value='4'>4</option>
+										{[...new Array(4)].map((_, idx) => (
+											<option value={idx} key={idx}>
+												{idx}
+											</option>
+										))}
 									</Field>
-									{errors.year && touched.year ? <Error>{errors.year}</Error> : null}
+									{errors.year && touched.year && <Error>{errors.year}</Error>}
 								</FieldContainer>
 								<FieldContainer>
 									<label htmlFor='department'>Department</label>
 									<Field name='department' as='select' className='select'>
 										<option value=''>-- Select --</option>
-										<option value='CSE'>CSE</option>
-										<option value='IT'>IT</option>
+										{['CSE', 'IT'].map(dept => (
+											<option value={dept} key={dept}>
+												{dept}
+											</option>
+										))}
 									</Field>
-									{errors.department && touched.department ? (
-										<Error>{errors.department}</Error>
-									) : null}
+									{errors.department && touched.department && <Error>{errors.department}</Error>}
 								</FieldContainer>
 							</Box>
 							<SubmitButton disabled={isLoading} type='submit'>
