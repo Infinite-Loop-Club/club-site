@@ -6,8 +6,8 @@ import { useHistory, useLocation } from 'react-router';
 import { ToastContainer, toast } from 'react-toastify';
 
 import TeamDetails from 'pages/about/TeamDetails';
-import details from './nominees';
 import LoadingToast, { LoadingToastOptions } from 'components/LoadingToast';
+import details from 'data/nominees';
 
 export default function Voting() {
 	const [vote, setVote] = useState({
