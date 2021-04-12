@@ -101,7 +101,7 @@ const Card = styled.div`
 	overflow: hidden;
 	color: ${({ theme }) => theme.white};
 
-	/* @media (max-width: 600px) {
+	/* @media only screen and (max-width: 600px) {
 		width: 97vw;
 		height: 23rem;
 		font-size: 1.4rem;
@@ -168,7 +168,7 @@ const Card = styled.div`
 		overflow-wrap: break-word;
 		padding-right: 1rem;
 
-		/* @media (max-width: 600px) {
+		/* @media only screen and (max-width: 600px) {
 			grid-gap: 1rem;
 			figure {
 				margin-left: 5rem !important;

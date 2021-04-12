@@ -51,15 +51,15 @@ const AboutClub = styled.div`
 		align-self: stretch;
 	}
 
-	@media (max-width: 120rem) {
+	@media only screen and (max-width: 120rem) {
 		max-width: 90%;
 	}
 
-	@media (max-width: 900px) {
+	@media only screen and (max-width: 900px) {
 		flex-direction: column;
 	}
 
-	@media (max-width: 600px) {
+	@media only screen and (max-width: 600px) {
 		max-width: 95%;
 	}
 
@@ -69,7 +69,7 @@ const AboutClub = styled.div`
 
 		gap: 3rem;
 
-		@media (max-width: 650px) {
+		@media only screen and (max-width: 650px) {
 			flex-direction: column;
 		}
 

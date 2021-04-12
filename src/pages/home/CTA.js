@@ -55,7 +55,7 @@ const Div = styled.div`
 	overflow: hidden;
 	height: 30rem;
 
-	@media (max-width: 600px) {
+	@media only screen and (max-width: 600px) {
 		height: 35rem;
 	}
 

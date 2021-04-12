@@ -73,22 +73,22 @@ const Container = styled.div`
 	box-shadow: ${props => `1px 1px 20px ${props.theme.black}30`};
 	cursor: ${props => (props.id ? 'pointer' : 'default')};
 
-	@media (max-width: 1200px) {
+	@media only screen and (max-width: 1200px) {
 		width: 40rem;
 		height: 19rem;
 	}
 
-	@media (max-width: 970px) {
+	@media only screen and (max-width: 970px) {
 		width: 35rem;
 		height: 16.5rem;
 	}
 
-	@media (max-width: 400px) {
+	@media only screen and (max-width: 400px) {
 		width: 28rem;
 		height: 15rem;
 	}
 
-	@media (max-width: 400px) {
+	@media only screen and (max-width: 400px) {
 		width: 22.5rem;
 		height: 13rem;
 		padding: 1.5rem;
@@ -104,25 +104,25 @@ const Container = styled.div`
 		width: 16rem;
 		height: 18rem;
 
-		@media (max-width: 1200px) {
+		@media only screen and (max-width: 1200px) {
 			margin-right: 3rem;
 			width: 14rem;
 			height: 16rem;
 		}
 
-		@media (max-width: 970px) {
+		@media only screen and (max-width: 970px) {
 			margin-right: 2.5rem;
 			width: 12rem;
 			height: 13rem;
 		}
 
-		@media (max-width: 400px) {
+		@media only screen and (max-width: 400px) {
 			margin-right: 1rem;
 			width: 8rem;
 			height: 11rem;
 		}
 
-		@media (max-width: 400px) {
+		@media only screen and (max-width: 400px) {
 			margin-right: 0.5rem;
 			width: 6rem;
 			height: 9rem;
@@ -133,19 +133,19 @@ const Container = styled.div`
 		font-family: ${fonts.sansSerif};
 		color: ${p => p.theme.primary};
 
-		@media (max-width: 1200px) {
+		@media only screen and (max-width: 1200px) {
 			font-size: 2.2rem;
 		}
 
-		@media (max-width: 970px) {
+		@media only screen and (max-width: 970px) {
 			font-size: 2rem;
 		}
 
-		@media (max-width: 850px) {
+		@media only screen and (max-width: 850px) {
 			font-size: 1.8rem;
 		}
 
-		@media (max-width: 400px) {
+		@media only screen and (max-width: 400px) {
 			font-size: 1.2rem;
 		}
 	}
@@ -164,11 +164,11 @@ const IconContainer = styled.div`
 	align-items: flex-end;
 	z-index: 1;
 
-	@media (max-width: 1200px) {
+	@media only screen and (max-width: 1200px) {
 		margin-top: 1rem;
 	}
 
-	@media (max-width: 970px) {
+	@media only screen and (max-width: 970px) {
 		margin-top: 0rem;
 	}
 
@@ -177,20 +177,20 @@ const IconContainer = styled.div`
 		font-size: 2.5rem;
 		margin-right: 2rem;
 
-		@media (max-width: 1200px) {
+		@media only screen and (max-width: 1200px) {
 			font-size: 2rem;
 		}
 
-		@media (max-width: 970px) {
+		@media only screen and (max-width: 970px) {
 			margin-right: 1.5rem;
 		}
 
-		@media (max-width: 400px) {
+		@media only screen and (max-width: 400px) {
 			font-size: 1.5rem;
 			margin-right: 1rem;
 		}
 
-		@media (max-width: 400px) {
+		@media only screen and (max-width: 400px) {
 			font-size: 1.3rem;
 			margin-right: 1rem;
 		}
@@ -219,24 +219,24 @@ const Rect1 = styled.div`
 	height: 4rem;
 	transform: skew(0deg, -25deg);
 
-	@media (max-width: 1200px) {
+	@media only screen and (max-width: 1200px) {
 		top: 40%;
 		width: 18rem;
 		height: 3.5rem;
 	}
 
-	@media (max-width: 970px) {
+	@media only screen and (max-width: 970px) {
 		top: 35%;
 		width: 14.5rem;
 		height: 3rem;
 	}
 
-	@media (max-width: 400px) {
+	@media only screen and (max-width: 400px) {
 		width: 10rem;
 		height: 2.5rem;
 	}
 
-	@media (max-width: 400px) {
+	@media only screen and (max-width: 400px) {
 		width: 7.5rem;
 		height: 2rem;
 	}
@@ -251,21 +251,21 @@ const Rect2 = styled.div`
 	height: 1.5rem;
 	transform: skew(0deg, -25deg);
 
-	@media (max-width: 1200px) {
+	@media only screen and (max-width: 1200px) {
 		top: 40%;
 		width: 17rem;
 		height: 1rem;
 	}
 
-	@media (max-width: 970px) {
+	@media only screen and (max-width: 970px) {
 		width: 16rem;
 	}
 
-	@media (max-width: 400px) {
+	@media only screen and (max-width: 400px) {
 		width: 14rem;
 	}
 
-	@media (max-width: 400px) {
+	@media only screen and (max-width: 400px) {
 		width: 11rem;
 	}
 `;
@@ -275,15 +275,15 @@ const Text = styled.p`
 	font-weight: ${props => (props.bold ? '700' : '600')};
 	z-index: 1;
 
-	@media (max-width: 1200px) {
+	@media only screen and (max-width: 1200px) {
 		font-size: ${props => (props.bold ? '1.2rem' : '1rem')};
 	}
 
-	@media (max-width: 970px) {
+	@media only screen and (max-width: 970px) {
 		font-size: ${props => (props.bold ? '1rem' : '.9rem')};
 	}
 
-	@media (max-width: 400px) {
+	@media only screen and (max-width: 400px) {
 		font-size: ${props => (props.bold ? '.9rem' : '0.8rem')};
 	}
 `;
@@ -297,17 +297,17 @@ const Triangle = styled.div`
 	width: 25rem;
 	height: 10rem;
 
-	@media (max-width: 1200px) {
+	@media only screen and (max-width: 1200px) {
 		width: 22rem;
 		height: 8rem;
 	}
 
-	@media (max-width: 970px) {
+	@media only screen and (max-width: 970px) {
 		width: 20rem;
 		height: 8rem;
 	}
 
-	@media (max-width: 400px) {
+	@media only screen and (max-width: 400px) {
 		width: 10rem;
 		height: 3.5rem;
 	}
@@ -321,7 +321,7 @@ const Triangle = styled.div`
 		display: inline-block;
 		border: none;
 
-		@media (max-width: 400px) {
+		@media only screen and (max-width: 400px) {
 			right: 0%;
 		}
 	}

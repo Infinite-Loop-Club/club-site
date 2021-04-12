@@ -35,13 +35,13 @@ const CoreBox = styled.div`
 	justify-content: center;
 	gap: 3rem;
 
-	@media (max-width: 1000px) {
+	@media only screen and (max-width: 1000px) {
 		& > div:nth-child(even) {
 			order: -1;
 		}
 	}
 
-	@media (max-width: 600px) {
+	@media only screen and (max-width: 600px) {
 		flex-direction: column;
 		align-items: center;
 	}

@@ -51,14 +51,14 @@ const Container = styled.div`
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 2.5rem;
 
-	@media (max-width: 1100px) {
+	@media only screen and (max-width: 1100px) {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 	}
 
-	@media (max-width: 400px) {
+	@media only screen and (max-width: 400px) {
 		margin: 0;
 	}
 `;

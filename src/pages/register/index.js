@@ -211,15 +211,15 @@ const Avatar = styled.img`
 		cursor: pointer;
 	}
 
-	@media (max-width: 600px) {
+	@media only screen and (max-width: 600px) {
 		width: 8rem;
 	}
 
-	@media (max-width: 500px) {
+	@media only screen and (max-width: 500px) {
 		width: 6rem;
 	}
 
-	@media (max-width: 400px) {
+	@media only screen and (max-width: 400px) {
 		width: 5rem;
 	}
 `;
@@ -325,7 +325,7 @@ const RadioContainer = styled.div`
 	display: flex;
 	flex-direction: row;
 
-	@media (max-width: 400px) {
+	@media only screen and (max-width: 400px) {
 		flex-direction: column;
 	}
 `;
@@ -387,7 +387,7 @@ const RadioGroup = styled.div`
 const SubmitButton = styled(Button)`
 	margin-top: 3rem;
 
-	@media (max-width: 700px) {
+	@media only screen and (max-width: 700px) {
 		margin-top: 0rem;
 	}
 `;
