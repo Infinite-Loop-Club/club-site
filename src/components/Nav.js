@@ -7,7 +7,8 @@ export default function NavigationBar() {
 
 	const history = useHistory();
 
-	const handleClick = path => {
+	const handleClick = ev => {
+		const path = ev.target.getAttribute('path');
 		setOpenHam(false);
 		history.push(path);
 	};
@@ -29,10 +30,18 @@ export default function NavigationBar() {
 			</Hamburger>
 			<Nav active={openHam}>
 				<ul>
-					<li onClick={() => handleClick('/')}>Home</li>
-					<li onClick={() => handleClick('/posts')}>Posts</li>
-					<li onClick={() => handleClick('about-us')}>About us</li>
-					<li onClick={() => handleClick('/register')}>Register</li>
+					<li path='/' onClick={handleClick}>
+						Home
+					</li>
+					<li path='/posts' onClick={handleClick}>
+						Posts
+					</li>
+					<li path='/about-us' onClick={handleClick}>
+						About us
+					</li>
+					<li path='/register' onClick={handleClick}>
+						Register
+					</li>
 				</ul>
 			</Nav>
 		</>

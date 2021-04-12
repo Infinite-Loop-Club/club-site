@@ -3,7 +3,7 @@ import { Card, Container, Heading } from 'components';
 
 export default function Members() {
 	return (
-		<CardContainer>
+		<Container>
 			<Heading gradient margin='huge'>
 				Our core members
 			</Heading>
@@ -25,13 +25,9 @@ export default function Members() {
 					position='Secretary'
 				/>
 			</CoreBox>
-		</CardContainer>
+		</Container>
 	);
 }
-
-const CardContainer = styled(Container)`
-	margin: 2rem auto;
-`;
 
 const CoreBox = styled.div`
 	display: flex;
