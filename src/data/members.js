@@ -91,7 +91,7 @@ const data = [
 			},
 			{
 				name: 'Pranav G',
-				profile: 'https://drive.google.com/uc?export=view&id=1LhHClnmJnTVNjTB_DXcTXfY1BHP89-D9',
+				profile: 'https://avatars.githubusercontent.com/u/51258030?v=4',
 				designation: 'Full Stack Developer',
 				year: 'III - CSE',
 				tag: `Before software can be reusable it first has to be usable.`,
