@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import AboutCard from './AboutCard';
 
-export default function TeamContainer({ title, data, handleClick, vote }) {
+export default function TeamContainer({ title, data, handleClick }) {
 	const [list, setList] = useState(data);
 
 	useEffect(() => {
@@ -32,7 +32,6 @@ export default function TeamContainer({ title, data, handleClick, vote }) {
 							socialLinks={socialLinks}
 							handleClick={handleClick}
 							role={role}
-							vote={vote}
 							fromBenxene={fromBenxene}
 						/>
 					);
@@ -47,14 +46,10 @@ const Container = styled.div`
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 2.5rem;
 
-	@media only screen and (max-width: 1100px) {
+	@media only screen and (max-width: 1200px) {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-	}
-
-	@media only screen and (max-width: 400px) {
-		margin: 0;
 	}
 `;
