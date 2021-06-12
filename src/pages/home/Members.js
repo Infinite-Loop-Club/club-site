@@ -9,18 +9,18 @@ export default function Members() {
 			</Heading>
 			<CoreBox>
 				<Card
-					imgSrc='https://drive.google.com/uc?export=view&id=15NoSJaPEm5kKkHgj7Sfeic6wZfGQ9ll-'
+					imgSrc='https://drive.google.com/uc?export=view&id=18uB2tXYtCFhBp-Kjreu118pjDx9TJQPm'
 					name='Mugundhan B'
 					position='Vice President'
 				/>
 				<Card
-					imgSrc='https://drive.google.com/uc?export=view&id=1mtIe1U88UpBuV8WpW9IqHeeJ0YeWqhH1'
+					imgSrc='https://drive.google.com/uc?export=view&id=1RVv4aHkOSPClM2uZPcQVuuvwKn1mHYxT'
 					name='Kiruthika R'
 					position='President'
 					isSpecial
 				/>
 				<Card
-					imgSrc='https://drive.google.com/uc?export=view&id=1pELo9uh1k60NTOf2HWDwproNNjaBuj8s'
+					imgSrc='https://drive.google.com/uc?export=view&id=1qad0POI19F_zVjWrb60nHVvmusBv5kPK'
 					name='Thirumurugan M'
 					position='Secretary'
 				/>

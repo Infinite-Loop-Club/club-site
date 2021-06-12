@@ -4,7 +4,7 @@ const data = [
 		data: [
 			{
 				name: 'Kiruthika R',
-				profile: 'https://drive.google.com/uc?export=view&id=1mtIe1U88UpBuV8WpW9IqHeeJ0YeWqhH1',
+				profile: 'https://drive.google.com/uc?export=view&id=1RVv4aHkOSPClM2uZPcQVuuvwKn1mHYxT',
 				designation: 'President',
 				year: 'IV - CSE',
 				tag: 'To enhance peer-peer learning through networking',
@@ -30,7 +30,7 @@ const data = [
 			},
 			{
 				name: 'Thirumurugan M',
-				profile: 'https://drive.google.com/uc?export=view&id=1pELo9uh1k60NTOf2HWDwproNNjaBuj8s',
+				profile: 'https://drive.google.com/uc?export=view&id=1qad0POI19F_zVjWrb60nHVvmusBv5kPK',
 				designation: 'Secretary',
 				year: 'II - CSE',
 				tag: 'ALL THINGS ARE POSSIBLE',
@@ -43,7 +43,7 @@ const data = [
 			},
 			{
 				name: 'Krishna Sangavi S',
-				profile: 'https://drive.google.com/uc?export=view&id=1-7ihsLuOzoW6kJnSq2ikwU_qXcseL5HO',
+				profile: 'https://drive.google.com/uc?export=view&id=1A8q3XNE9KrVXQpjnRbgmJt-sEwn24ifR',
 				designation: 'Youth Representative',
 				year: 'I - IT',
 				tag: 'To work genuinely!',
